@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>電磁気学（第7回〜第13回）体系ノート – Electromagnetism</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-1a4b4918590cfbc990f9f06862e7272f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Electromagnetism</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./electromagnetism.html"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#全体構造依存関係" id="toc-全体構造依存関係" class="nav-link active" data-scroll-target="#全体構造依存関係"><span class="header-section-number">0.1</span> 0. 全体構造（依存関係）</a></li>
+  <li><a href="#磁場と力静磁場の入口" id="toc-磁場と力静磁場の入口" class="nav-link" data-scroll-target="#磁場と力静磁場の入口"><span class="header-section-number">0.2</span> 1. 磁場と力（静磁場の入口）</a>
+  <ul class="collapse">
+  <li><a href="#ローレンツ力ミクロ" id="toc-ローレンツ力ミクロ" class="nav-link" data-scroll-target="#ローレンツ力ミクロ"><span class="header-section-number">0.2.1</span> 1.1 ローレンツ力（ミクロ）</a></li>
+  <li><a href="#アンペールの力マクロ" id="toc-アンペールの力マクロ" class="nav-link" data-scroll-target="#アンペールの力マクロ"><span class="header-section-number">0.2.2</span> 1.2 アンペールの力（マクロ）</a></li>
+  </ul></li>
+  <li><a href="#電流が作る磁場静磁場の計算" id="toc-電流が作る磁場静磁場の計算" class="nav-link" data-scroll-target="#電流が作る磁場静磁場の計算"><span class="header-section-number">0.3</span> 2. 電流が作る磁場（静磁場の計算）</a>
+  <ul class="collapse">
+  <li><a href="#ビオサバールの法則一般形" id="toc-ビオサバールの法則一般形" class="nav-link" data-scroll-target="#ビオサバールの法則一般形"><span class="header-section-number">0.3.1</span> 2.1 ビオ・サバールの法則（一般形）</a></li>
+  <li><a href="#代表的な結果頻出" id="toc-代表的な結果頻出" class="nav-link" data-scroll-target="#代表的な結果頻出"><span class="header-section-number">0.3.2</span> 2.2 代表的な結果（頻出）</a></li>
+  <li><a href="#アンペールの法則対称性が良いとき" id="toc-アンペールの法則対称性が良いとき" class="nav-link" data-scroll-target="#アンペールの法則対称性が良いとき"><span class="header-section-number">0.3.3</span> 2.3 アンペールの法則（対称性が良いとき）</a></li>
+  </ul></li>
+  <li><a href="#磁束と電磁誘導時間変化の導入" id="toc-磁束と電磁誘導時間変化の導入" class="nav-link" data-scroll-target="#磁束と電磁誘導時間変化の導入"><span class="header-section-number">0.4</span> 3. 磁束と電磁誘導（時間変化の導入）</a>
+  <ul class="collapse">
+  <li><a href="#磁束" id="toc-磁束" class="nav-link" data-scroll-target="#磁束"><span class="header-section-number">0.4.1</span> 3.1 磁束</a></li>
+  <li><a href="#ファラデーの電磁誘導の法則起電力" id="toc-ファラデーの電磁誘導の法則起電力" class="nav-link" data-scroll-target="#ファラデーの電磁誘導の法則起電力"><span class="header-section-number">0.4.2</span> 3.2 ファラデーの電磁誘導の法則（起電力）</a></li>
+  <li><a href="#誘導の2つの起源混在可" id="toc-誘導の2つの起源混在可" class="nav-link" data-scroll-target="#誘導の2つの起源混在可"><span class="header-section-number">0.4.3</span> 3.3 誘導の2つの起源（混在可）</a></li>
+  </ul></li>
+  <li><a href="#インダクタンス電磁誘導の応用" id="toc-インダクタンス電磁誘導の応用" class="nav-link" data-scroll-target="#インダクタンス電磁誘導の応用"><span class="header-section-number">1</span> 4. インダクタンス（電磁誘導の応用）</a>
+  <ul class="collapse">
+  <li><a href="#自己インダクタンス" id="toc-自己インダクタンス" class="nav-link" data-scroll-target="#自己インダクタンス"><span class="header-section-number">1.1</span> 4.1 自己インダクタンス</a></li>
+  <li><a href="#rl回路基本形" id="toc-rl回路基本形" class="nav-link" data-scroll-target="#rl回路基本形"><span class="header-section-number">1.2</span> 4.2 RL回路（基本形）</a></li>
+  <li><a href="#磁場のエネルギー" id="toc-磁場のエネルギー" class="nav-link" data-scroll-target="#磁場のエネルギー"><span class="header-section-number">1.3</span> 4.3 磁場のエネルギー</a></li>
+  </ul></li>
+  <li><a href="#変位電流と修正アンペールの法則" id="toc-変位電流と修正アンペールの法則" class="nav-link" data-scroll-target="#変位電流と修正アンペールの法則"><span class="header-section-number">2</span> 5. 変位電流と修正アンペールの法則</a>
+  <ul class="collapse">
+  <li><a href="#問題矛盾" id="toc-問題矛盾" class="nav-link" data-scroll-target="#問題矛盾"><span class="header-section-number">2.1</span> 5.1 問題（矛盾）</a></li>
+  <li><a href="#変位電流" id="toc-変位電流" class="nav-link" data-scroll-target="#変位電流"><span class="header-section-number">2.2</span> 5.2 変位電流</a></li>
+  <li><a href="#アンペールマクスウェルの法則" id="toc-アンペールマクスウェルの法則" class="nav-link" data-scroll-target="#アンペールマクスウェルの法則"><span class="header-section-number">2.3</span> 5.3 アンペール–マクスウェルの法則</a></li>
+  </ul></li>
+  <li><a href="#マクスウェル方程式完成形" id="toc-マクスウェル方程式完成形" class="nav-link" data-scroll-target="#マクスウェル方程式完成形"><span class="header-section-number">3</span> 6. マクスウェル方程式（完成形）</a></li>
+  <li><a href="#電磁波真空中の帰結" id="toc-電磁波真空中の帰結" class="nav-link" data-scroll-target="#電磁波真空中の帰結"><span class="header-section-number">4</span> 7. 電磁波（真空中の帰結）</a>
+  <ul class="collapse">
+  <li><a href="#真空中の設定" id="toc-真空中の設定" class="nav-link" data-scroll-target="#真空中の設定"><span class="header-section-number">4.1</span> 7.1 真空中の設定</a></li>
+  <li><a href="#波動方程式形だけ" id="toc-波動方程式形だけ" class="nav-link" data-scroll-target="#波動方程式形だけ"><span class="header-section-number">4.2</span> 7.2 波動方程式（形だけ）</a></li>
+  <li><a href="#電磁波の速さ" id="toc-電磁波の速さ" class="nav-link" data-scroll-target="#電磁波の速さ"><span class="header-section-number">4.3</span> 7.3 電磁波の速さ</a></li>
+  </ul></li>
+  <li><a href="#エネルギーの流れポインティング" id="toc-エネルギーの流れポインティング" class="nav-link" data-scroll-target="#エネルギーの流れポインティング"><span class="header-section-number">5</span> 8. エネルギーの流れ（ポインティング）</a>
+  <ul class="collapse">
+  <li><a href="#エネルギー密度" id="toc-エネルギー密度" class="nav-link" data-scroll-target="#エネルギー密度"><span class="header-section-number">5.1</span> 8.1 エネルギー密度</a></li>
+  <li><a href="#ポインティングベクトル" id="toc-ポインティングベクトル" class="nav-link" data-scroll-target="#ポインティングベクトル"><span class="header-section-number">5.2</span> 8.2 ポインティングベクトル</a></li>
+  </ul></li>
+  <li><a href="#最終まとめ最短" id="toc-最終まとめ最短" class="nav-link" data-scroll-target="#最終まとめ最短"><span class="header-section-number">6</span> 9. 最終まとめ（最短）</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">電磁気学（第7回〜第13回）体系ノート</h1>
+<p class="subtitle lead">静磁場 → 電磁誘導 → マクスウェル方程式 → 電磁波</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>このノートは「スライドの順番」ではなく「依存関係」で再編成している。 Mermaidは <strong>ASCIIのみ</strong> で書く（Unicodeで落ちやすい）。</p>
+</div>
+</div>
+<section id="全体構造依存関係" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="全体構造依存関係"><span class="header-section-number">0.1</span> 0. 全体構造（依存関係）</h2>
+<p>（図のラベルはASCIIに限定）</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+  ChargeCurrent[Charge and Current] --&gt; StaticB[Static magnetic field B]
+  StaticB --&gt; Flux[Magnetic flux Phi_B]
+  Flux --&gt; Faraday[Faraday induction]
+  Faraday --&gt; InducedE[Induced electric field E]
+  InducedE --&gt; DispCurrent[Displacement current]
+  DispCurrent --&gt; Maxwell[Maxwell equations]
+  Maxwell --&gt; EMWave[Electromagnetic wave]
+  Maxwell --&gt; Poynting[Poynting vector]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="磁場と力静磁場の入口" class="level2" data-number="0.2">
+<h2 data-number="0.2" class="anchored" data-anchor-id="磁場と力静磁場の入口"><span class="header-section-number">0.2</span> 1. 磁場と力（静磁場の入口）</h2>
+<section id="ローレンツ力ミクロ" class="level3" data-number="0.2.1">
+<h3 data-number="0.2.1" class="anchored" data-anchor-id="ローレンツ力ミクロ"><span class="header-section-number">0.2.1</span> 1.1 ローレンツ力（ミクロ）</h3>
+<p><span class="math display">\[
+\mathbf{F} = q\,\mathbf{v} \times \mathbf{B}
+\]</span></p>
+<ul>
+<li>力は速度に垂直（言葉で書く：F is perpendicular to v）</li>
+<li>仕事をしない → 運動エネルギー保存</li>
+<li>典型運動：円運動（＋成分があればらせん）</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  v[v] --&gt; F[F]
+  B[B] --&gt; F
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="アンペールの力マクロ" class="level3" data-number="0.2.2">
+<h3 data-number="0.2.2" class="anchored" data-anchor-id="アンペールの力マクロ"><span class="header-section-number">0.2.2</span> 1.2 アンペールの力（マクロ）</h3>
+<p><span class="math display">\[
+\Delta \mathbf{F} = I\,\Delta \mathbf{l} \times \mathbf{B}
+\]</span></p>
+<ul>
+<li>ローレンツ力を「電流」へまとめた表現</li>
+<li>回路全体では力が相殺される場合がある</li>
+<li>ただしトルクは残り得る</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="電流が作る磁場静磁場の計算" class="level2" data-number="0.3">
+<h2 data-number="0.3" class="anchored" data-anchor-id="電流が作る磁場静磁場の計算"><span class="header-section-number">0.3</span> 2. 電流が作る磁場（静磁場の計算）</h2>
+<section id="ビオサバールの法則一般形" class="level3" data-number="0.3.1">
+<h3 data-number="0.3.1" class="anchored" data-anchor-id="ビオサバールの法則一般形"><span class="header-section-number">0.3.1</span> 2.1 ビオ・サバールの法則（一般形）</h3>
+<p><span class="math display">\[
+d\mathbf{B}
+= \frac{\mu_0}{4\pi}
+\frac{I\,d\mathbf{l}\times\mathbf{r}}{r^3}
+\]</span></p>
+<ul>
+<li>任意形状の電流に適用可能</li>
+<li>計算は重い（積分と座標設定が本体）</li>
+<li>対称性が無い配置の最終手段</li>
+</ul>
+<hr>
+</section>
+<section id="代表的な結果頻出" class="level3" data-number="0.3.2">
+<h3 data-number="0.3.2" class="anchored" data-anchor-id="代表的な結果頻出"><span class="header-section-number">0.3.2</span> 2.2 代表的な結果（頻出）</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>配置</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>無限直線電流</td>
+<td><span class="math inline">\(B(r)=\dfrac{\mu_0 I}{2\pi r}\)</span></td>
+</tr>
+<tr class="even">
+<td>円電流（中心）</td>
+<td><span class="math inline">\(B=\dfrac{\mu_0 I}{2a}\)</span></td>
+</tr>
+<tr class="odd">
+<td>ソレノイド内部（十分長い）</td>
+<td><span class="math inline">\(B=\mu_0 n I\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="アンペールの法則対称性が良いとき" class="level3" data-number="0.3.3">
+<h3 data-number="0.3.3" class="anchored" data-anchor-id="アンペールの法則対称性が良いとき"><span class="header-section-number">0.3.3</span> 2.3 アンペールの法則（対称性が良いとき）</h3>
+<p><span class="math display">\[
+\oint_C \mathbf{B}\cdot d\mathbf{l} = \mu_0 I
+\]</span></p>
+<ul>
+<li>無限直線電流、円筒対称、ソレノイド等で有効</li>
+<li>積分経路 <span class="math inline">\(C\)</span> の選び方が勝負</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="磁束と電磁誘導時間変化の導入" class="level2" data-number="0.4">
+<h2 data-number="0.4" class="anchored" data-anchor-id="磁束と電磁誘導時間変化の導入"><span class="header-section-number">0.4</span> 3. 磁束と電磁誘導（時間変化の導入）</h2>
+<section id="磁束" class="level3" data-number="0.4.1">
+<h3 data-number="0.4.1" class="anchored" data-anchor-id="磁束"><span class="header-section-number">0.4.1</span> 3.1 磁束</h3>
+<p><span class="math display">\[
+\Phi_B = \int_{S} \mathbf{B}\cdot \mathbf{n}\, dS
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\Phi_B\)</span>：面 <span class="math inline">\(S\)</span> を貫く磁束</li>
+<li><span class="math inline">\(\mathbf{n}\)</span>：面 <span class="math inline">\(S\)</span> の法線単位ベクトル（向きで符号が変わる）</li>
+</ul>
+<hr>
+</section>
+<section id="ファラデーの電磁誘導の法則起電力" class="level3" data-number="0.4.2">
+<h3 data-number="0.4.2" class="anchored" data-anchor-id="ファラデーの電磁誘導の法則起電力"><span class="header-section-number">0.4.2</span> 3.2 ファラデーの電磁誘導の法則（起電力）</h3>
+<p><span class="math display">\[
+\mathcal{E} = -\frac{d\Phi_B}{dt}
+\]</span></p>
+<ul>
+<li>磁束が時間変化 → 起電力が発生</li>
+<li>マイナス符号＝レンツの法則（変化を打ち消す向き）</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  Flux[Phi_B] --&gt;|d/dt| EMF[emf]
+  EMF --&gt; Current[induced current]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="誘導の2つの起源混在可" class="level3" data-number="0.4.3">
+<h3 data-number="0.4.3" class="anchored" data-anchor-id="誘導の2つの起源混在可"><span class="header-section-number">0.4.3</span> 3.3 誘導の2つの起源（混在可）</h3>
+<ul>
+<li>磁場 <span class="math inline">\(B(t)\)</span> が時間変化（回路固定）</li>
+<li>回路が運動（磁場固定）</li>
+</ul>
+<p>どちらも結局ここに落ちる：</p>
+<p><span class="math display">\[
+\frac{d\Phi_B}{dt}
+\]</span></p>
+<hr>
+</section>
+</section>
+<section id="インダクタンス電磁誘導の応用" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 4. インダクタンス（電磁誘導の応用）</h1>
+<section id="自己インダクタンス" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="自己インダクタンス"><span class="header-section-number">1.1</span> 4.1 自己インダクタンス</h2>
+<p><span class="math display">\[
+\mathcal{E} = -L\frac{dI}{dt}, \qquad L=\frac{N\Phi}{I}
+\]</span></p>
+<ul>
+<li>電流変化を妨げる（回路の「慣性」）</li>
+<li><span class="math inline">\(L\)</span> が大きいほど電流が立ち上がりにくい</li>
+</ul>
+<hr>
+</section>
+<section id="rl回路基本形" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="rl回路基本形"><span class="header-section-number">1.2</span> 4.2 RL回路（基本形）</h2>
+<p><span class="math display">\[
+I(t)=\frac{\Phi}{R}\left(1-e^{-Rt/L}\right)
+\]</span></p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  ON[switch on] --&gt; Rise[I increases gradually]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="磁場のエネルギー" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="磁場のエネルギー"><span class="header-section-number">1.3</span> 4.3 磁場のエネルギー</h2>
+<p><span class="math display">\[
+U=\frac{1}{2}LI^2, \qquad
+u_B=\frac{1}{2\mu_0}B^2
+\]</span></p>
+<ul>
+<li>エネルギーは「コイル」ではなく磁場（空間）にある</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="変位電流と修正アンペールの法則" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 5. 変位電流と修正アンペールの法則</h1>
+<section id="問題矛盾" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="問題矛盾"><span class="header-section-number">2.1</span> 5.1 問題（矛盾）</h2>
+<ul>
+<li>コンデンサー内部（極板間）には導電電流が流れない</li>
+<li>でも周囲に磁場があるように見える</li>
+<li>面の取り方で矛盾が出る</li>
+</ul>
+<hr>
+</section>
+<section id="変位電流" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="変位電流"><span class="header-section-number">2.2</span> 5.2 変位電流</h2>
+<p><span class="math display">\[
+\mathbf{i_d}=\varepsilon_0\frac{\partial\mathbf{E}}{\partial t}
+\]</span></p>
+<ul>
+<li>電荷の流れではない</li>
+<li>しかし磁場の源として働く</li>
+</ul>
+<hr>
+</section>
+<section id="アンペールマクスウェルの法則" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="アンペールマクスウェルの法則"><span class="header-section-number">2.3</span> 5.3 アンペール–マクスウェルの法則</h2>
+<p><span class="math display">\[
+\nabla\times\mathbf{B}
+=\mu_0\mathbf{i}
++\mu_0\varepsilon_0\frac{\partial\mathbf{E}}{\partial t}
+\]</span></p>
+<hr>
+</section>
+</section>
+<section id="マクスウェル方程式完成形" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 6. マクスウェル方程式（完成形）</h1>
+<p><span class="math display">\[
+\begin{aligned}
+\nabla\cdot\mathbf{E} &amp;= \frac{\rho}{\varepsilon_0} \\
+\nabla\cdot\mathbf{B} &amp;= 0 \\
+\nabla\times\mathbf{E} &amp;= -\frac{\partial\mathbf{B}}{\partial t} \\
+\nabla\times\mathbf{B} &amp;=
+\mu_0\mathbf{i}
++\mu_0\varepsilon_0\frac{\partial\mathbf{E}}{\partial t}
+\end{aligned}
+\]</span></p>
+<hr>
+</section>
+<section id="電磁波真空中の帰結" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> 7. 電磁波（真空中の帰結）</h1>
+<section id="真空中の設定" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="真空中の設定"><span class="header-section-number">4.1</span> 7.1 真空中の設定</h2>
+<ul>
+<li><span class="math inline">\(\rho = 0\)</span></li>
+<li><span class="math inline">\(\mathbf{i} = 0\)</span></li>
+</ul>
+<hr>
+</section>
+<section id="波動方程式形だけ" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="波動方程式形だけ"><span class="header-section-number">4.2</span> 7.2 波動方程式（形だけ）</h2>
+<p><span class="math display">\[
+\Delta\mathbf{E}=\mu_0\varepsilon_0\frac{\partial^2\mathbf{E}}{\partial t^2},
+\qquad
+\Delta\mathbf{B}=\mu_0\varepsilon_0\frac{\partial^2\mathbf{B}}{\partial t^2}
+\]</span></p>
+<hr>
+</section>
+<section id="電磁波の速さ" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="電磁波の速さ"><span class="header-section-number">4.3</span> 7.3 電磁波の速さ</h2>
+<p><span class="math display">\[
+c=\frac{1}{\sqrt{\varepsilon_0\mu_0}}
+\]</span></p>
+<hr>
+</section>
+</section>
+<section id="エネルギーの流れポインティング" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> 8. エネルギーの流れ（ポインティング）</h1>
+<section id="エネルギー密度" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="エネルギー密度"><span class="header-section-number">5.1</span> 8.1 エネルギー密度</h2>
+<p><span class="math display">\[
+u=\frac{\varepsilon_0}{2}E^2+\frac{1}{2\mu_0}B^2
+\]</span></p>
+</section>
+<section id="ポインティングベクトル" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="ポインティングベクトル"><span class="header-section-number">5.2</span> 8.2 ポインティングベクトル</h2>
+<p><span class="math display">\[
+\mathbf{S}=\frac{1}{\mu_0}\mathbf{E}\times\mathbf{B}
+\]</span></p>
+<hr>
+</section>
+</section>
+<section id="最終まとめ最短" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> 9. 最終まとめ（最短）</h1>
+<ul>
+<li>電流 → 磁場 <span class="math inline">\(B\)</span></li>
+<li><span class="math inline">\(B\)</span> の時間変化 → 誘導電場 <span class="math inline">\(E\)</span></li>
+<li><span class="math inline">\(E\)</span> の時間変化 → 磁場の源（変位電流）</li>
+<li><span class="math inline">\(E\)</span> と <span class="math inline">\(B\)</span> が互いを作り合い、電磁波として伝播</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

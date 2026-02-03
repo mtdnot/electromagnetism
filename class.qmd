@@ -1,0 +1,279 @@
+---
+title: "電磁気学（第7回〜第13回）体系ノート"
+subtitle: "静磁場 → 電磁誘導 → マクスウェル方程式 → 電磁波"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    mathjax: true
+---
+
+::: {.callout-note}
+このノートは「スライドの順番」ではなく「依存関係」で再編成している。
+Mermaidは **ASCIIのみ** で書く（Unicodeで落ちやすい）。
+:::
+
+## 0. 全体構造（依存関係）
+
+（図のラベルはASCIIに限定）
+
+```{mermaid}
+flowchart TD
+  ChargeCurrent[Charge and Current] --> StaticB[Static magnetic field B]
+  StaticB --> Flux[Magnetic flux Phi_B]
+  Flux --> Faraday[Faraday induction]
+  Faraday --> InducedE[Induced electric field E]
+  InducedE --> DispCurrent[Displacement current]
+  DispCurrent --> Maxwell[Maxwell equations]
+  Maxwell --> EMWave[Electromagnetic wave]
+  Maxwell --> Poynting[Poynting vector]
+```
+
+---
+
+## 1. 磁場と力（静磁場の入口）
+
+### 1.1 ローレンツ力（ミクロ）
+
+$$
+\mathbf{F} = q\,\mathbf{v} \times \mathbf{B}
+$$
+
+- 力は速度に垂直（言葉で書く：F is perpendicular to v）
+- 仕事をしない → 運動エネルギー保存
+- 典型運動：円運動（＋成分があればらせん）
+
+```{mermaid}
+flowchart LR
+  v[v] --> F[F]
+  B[B] --> F
+```
+
+---
+
+### 1.2 アンペールの力（マクロ）
+
+$$
+\Delta \mathbf{F} = I\,\Delta \mathbf{l} \times \mathbf{B}
+$$
+
+- ローレンツ力を「電流」へまとめた表現
+- 回路全体では力が相殺される場合がある
+- ただしトルクは残り得る
+
+---
+
+## 2. 電流が作る磁場（静磁場の計算）
+
+### 2.1 ビオ・サバールの法則（一般形）
+
+$$
+d\mathbf{B}
+= \frac{\mu_0}{4\pi}
+\frac{I\,d\mathbf{l}\times\mathbf{r}}{r^3}
+$$
+
+- 任意形状の電流に適用可能
+- 計算は重い（積分と座標設定が本体）
+- 対称性が無い配置の最終手段
+
+---
+
+### 2.2 代表的な結果（頻出）
+
+| 配置 | 結果 |
+|---|---|
+| 無限直線電流 | $B(r)=\dfrac{\mu_0 I}{2\pi r}$ |
+| 円電流（中心） | $B=\dfrac{\mu_0 I}{2a}$ |
+| ソレノイド内部（十分長い） | $B=\mu_0 n I$ |
+
+---
+
+### 2.3 アンペールの法則（対称性が良いとき）
+
+$$
+\oint_C \mathbf{B}\cdot d\mathbf{l} = \mu_0 I
+$$
+
+- 無限直線電流、円筒対称、ソレノイド等で有効
+- 積分経路 $C$ の選び方が勝負
+
+---
+
+## 3. 磁束と電磁誘導（時間変化の導入）
+
+### 3.1 磁束
+
+$$
+\Phi_B = \int_{S} \mathbf{B}\cdot \mathbf{n}\, dS
+$$
+
+- $\Phi_B$：面 $S$ を貫く磁束
+- $\mathbf{n}$：面 $S$ の法線単位ベクトル（向きで符号が変わる）
+
+---
+
+### 3.2 ファラデーの電磁誘導の法則（起電力）
+
+$$
+\mathcal{E} = -\frac{d\Phi_B}{dt}
+$$
+
+- 磁束が時間変化 → 起電力が発生
+- マイナス符号＝レンツの法則（変化を打ち消す向き）
+
+```{mermaid}
+flowchart LR
+  Flux[Phi_B] -->|d/dt| EMF[emf]
+  EMF --> Current[induced current]
+```
+
+---
+
+### 3.3 誘導の2つの起源（混在可）
+
+- 磁場 $B(t)$ が時間変化（回路固定）
+- 回路が運動（磁場固定）
+
+どちらも結局ここに落ちる：
+
+$$
+\frac{d\Phi_B}{dt}
+$$
+
+---
+
+# 4. インダクタンス（電磁誘導の応用）
+
+## 4.1 自己インダクタンス
+
+$$
+\mathcal{E} = -L\frac{dI}{dt}, \qquad L=\frac{N\Phi}{I}
+$$
+
+- 電流変化を妨げる（回路の「慣性」）
+- $L$ が大きいほど電流が立ち上がりにくい
+
+---
+
+## 4.2 RL回路（基本形）
+
+$$
+I(t)=\frac{\Phi}{R}\left(1-e^{-Rt/L}\right)
+$$
+
+```{mermaid}
+flowchart LR
+  ON[switch on] --> Rise[I increases gradually]
+```
+
+---
+
+## 4.3 磁場のエネルギー
+
+$$
+U=\frac{1}{2}LI^2, \qquad
+u_B=\frac{1}{2\mu_0}B^2
+$$
+
+- エネルギーは「コイル」ではなく磁場（空間）にある
+
+---
+
+# 5. 変位電流と修正アンペールの法則
+
+## 5.1 問題（矛盾）
+
+- コンデンサー内部（極板間）には導電電流が流れない
+- でも周囲に磁場があるように見える
+- 面の取り方で矛盾が出る
+
+---
+
+## 5.2 変位電流
+
+$$
+\mathbf{i_d}=\varepsilon_0\frac{\partial\mathbf{E}}{\partial t}
+$$
+
+- 電荷の流れではない
+- しかし磁場の源として働く
+
+---
+
+## 5.3 アンペール–マクスウェルの法則
+
+$$
+\nabla\times\mathbf{B}
+=\mu_0\mathbf{i}
++\mu_0\varepsilon_0\frac{\partial\mathbf{E}}{\partial t}
+$$
+
+---
+
+# 6. マクスウェル方程式（完成形）
+
+$$
+\begin{aligned}
+\nabla\cdot\mathbf{E} &= \frac{\rho}{\varepsilon_0} \\
+\nabla\cdot\mathbf{B} &= 0 \\
+\nabla\times\mathbf{E} &= -\frac{\partial\mathbf{B}}{\partial t} \\
+\nabla\times\mathbf{B} &=
+\mu_0\mathbf{i}
++\mu_0\varepsilon_0\frac{\partial\mathbf{E}}{\partial t}
+\end{aligned}
+$$
+
+---
+
+# 7. 電磁波（真空中の帰結）
+
+## 7.1 真空中の設定
+
+- $\rho = 0$
+- $\mathbf{i} = 0$
+
+---
+
+## 7.2 波動方程式（形だけ）
+
+$$
+\Delta\mathbf{E}=\mu_0\varepsilon_0\frac{\partial^2\mathbf{E}}{\partial t^2},
+\qquad
+\Delta\mathbf{B}=\mu_0\varepsilon_0\frac{\partial^2\mathbf{B}}{\partial t^2}
+$$
+
+---
+
+## 7.3 電磁波の速さ
+
+$$
+c=\frac{1}{\sqrt{\varepsilon_0\mu_0}}
+$$
+
+---
+
+# 8. エネルギーの流れ（ポインティング）
+
+## 8.1 エネルギー密度
+
+$$
+u=\frac{\varepsilon_0}{2}E^2+\frac{1}{2\mu_0}B^2
+$$
+
+## 8.2 ポインティングベクトル
+
+$$
+\mathbf{S}=\frac{1}{\mu_0}\mathbf{E}\times\mathbf{B}
+$$
+
+---
+
+# 9. 最終まとめ（最短）
+
+- 電流 → 磁場 $B$
+- $B$ の時間変化 → 誘導電場 $E$
+- $E$ の時間変化 → 磁場の源（変位電流）
+- $E$ と $B$ が互いを作り合い、電磁波として伝播

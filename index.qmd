@@ -1,0 +1,30 @@
+---
+title: "Electromagnetism"
+format:
+  html:
+    toc: false
+---
+
+:::{.callout-note}
+**電磁気学演習（第1回〜第14回）**の解法パターン（型）を整理したノート。
+:::
+
+## Contents
+
+<div class="grid">
+<div class="g-col-12 g-col-md-6">
+
+### 型抽出
+- [型一覧](electromagnetism.html)
+
+### 体系化
+- [授業ノート](class.html)
+
+</div>
+<div class="g-col-12 g-col-md-6">
+
+### 参考
+- ガウスの法則 / アンペールの法則 / 誘導など
+
+</div>
+</div>

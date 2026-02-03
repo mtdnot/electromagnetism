@@ -1,0 +1,219 @@
+[
+  {
+    "objectID": "class.html",
+    "href": "class.html",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "",
+    "text": "Note\n\n\n\nこのノートは「スライドの順番」ではなく「依存関係」で再編成している。 Mermaidは ASCIIのみ で書く（Unicodeで落ちやすい）。"
+  },
+  {
+    "objectID": "class.html#全体構造依存関係",
+    "href": "class.html#全体構造依存関係",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "0.1 0. 全体構造（依存関係）",
+    "text": "0.1 0. 全体構造（依存関係）\n（図のラベルはASCIIに限定）\n\n\n\n\n\nflowchart TD\n  ChargeCurrent[Charge and Current] --&gt; StaticB[Static magnetic field B]\n  StaticB --&gt; Flux[Magnetic flux Phi_B]\n  Flux --&gt; Faraday[Faraday induction]\n  Faraday --&gt; InducedE[Induced electric field E]\n  InducedE --&gt; DispCurrent[Displacement current]\n  DispCurrent --&gt; Maxwell[Maxwell equations]\n  Maxwell --&gt; EMWave[Electromagnetic wave]\n  Maxwell --&gt; Poynting[Poynting vector]"
+  },
+  {
+    "objectID": "class.html#磁場と力静磁場の入口",
+    "href": "class.html#磁場と力静磁場の入口",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "0.2 1. 磁場と力（静磁場の入口）",
+    "text": "0.2 1. 磁場と力（静磁場の入口）\n\n0.2.1 1.1 ローレンツ力（ミクロ）\n\\[\n\\mathbf{F} = q\\,\\mathbf{v} \\times \\mathbf{B}\n\\]\n\n力は速度に垂直（言葉で書く：F is perpendicular to v）\n仕事をしない → 運動エネルギー保存\n典型運動：円運動（＋成分があればらせん）\n\n\n\n\n\n\nflowchart LR\n  v[v] --&gt; F[F]\n  B[B] --&gt; F\n\n\n\n\n\n\n\n\n\n0.2.2 1.2 アンペールの力（マクロ）\n\\[\n\\Delta \\mathbf{F} = I\\,\\Delta \\mathbf{l} \\times \\mathbf{B}\n\\]\n\nローレンツ力を「電流」へまとめた表現\n回路全体では力が相殺される場合がある\nただしトルクは残り得る"
+  },
+  {
+    "objectID": "class.html#電流が作る磁場静磁場の計算",
+    "href": "class.html#電流が作る磁場静磁場の計算",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "0.3 2. 電流が作る磁場（静磁場の計算）",
+    "text": "0.3 2. 電流が作る磁場（静磁場の計算）\n\n0.3.1 2.1 ビオ・サバールの法則（一般形）\n\\[\nd\\mathbf{B}\n= \\frac{\\mu_0}{4\\pi}\n\\frac{I\\,d\\mathbf{l}\\times\\mathbf{r}}{r^3}\n\\]\n\n任意形状の電流に適用可能\n計算は重い（積分と座標設定が本体）\n対称性が無い配置の最終手段\n\n\n\n\n0.3.2 2.2 代表的な結果（頻出）\n\n\n\n配置\n結果\n\n\n\n\n無限直線電流\n\\(B(r)=\\dfrac{\\mu_0 I}{2\\pi r}\\)\n\n\n円電流（中心）\n\\(B=\\dfrac{\\mu_0 I}{2a}\\)\n\n\nソレノイド内部（十分長い）\n\\(B=\\mu_0 n I\\)\n\n\n\n\n\n\n0.3.3 2.3 アンペールの法則（対称性が良いとき）\n\\[\n\\oint_C \\mathbf{B}\\cdot d\\mathbf{l} = \\mu_0 I\n\\]\n\n無限直線電流、円筒対称、ソレノイド等で有効\n積分経路 \\(C\\) の選び方が勝負"
+  },
+  {
+    "objectID": "class.html#磁束と電磁誘導時間変化の導入",
+    "href": "class.html#磁束と電磁誘導時間変化の導入",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "0.4 3. 磁束と電磁誘導（時間変化の導入）",
+    "text": "0.4 3. 磁束と電磁誘導（時間変化の導入）\n\n0.4.1 3.1 磁束\n\\[\n\\Phi_B = \\int_{S} \\mathbf{B}\\cdot \\mathbf{n}\\, dS\n\\]\n\n\\(\\Phi_B\\)：面 \\(S\\) を貫く磁束\n\\(\\mathbf{n}\\)：面 \\(S\\) の法線単位ベクトル（向きで符号が変わる）\n\n\n\n\n0.4.2 3.2 ファラデーの電磁誘導の法則（起電力）\n\\[\n\\mathcal{E} = -\\frac{d\\Phi_B}{dt}\n\\]\n\n磁束が時間変化 → 起電力が発生\nマイナス符号＝レンツの法則（変化を打ち消す向き）\n\n\n\n\n\n\nflowchart LR\n  Flux[Phi_B] --&gt;|d/dt| EMF[emf]\n  EMF --&gt; Current[induced current]\n\n\n\n\n\n\n\n\n\n0.4.3 3.3 誘導の2つの起源（混在可）\n\n磁場 \\(B(t)\\) が時間変化（回路固定）\n回路が運動（磁場固定）\n\nどちらも結局ここに落ちる：\n\\[\n\\frac{d\\Phi_B}{dt}\n\\]"
+  },
+  {
+    "objectID": "class.html#自己インダクタンス",
+    "href": "class.html#自己インダクタンス",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "1.1 4.1 自己インダクタンス",
+    "text": "1.1 4.1 自己インダクタンス\n\\[\n\\mathcal{E} = -L\\frac{dI}{dt}, \\qquad L=\\frac{N\\Phi}{I}\n\\]\n\n電流変化を妨げる（回路の「慣性」）\n\\(L\\) が大きいほど電流が立ち上がりにくい"
+  },
+  {
+    "objectID": "class.html#rl回路基本形",
+    "href": "class.html#rl回路基本形",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "1.2 4.2 RL回路（基本形）",
+    "text": "1.2 4.2 RL回路（基本形）\n\\[\nI(t)=\\frac{\\Phi}{R}\\left(1-e^{-Rt/L}\\right)\n\\]\n\n\n\n\n\nflowchart LR\n  ON[switch on] --&gt; Rise[I increases gradually]"
+  },
+  {
+    "objectID": "class.html#磁場のエネルギー",
+    "href": "class.html#磁場のエネルギー",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "1.3 4.3 磁場のエネルギー",
+    "text": "1.3 4.3 磁場のエネルギー\n\\[\nU=\\frac{1}{2}LI^2, \\qquad\nu_B=\\frac{1}{2\\mu_0}B^2\n\\]\n\nエネルギーは「コイル」ではなく磁場（空間）にある"
+  },
+  {
+    "objectID": "class.html#問題矛盾",
+    "href": "class.html#問題矛盾",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "2.1 5.1 問題（矛盾）",
+    "text": "2.1 5.1 問題（矛盾）\n\nコンデンサー内部（極板間）には導電電流が流れない\nでも周囲に磁場があるように見える\n面の取り方で矛盾が出る"
+  },
+  {
+    "objectID": "class.html#変位電流",
+    "href": "class.html#変位電流",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "2.2 5.2 変位電流",
+    "text": "2.2 5.2 変位電流\n\\[\n\\mathbf{i_d}=\\varepsilon_0\\frac{\\partial\\mathbf{E}}{\\partial t}\n\\]\n\n電荷の流れではない\nしかし磁場の源として働く"
+  },
+  {
+    "objectID": "class.html#アンペールマクスウェルの法則",
+    "href": "class.html#アンペールマクスウェルの法則",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "2.3 5.3 アンペール–マクスウェルの法則",
+    "text": "2.3 5.3 アンペール–マクスウェルの法則\n\\[\n\\nabla\\times\\mathbf{B}\n=\\mu_0\\mathbf{i}\n+\\mu_0\\varepsilon_0\\frac{\\partial\\mathbf{E}}{\\partial t}\n\\]"
+  },
+  {
+    "objectID": "class.html#真空中の設定",
+    "href": "class.html#真空中の設定",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "4.1 7.1 真空中の設定",
+    "text": "4.1 7.1 真空中の設定\n\n\\(\\rho = 0\\)\n\\(\\mathbf{i} = 0\\)"
+  },
+  {
+    "objectID": "class.html#波動方程式形だけ",
+    "href": "class.html#波動方程式形だけ",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "4.2 7.2 波動方程式（形だけ）",
+    "text": "4.2 7.2 波動方程式（形だけ）\n\\[\n\\Delta\\mathbf{E}=\\mu_0\\varepsilon_0\\frac{\\partial^2\\mathbf{E}}{\\partial t^2},\n\\qquad\n\\Delta\\mathbf{B}=\\mu_0\\varepsilon_0\\frac{\\partial^2\\mathbf{B}}{\\partial t^2}\n\\]"
+  },
+  {
+    "objectID": "class.html#電磁波の速さ",
+    "href": "class.html#電磁波の速さ",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "4.3 7.3 電磁波の速さ",
+    "text": "4.3 7.3 電磁波の速さ\n\\[\nc=\\frac{1}{\\sqrt{\\varepsilon_0\\mu_0}}\n\\]"
+  },
+  {
+    "objectID": "class.html#エネルギー密度",
+    "href": "class.html#エネルギー密度",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "5.1 8.1 エネルギー密度",
+    "text": "5.1 8.1 エネルギー密度\n\\[\nu=\\frac{\\varepsilon_0}{2}E^2+\\frac{1}{2\\mu_0}B^2\n\\]"
+  },
+  {
+    "objectID": "class.html#ポインティングベクトル",
+    "href": "class.html#ポインティングベクトル",
+    "title": "電磁気学（第7回〜第13回）体系ノート",
+    "section": "5.2 8.2 ポインティングベクトル",
+    "text": "5.2 8.2 ポインティングベクトル\n\\[\n\\mathbf{S}=\\frac{1}{\\mu_0}\\mathbf{E}\\times\\mathbf{B}\n\\]"
+  },
+  {
+    "objectID": "electromagnetism.html",
+    "href": "electromagnetism.html",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "",
+    "text": "電磁気学演習（第1回〜第14回）において出現する\n解答パターン（＝型）を体系的に整理した。\n本資料は、\n- 問題文を読んだ瞬間に「どの型か」を判定する\n- 最初に書く一行を即座に固定する\nことを目的とする。"
+  },
+  {
+    "objectID": "electromagnetism.html#t1ガウス即適用型",
+    "href": "electromagnetism.html#t1ガウス即適用型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "3.1 T1：ガウス即適用型",
+    "text": "3.1 T1：ガウス即適用型\n\n主題：電場と電荷の直接関係\n\n判断基準：閉曲面が明示され、中の電荷が数えられる\n\n操作：電荷カウントのみで完結"
+  },
+  {
+    "objectID": "electromagnetism.html#t2ガウス対称性型",
+    "href": "electromagnetism.html#t2ガウス対称性型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "3.2 T2：ガウス＋対称性型",
+    "text": "3.2 T2：ガウス＋対称性型\n\n主題：球対称・円筒対称・平面対称\n\n判断基準：\\(\\mathbf{E}\\) が距離 \\(r\\) のみの関数\n\n操作：\\(E=\\text{const}\\) 宣言 → 場合分け\n\n備考：試験頻出・最重要型"
+  },
+  {
+    "objectID": "electromagnetism.html#t3ガウス微分形型",
+    "href": "electromagnetism.html#t3ガウス微分形型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "3.3 T3：ガウス微分形型",
+    "text": "3.3 T3：ガウス微分形型\n\n主題：電荷密度と電場分布\n\n判断基準：\\(\\rho(\\mathbf{r})\\) や \\(\\mathbf{E}(\\mathbf{r})\\) が与えられる\n\n操作：発散の計算"
+  },
+  {
+    "objectID": "electromagnetism.html#t4ポテンシャル起点型",
+    "href": "electromagnetism.html#t4ポテンシャル起点型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "3.4 T4：ポテンシャル起点型",
+    "text": "3.4 T4：ポテンシャル起点型\n\n主題：電位と電場の関係\n\n判断基準：\\(\\phi\\) が与えられる／\\(\\phi\\) を求める\n\n操作：偏微分＋境界条件"
+  },
+  {
+    "objectID": "electromagnetism.html#t5保存場判定型",
+    "href": "electromagnetism.html#t5保存場判定型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "3.5 T5：保存場判定型",
+    "text": "3.5 T5：保存場判定型\n\n主題：保存力・経路独立性\n\n判断基準：「保存場であることを示せ」\n\n操作：回転（rot）の計算\n\n備考：頻度は低いが論証問題"
+  },
+  {
+    "objectID": "electromagnetism.html#t6回路オーム時間発展型",
+    "href": "electromagnetism.html#t6回路オーム時間発展型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "3.6 T6：回路・オーム・時間発展型",
+    "text": "3.6 T6：回路・オーム・時間発展型\n\n主題：電流・電圧・時間変化\n\n判断基準：\\(R, V, I, t\\) が同時に登場\n\n操作：微分方程式・エネルギー収支"
+  },
+  {
+    "objectID": "electromagnetism.html#t7ローレンツ運動方程式型",
+    "href": "electromagnetism.html#t7ローレンツ運動方程式型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "3.7 T7：ローレンツ運動方程式型",
+    "text": "3.7 T7：ローレンツ運動方程式型\n\n主題：磁場中の粒子運動\n\n判断基準：「磁場中を運動する粒子」\n\n操作：成分分解 → 円運動・らせん運動"
+  },
+  {
+    "objectID": "electromagnetism.html#t8アンペール積分型",
+    "href": "electromagnetism.html#t8アンペール積分型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "3.8 T8：アンペール積分型",
+    "text": "3.8 T8：アンペール積分型\n\n主題：電流が作る磁場\n\n判断基準：無限長・対称な電流配置\n\n操作：積分経路選択 → \\(\\mathbf{B}\\) 一定化"
+  },
+  {
+    "objectID": "electromagnetism.html#t9ビオサバール積分型",
+    "href": "electromagnetism.html#t9ビオサバール積分型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "3.9 T9：ビオ・サバール積分型",
+    "text": "3.9 T9：ビオ・サバール積分型\n\n主題：有限電流配置の磁場\n\n判断基準：電流素片 \\(d\\mathbf{l}\\) と距離 \\(\\mathbf{r}\\)\n\n操作：座標設定 → 積分変数変換\n\n備考：計算負荷が高い"
+  },
+  {
+    "objectID": "electromagnetism.html#t10電磁誘導磁束型",
+    "href": "electromagnetism.html#t10電磁誘導磁束型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "3.10 T10：電磁誘導・磁束型",
+    "text": "3.10 T10：電磁誘導・磁束型\n\n主題：磁束変化と起電力\n\n判断基準：磁束 \\(\\Phi\\) が登場\n\n操作：磁束計算 → 時間微分"
+  },
+  {
+    "objectID": "electromagnetism.html#t11インダクタンスエネルギー型",
+    "href": "electromagnetism.html#t11インダクタンスエネルギー型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "3.11 T11：インダクタンス・エネルギー型",
+    "text": "3.11 T11：インダクタンス・エネルギー型\n\n主題：自己・相互インダクタンス\n\n判断基準：コイル・\\(L\\)・\\(M\\)・エネルギー\n\n操作：磁場 → 磁束 → \\(L, U\\)"
+  },
+  {
+    "objectID": "electromagnetism.html#t12マクスウェル波動方程式型",
+    "href": "electromagnetism.html#t12マクスウェル波動方程式型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "3.12 T12：マクスウェル・波動方程式型",
+    "text": "3.12 T12：マクスウェル・波動方程式型\n\n主題：電磁場の時間発展・波動\n\n判断基準：\\(\\nabla\\times\\mathbf{E},\\;\\nabla\\times\\mathbf{B}\\) が主役\n\n操作：回転をとる → 波動方程式"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Electromagnetism",
+    "section": "",
+    "text": "Note\n\n\n\n電磁気学演習（第1回〜第14回）の解法パターン（型）を整理したノート。"
+  },
+  {
+    "objectID": "index.html#contents",
+    "href": "index.html#contents",
+    "title": "Electromagnetism",
+    "section": "1 Contents",
+    "text": "1 Contents\n\n\n\n1.1 型抽出\n\n型一覧\n\n\n\n1.2 体系化\n\n授業ノート\n\n\n\n\n1.3 参考\n\nガウスの法則 / アンペールの法則 / 誘導など"
+  }
+]
