@@ -19,6 +19,8 @@ format:
 
 - [授業ノート](class.html)
 
+- [微積](biseki.html)
+
 </div>
 <div class="g-col-12 g-col-md-6">
 
