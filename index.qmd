@@ -6,7 +6,7 @@ format:
 ---
 
 :::{.callout-note}
-**電磁気学演習（第1回〜第14回）**の解法パターン（型）を整理したノート。
+**電磁気学演習（第1回〜第14回）
 :::
 
 ## Contents
@@ -14,10 +14,9 @@ format:
 <div class="grid">
 <div class="g-col-12 g-col-md-6">
 
-### 型抽出
-- [型一覧](electromagnetism.html)
+##　リンク
+- [公式集](electromagnetism.html)
 
-### 体系化
 - [授業ノート](class.html)
 
 </div>

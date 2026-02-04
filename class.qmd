@@ -10,14 +10,8 @@ format:
     mathjax: true
 ---
 
-::: {.callout-note}
-このノートは「スライドの順番」ではなく「依存関係」で再編成している。
-Mermaidは **ASCIIのみ** で書く（Unicodeで落ちやすい）。
-:::
-
 ## 0. 全体構造（依存関係）
 
-（図のラベルはASCIIに限定）
 
 ```{mermaid}
 flowchart TD
