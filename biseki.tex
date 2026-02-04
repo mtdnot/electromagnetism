@@ -162,7 +162,7 @@
 \tableofcontents
 }
 
-\section{対象ファイル}\label{ux5bfeux8c61ux30d5ux30a1ux30a4ux30eb}
+\section{対象}\label{ux5bfeux8c61}
 
 Exam2024\_prb（問題1〜6）
 
@@ -175,30 +175,22 @@ Exam2024\_prb（問題1〜6）
 
 \subsubsection{解くための公式}\label{ux89e3ux304fux305fux3081ux306eux516cux5f0f}
 
-\begin{itemize}
-\tightlist
-\item
-  置換 \(u=x^2-2y\) とすると {[} z=\log\textbar u\textbar,\quad 
-  \frac{\partial z}{\partial x}=\frac{1}{u}\frac{\partial u}{\partial x},\quad
-  \frac{\partial z}{\partial y}=\frac{1}{u}\frac{\partial u}{\partial y}\quad (u\neq 0)
-  {]}
-\item
-  2階偏導・混合偏導 {[}
-  \frac{\partial^2 z}{\partial x^2}=\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial x}\right),
-  \quad
-  \frac{\partial^2 z}{\partial y\,\partial x}=\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right)
-  {]}
-\end{itemize}
+置換 \(u=x^2-2y\) とすると {[} z=\log\textbar u\textbar,\qquad
+\frac{\partial z}{\partial x}=\frac{1}{u}\frac{\partial u}{\partial x},\qquad
+\frac{\partial z}{\partial y}=\frac{1}{u}\frac{\partial u}{\partial y}\quad(u\neq 0).
+{]} 2階偏導・混合偏導は {[}
+\frac{\partial^2 z}{\partial x^2}=\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial x}\right),\qquad
+\frac{\partial^2 z}{\partial y\,\partial x}=\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right).
+{]}
 
 \subsubsection{使う分野の知識}\label{ux4f7fux3046ux5206ux91ceux306eux77e5ux8b58}
 
 \begin{itemize}
 \tightlist
 \item
-  多変数微分、合成関数の微分（連鎖律）
+  多変数微分、合成関数（連鎖律）
 \item
-  \(\log|u|\) の微分は \(\log u\) と同形だが、\textbf{定義域として
-  \(u\neq 0\) を意識}
+  \(\log|u|\) の定義域（\(u\neq 0\)）
 \end{itemize}
 
 \subsubsection{解くための考え方}\label{ux89e3ux304fux305fux3081ux306eux8003ux3048ux65b9}
@@ -206,10 +198,10 @@ Exam2024\_prb（問題1〜6）
 \begin{itemize}
 \tightlist
 \item
-  まず \(u=x^2-2y\)
-  と置き、\(\partial z/\partial x,\partial z/\partial y\) を出す
+  まず \(u\) を置いて \(\partial z/\partial x,\partial z/\partial y\)
+  を作る
 \item
-  その式をもう一度微分して2階へ（分数の微分で符号ミス注意）
+  その式をもう一回微分して2階へ（分数微分の符号ミスに注意）
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -219,24 +211,21 @@ Exam2024\_prb（問題1〜6）
 
 \subsubsection{解くための公式}\label{ux89e3ux304fux305fux3081ux306eux516cux5f0f-1}
 
-\begin{itemize}
-\tightlist
-\item
-  1階： {[} \frac{dz}{dt}=f\_x\frac{dx}{dt}+f\_y\frac{dy}{dt} {]}
-\item
-  2階（標準形）： {[} \frac{d^2z}{dt^2}
-  =f\_\{xx\}\left(\frac{dx}{dt}\right)\^{}2
-  +2f\_\{xy\}\left(\frac{dx}{dt}\right)\left(\frac{dy}{dt}\right)
-  +f\_\{yy\}\left(\frac{dy}{dt}\right)\^{}2 +f\_x\frac{d^2x}{dt^2}
-  +f\_y\frac{d^2y}{dt^2} {]}
-\end{itemize}
+1階： {[} \frac{dz}{dt}=f\_x\frac{dx}{dt}+f\_y\frac{dy}{dt}. {]}
+2階（標準形）： {[} \frac{d^2z}{dt^2}
+=f\_\{xx\}\left(\frac{dx}{dt}\right)\^{}2
++2f\_\{xy\}\left(\frac{dx}{dt}\right)\left(\frac{dy}{dt}\right)
++f\_\{yy\}\left(\frac{dy}{dt}\right)\^{}2 +f\_x\frac{d^2x}{dt^2}
++f\_y\frac{d^2y}{dt^2}. {]}
 
 \subsubsection{使う分野の知識}\label{ux4f7fux3046ux5206ux91ceux306eux77e5ux8b58-1}
 
 \begin{itemize}
 \tightlist
 \item
-  多変数の連鎖律（1階・2階）、偏微分記号
+  多変数の連鎖律（1階・2階）
+\item
+  偏微分記号（\(f_x,f_{xy}\) など）
 \end{itemize}
 
 \subsubsection{解くための考え方}\label{ux89e3ux304fux305fux3081ux306eux8003ux3048ux65b9-1}
@@ -245,44 +234,36 @@ Exam2024\_prb（問題1〜6）
 \tightlist
 \item
   先に \(dx/dt,dy/dt,d^2x/dt^2,d^2y/dt^2\) を確定（\(\sin,\cos\)
-  の微分は機械的）
+  の微分）
 \item
-  2階は「\(f\) の2階偏微分ブロック」＋「\(f\)
-  の1階偏微分×2階導関数ブロック」に分けて整理
+  2階は「2階偏微分ブロック」＋「1階偏微分×2階導関数ブロック」に分けて整理
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \subsection{\texorpdfstring{(3) 2次関数の最大値：\(f,g,h\)
-の比較}{(3) 2次関数の最大値：f,g,h の比較}}\label{ux6b21ux95a2ux6570ux306eux6700ux5927ux5024fgh-ux306eux6bd4ux8f03}
+のうち最大値をもつもの}{(3) 2次関数の最大値：f,g,h のうち最大値をもつもの}}\label{ux6b21ux95a2ux6570ux306eux6700ux5927ux5024fgh-ux306eux3046ux3061ux6700ux5927ux5024ux3092ux3082ux3064ux3082ux306e}
 
 \subsubsection{解くための公式}\label{ux89e3ux304fux305fux3081ux306eux516cux5f0f-2}
 
-\begin{itemize}
-\tightlist
-\item
-  極値点：\(\nabla Q=0\)
-\item
-  判定（ヘッセ行列 \(H\)）： {[} H=
+2変数2次関数 \(Q(x,y)\) に対し、ヘッセ行列 {[} H=
 
-  \begin{pmatrix}Q_{xx}&Q_{xy}\\Q_{yx}&Q_{yy}\end{pmatrix}
+\begin{pmatrix}Q_{xx}&Q_{xy}\\Q_{yx}&Q_{yy}\end{pmatrix}
 
-  ,\quad D=\det H=Q\_\{xx\}Q\_\{yy\}-Q\_\{xy\}\^{}2 {]} {[}
-  D\textgreater0,~Q\_\{xx\}\textless0 \Rightarrow \text{極大（負定値）}
-  \quad D\textgreater0,~Q\_\{xx\}\textgreater0
-  \Rightarrow \text{極小（正定値）} \quad D\textless0
-  \Rightarrow \text{鞍点（極値なし）} {]}
-\item
-  2次関数が負定値なら \textbf{全体最大値}
-  をもつ（上に凸ではなく「下に凸の逆」）
-\end{itemize}
+,\qquad D=\det H=Q\_\{xx\}Q\_\{yy\}-Q\_\{xy\}\^{}2. {]} 判定： {[}
+D\textgreater0,~Q\_\{xx\}\textless0
+\Rightarrow \text{極大（負定値）},\qquad
+D\textgreater0,~Q\_\{xx\}\textgreater0
+\Rightarrow \text{極小（正定値）},\qquad D\textless0
+\Rightarrow \text{鞍点（極値なし）}. {]} 極値点は
+\(\nabla Q=0\)（連立一次方程式）で求まる。2次関数が負定値なら全体最大値をもつ。
 
 \subsubsection{使う分野の知識}\label{ux4f7fux3046ux5206ux91ceux306eux77e5ux8b58-2}
 
 \begin{itemize}
 \tightlist
 \item
-  多変数関数の極値、二次形式、ヘッセ行列の符号判定
+  多変数関数の極値、ヘッセ行列、二次形式
 \end{itemize}
 
 \subsubsection{解くための考え方}\label{ux89e3ux304fux305fux3081ux306eux8003ux3048ux65b9-2}
@@ -290,37 +271,30 @@ Exam2024\_prb（問題1〜6）
 \begin{itemize}
 \tightlist
 \item
-  まず各関数の \(H\) を見て「最大値を持ちうる（負定値か）」を即判定
+  まず \(H\) の符号（負定値か）で「最大値を持ちうるか」を絞る
 \item
-  候補だけ \(\nabla Q=0\) を解いて点を出し、代入して最大値を比較
+  候補だけ \(\nabla Q=0\) を解いて点を出し、代入して値を比較
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\subsection{\texorpdfstring{(4) 二重積分：\(\iint_D x\,dxdy\)（\(y\)
-の上下が2つの放物線）}{(4) 二重積分：\textbackslash iint\_D x\textbackslash,dxdy（y の上下が2つの放物線）}}\label{ux4e8cux91cdux7a4dux5206iint_d-xdxdyy-ux306eux4e0aux4e0bux304c2ux3064ux306eux653eux7269ux7dda}
+\subsection{\texorpdfstring{(4) 二重積分：\(\iint_D x\,dx\,dy\)（\(y\)
+の上下が2つの放物線）}{(4) 二重積分：\textbackslash iint\_D x\textbackslash,dx\textbackslash,dy（y の上下が2つの放物線）}}\label{ux4e8cux91cdux7a4dux5206iint_d-xdxdyy-ux306eux4e0aux4e0bux304c2ux3064ux306eux653eux7269ux7dda}
 
 \subsubsection{解くための公式}\label{ux89e3ux304fux305fux3081ux306eux516cux5f0f-3}
 
-\begin{itemize}
-\tightlist
-\item
-  縦に積分： {[} \iint\emph{D
-  x,dxdy=\int}\{\alpha\}\^{}\{\beta\}\left(\int\_\{y=\mathrm{lower}(x)\}\^{}\{\mathrm{upper}(x)\}
-  x,dy\right)dx {]}
-\item
-  内側は {[} \int x,dy=x\bigl(\mathrm{upper}(x)-\mathrm{lower}(x)\bigr)
-  {]}
-\item
-  \(x\) 範囲は \(\mathrm{lower}(x)\le \mathrm{upper}(x)\) から決める
-\end{itemize}
+縦に積分： {[} \iint\emph{\{D\} x,dx,dy = \int}\{\alpha\}\^{}\{\beta\}
+\left( \int\emph{\{y=\ell(x)\}\^{}\{u(x)\} x,dy \right),dx. {]} 内側は
+\(x\) が \(y\) に依らないので {[} \int}\{y=\ell(x)\}\^{}\{u(x)\} x,dy =
+x\bigl(u(x)-\ell(x)\bigr). {]} ここで \(x\) の範囲 \([\alpha,\beta]\)
+は、領域が存在する条件 \(\ell(x)\le u(x)\)（上下曲線の交点）から決める。
 
 \subsubsection{使う分野の知識}\label{ux4f7fux3046ux5206ux91ceux306eux77e5ux8b58-3}
 
 \begin{itemize}
 \tightlist
 \item
-  二重積分、領域分割、曲線の交点（2次方程式）
+  二重積分、領域の切り出し、交点（2次方程式）
 \end{itemize}
 
 \subsubsection{解くための考え方}\label{ux89e3ux304fux305fux3081ux306eux8003ux3048ux65b9-3}
@@ -328,36 +302,32 @@ Exam2024\_prb（問題1〜6）
 \begin{itemize}
 \tightlist
 \item
-  交点で \(\alpha,\beta\) を確定し、内側積分は「長さ×\(x\)」に落とす
+  交点で \(\alpha,\beta\) を確定
 \item
-  外側は1変数積分として計算
+  内側は「長さ \(u(x)-\ell(x)\) × \(x\)」に落として外側を1変数積分で処理
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\subsection{\texorpdfstring{(5) 変数変換：\(u=x+y,\ v=3x-y\) による
-\(\iint_D y\,dxdy\)}{(5) 変数変換：u=x+y,\textbackslash{} v=3x-y による \textbackslash iint\_D y\textbackslash,dxdy}}\label{ux5909ux6570ux5909ux63dbuxy-v3x-y-ux306bux3088ux308b-iint_d-ydxdy}
+\subsection{\texorpdfstring{(5)
+変数変換：\(0\le x+y\le 2,\ 0\le 3x-y\le 3\) の領域で
+\(\iint_D y\,dx\,dy\)}{(5) 変数変換：0\textbackslash le x+y\textbackslash le 2,\textbackslash{} 0\textbackslash le 3x-y\textbackslash le 3 の領域で \textbackslash iint\_D y\textbackslash,dx\textbackslash,dy}}\label{ux5909ux6570ux5909ux63db0le-xyle-2-0le-3x-yle-3-ux306eux9818ux57dfux3067-iint_d-ydxdy}
 
 \subsubsection{解くための公式}\label{ux89e3ux304fux305fux3081ux306eux516cux5f0f-4}
 
-\begin{itemize}
-\tightlist
-\item
-  線形変換： {[} u=x+y,\quad v=3x-y {]}
-\item
-  ヤコビアン： {[}
-  dxdy=\left\textbar{}\frac{\partial(x,y)}{\partial(u,v)}\right\textbar,dudv
-  =\frac{1}{\left|\frac{\partial(u,v)}{\partial(x,y)}\right|},dudv {]}
-\item
-  被積分関数を \(y=y(u,v)\) として書き換える（\(x,y\) を連立一次で解く）
-\end{itemize}
+線形変換 {[} u=x+y,\qquad v=3x-y. {]} ヤコビアン： {[}
+dx,dy=\left\textbar{}\frac{\partial(x,y)}{\partial(u,v)}\right\textbar,du,dv
+=\frac{1}{\left|\frac{\partial(u,v)}{\partial(x,y)}\right|},du,dv. {]}
+（\(\partial(u,v)/\partial(x,y)\) は一定なので計算は楽）
+また、被積分関数 \(y\) を \(y(u,v)\) に直すために、\(u,v\) から \(x,y\)
+を連立一次で解く。
 
 \subsubsection{使う分野の知識}\label{ux4f7fux3046ux5206ux91ceux306eux77e5ux8b58-4}
 
 \begin{itemize}
 \tightlist
 \item
-  2変数の変数変換、ヤコビアン、領域の写像（不等式が長方形になる典型）
+  変数変換（2変数）、ヤコビアン、逆変換（連立一次）
 \end{itemize}
 
 \subsubsection{解くための考え方}\label{ux89e3ux304fux305fux3081ux306eux8003ux3048ux65b9-4}
@@ -365,22 +335,24 @@ Exam2024\_prb（問題1〜6）
 \begin{itemize}
 \tightlist
 \item
-  まず新領域 \(K\) は条件から即決（\(0\le u\le 2,\ 0\le v\le 3\) の形）
+  条件がそのまま \(0\le u\le 2,\ 0\le v\le 3\) の長方形になる（典型）
 \item
-  次に逆変換で \(y(u,v)\) と \(|J|\) を出して、長方形上の通常積分にする
+  \(y(u,v)\) と \(|J|\) を出して長方形上の通常の二重積分にする
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \section{問題2（媒介変数曲線：長さ・面積）}\label{ux554fux984c2ux5a92ux4ecbux5909ux6570ux66f2ux7ddaux9577ux3055ux9762ux7a4d}
 
+与えられた曲線 {[} x=a(t-\sin t),\qquad y=a(1-\cos t). {]}
+
 \subsection{\texorpdfstring{(1)
 長さ（\(0\le t\le T\)）}{(1) 長さ（0\textbackslash le t\textbackslash le T）}}\label{ux9577ux30550le-tle-t}
 
 \subsubsection{解くための公式}\label{ux89e3ux304fux305fux3081ux306eux516cux5f0f-5}
 
-{[}
-L=\int\_0\^{}T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},dt
+媒介変数の弧長： {[}
+L=\int\_\{0\}\^{}\{T\}\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},dt.
 {]}
 
 \subsubsection{使う分野の知識}\label{ux4f7fux3046ux5206ux91ceux306eux77e5ux8b58-5}
@@ -388,7 +360,9 @@ L=\int\_0\^{}T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},d
 \begin{itemize}
 \tightlist
 \item
-  媒介変数表示、弧長公式、三角恒等式 \(\sin^2 t+\cos^2 t=1\)
+  媒介変数表示、弧長公式
+\item
+  三角恒等式 \(\sin^2 t+\cos^2 t=1\)
 \end{itemize}
 
 \subsubsection{解くための考え方}\label{ux89e3ux304fux305fux3081ux306eux8003ux3048ux65b9-5}
@@ -396,24 +370,28 @@ L=\int\_0\^{}T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},d
 \begin{itemize}
 \tightlist
 \item
-  \(dx/dt,dy/dt\) を計算してルート内を恒等式で簡約し、積分する
+  \(dx/dt,dy/dt\) を作ってルート内を整理（恒等式で簡約される形が多い）
+\item
+  整理後に1変数積分を実行
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \subsection{\texorpdfstring{(2)
-面積（\(0\le t\le 2\pi\)）}{(2) 面積（0\textbackslash le t\textbackslash le 2\textbackslash pi）}}\label{ux9762ux7a4d0le-tle-2pi}
+\(x\)軸と囲む面積（\(0\le t\le 2\pi\)）}{(2) x軸と囲む面積（0\textbackslash le t\textbackslash le 2\textbackslash pi）}}\label{xux8ef8ux3068ux56f2ux3080ux9762ux7a4d0le-tle-2pi}
 
 \subsubsection{解くための公式}\label{ux89e3ux304fux305fux3081ux306eux516cux5f0f-6}
 
-{[} A=\int y,dx=\int\_0\^{}\{2\pi\}y(t)\frac{dx}{dt},dt {]}
+{[} A=\int y,dx=\int\_\{0\}\^{}\{2\pi\}y(t)\frac{dx}{dt},dt. {]}
 
 \subsubsection{使う分野の知識}\label{ux4f7fux3046ux5206ux91ceux306eux77e5ux8b58-6}
 
 \begin{itemize}
 \tightlist
 \item
-  線積分による面積、パラメトリック積分
+  線積分（面積公式）
+\item
+  パラメトリック積分
 \end{itemize}
 
 \subsubsection{解くための考え方}\label{ux89e3ux304fux305fux3081ux306eux8003ux3048ux65b9-6}
@@ -421,36 +399,34 @@ L=\int\_0\^{}T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},d
 \begin{itemize}
 \tightlist
 \item
-  (1)で得た \(dx/dt\) を流用して \(y(t)\,dx/dt\)
-  を整理し、周期性も使って積分
+  (1)で得た \(dx/dt\) を流用
+\item
+  \(y(t)\,dx/dt\) を三角関数として整理し、周期性も使って積分
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\section{問題3（極値と最大最小）}\label{ux554fux984c3ux6975ux5024ux3068ux6700ux5927ux6700ux5c0f}
+\section{問題3（極値と最大・最小）}\label{ux554fux984c3ux6975ux5024ux3068ux6700ux5927ux6700ux5c0f}
 
-\subsection{\texorpdfstring{(1)
-極値調査：\(z=-\frac94 x^3-\frac23 y^3+9xy\)}{(1) 極値調査：z=-\textbackslash frac94 x\^{}3-\textbackslash frac23 y\^{}3+9xy}}\label{ux6975ux5024ux8abfux67fbz-frac94-x3-frac23-y39xy}
+\subsection{\texorpdfstring{(1) \(z=-\dfrac94 x^3-\dfrac23 y^3+9xy\)
+の極値}{(1) z=-\textbackslash dfrac94 x\^{}3-\textbackslash dfrac23 y\^{}3+9xy の極値}}\label{z-dfrac94-x3-dfrac23-y39xy-ux306eux6975ux5024}
 
 \subsubsection{解くための公式}\label{ux89e3ux304fux305fux3081ux306eux516cux5f0f-7}
 
-\begin{itemize}
-\tightlist
-\item
-  臨界点： {[} z\_x=0,\quad z\_y=0 {]}
-\item
-  判定： {[} D=z\_\{xx\}z\_\{yy\}-z\_\{xy\}\^{}2 {]} {[}
-  D\textgreater0,~z\_\{xx\}\textgreater0 \Rightarrow \text{極小},\quad
-  D\textgreater0,~z\_\{xx\}\textless0 \Rightarrow \text{極大},\quad
-  D\textless0 \Rightarrow \text{鞍点} {]}
-\end{itemize}
+臨界点： {[} z\_x=0,\qquad z\_y=0. {]} 2階判定（2変数）： {[}
+D=z\_\{xx\}z\_\{yy\}-z\_\{xy\}\^{}2. {]} {[}
+D\textgreater0,~z\_\{xx\}\textgreater0 \Rightarrow \text{極小},\qquad
+D\textgreater0,~z\_\{xx\}\textless0 \Rightarrow \text{極大},\qquad
+D\textless0 \Rightarrow \text{鞍点}. {]}
 
 \subsubsection{使う分野の知識}\label{ux4f7fux3046ux5206ux91ceux306eux77e5ux8b58-7}
 
 \begin{itemize}
 \tightlist
 \item
-  多変数微分、2階微分判定、非線形連立方程式
+  多変数微分、偏微分、2階微分判定
+\item
+  非線形連立方程式の解法（ここでは \(x,y\) が3次の式になる）
 \end{itemize}
 
 \subsubsection{解くための考え方}\label{ux89e3ux304fux305fux3081ux306eux8003ux3048ux65b9-7}
@@ -458,22 +434,27 @@ L=\int\_0\^{}T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},d
 \begin{itemize}
 \tightlist
 \item
-  まず臨界点を列挙→ヘッセ情報で分類→最後に \(z\) の値を代入で明記
+  まず \(z_x,z_y\) を計算して臨界点を列挙
+\item
+  次に \(z_{xx},z_{yy},z_{xy}\) で分類
+\item
+  要求されるなら臨界点へ代入して \(z\) の値も明記
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \subsection{(2)
-極大/極小が最大/最小か}\label{ux6975ux5927ux6975ux5c0fux304cux6700ux5927ux6700ux5c0fux304b}
+極大/極小が「最大/最小」かどうか}\label{ux6975ux5927ux6975ux5c0fux304cux6700ux5927ux6700ux5c0fux304bux3069ux3046ux304b}
 
 \subsubsection{解くための公式}\label{ux89e3ux304fux305fux3081ux306eux516cux5f0f-8}
 
 \begin{itemize}
 \tightlist
 \item
-  局所極値 \(\not\Rightarrow\) 全体最大/最小
+  局所極値 \(\Rightarrow\) 全体最大/最小 とは限らない
 \item
-  無限遠での挙動：支配項（最高次数項）で \(z\to \pm\infty\) を判定
+  無限遠の挙動は支配項（最高次数項）で概ね判定できる\\
+  （例えば、ある方向で \(z\to +\infty\) なら最大値は存在しない、など）
 \end{itemize}
 
 \subsubsection{使う分野の知識}\label{ux4f7fux3046ux5206ux91ceux306eux77e5ux8b58-8}
@@ -481,7 +462,7 @@ L=\int\_0\^{}T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},d
 \begin{itemize}
 \tightlist
 \item
-  最適化の存在判定、無限遠解析（方向による発散）
+  関数の発散（無限遠解析）、存在判定（最大値・最小値の有無）
 \end{itemize}
 
 \subsubsection{解くための考え方}\label{ux89e3ux304fux305fux3081ux306eux8003ux3048ux65b9-8}
@@ -489,11 +470,11 @@ L=\int\_0\^{}T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},d
 \begin{itemize}
 \tightlist
 \item
-  \(x\) や \(y\) を大きくしたときに \(z\)
-  がどちらへ発散するか、複数方向で確認
+  \(x\to\infty\) や \(y\to\infty\) など複数方向で \(z\)
+  の符号・発散先を確認
 \item
-  一方で \(+\infty\)、別方向で \(-\infty\)
-  へ行くなら最大/最小は存在しない、などを論理で示す
+  「別方向で \(+\infty\) と \(-\infty\)
+  の両方へ行く」なら最大も最小も成立しない、等を論理で詰める
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -502,14 +483,10 @@ L=\int\_0\^{}T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},d
 
 \subsubsection{解くための公式}\label{ux89e3ux304fux305fux3081ux306eux516cux5f0f-9}
 
-\begin{itemize}
-\tightlist
-\item
-  極座標： {[} x=r\cos\theta,\quad y=r\sin\theta,\quad dxdy=r,dr,d\theta
-  {]}
-\item
-  領域 \(x^2+y^2\le 9\)： {[} 0\le r\le 3,\quad 0\le \theta\le 2\pi {]}
-\end{itemize}
+極座標変換： {[}
+x=r\cos\theta,\qquad y=r\sin\theta,\qquad dx,dy=r,dr,d\theta. {]} 領域
+\(x^2+y^2\le 9\) は {[} 0\le r\le 3,\qquad 0\le \theta\le 2\pi. {]} また
+\(x^2+y^2=r^2\)。
 
 \subsubsection{使う分野の知識}\label{ux4f7fux3046ux5206ux91ceux306eux77e5ux8b58-9}
 
@@ -517,6 +494,8 @@ L=\int\_0\^{}T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},d
 \tightlist
 \item
   極座標変換、ヤコビアン \(r\)
+\item
+  半径のみ依存する関数の積分（\(\theta\) が分離できる）
 \end{itemize}
 
 \subsubsection{解くための考え方}\label{ux89e3ux304fux305fux3081ux306eux8003ux3048ux65b9-9}
@@ -524,25 +503,30 @@ L=\int\_0\^{}T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},d
 \begin{itemize}
 \tightlist
 \item
-  被積分関数が \(x^2+y^2=r^2\) のみ依存なので、\(\theta\) は \(2\pi\)
-  で因数分離できる
+  被積分関数が \(x^2+y^2\)（つまり
+  \(r^2\)）のみに依存する形なので極座標が最短
+\item
+  \(\theta\) 積分は \(2\pi\) の因子として抜け、\(r\) の1変数積分に落ちる
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\section{問題5（級数の収束・発散）}\label{ux554fux984c5ux7d1aux6570ux306eux53ceux675fux767aux6563}
+\section{問題5（級数：収束・発散判定）}\label{ux554fux984c5ux7d1aux6570ux53ceux675fux767aux6563ux5224ux5b9a}
 
 \subsection{\texorpdfstring{(1)
-\(\sum_{n=1}^\infty \dfrac{n}{(2\sqrt{n}-1)^2(\sqrt{n}+1)^2}\)}{(1) \textbackslash sum\_\{n=1\}\^{}\textbackslash infty \textbackslash dfrac\{n\}\{(2\textbackslash sqrt\{n\}-1)\^{}2(\textbackslash sqrt\{n\}+1)\^{}2\}}}\label{sum_n1infty-dfracn2sqrtn-12sqrtn12}
+\(\displaystyle \sum_{n=1}^{\infty}\frac{n}{(2\sqrt{n}-1)^2(\sqrt{n}+1)^2}\)}{(1) \textbackslash displaystyle \textbackslash sum\_\{n=1\}\^{}\{\textbackslash infty\}\textbackslash frac\{n\}\{(2\textbackslash sqrt\{n\}-1)\^{}2(\textbackslash sqrt\{n\}+1)\^{}2\}}}\label{displaystyle-sum_n1inftyfracn2sqrtn-12sqrtn12}
 
 \subsubsection{解くための公式}\label{ux89e3ux304fux305fux3081ux306eux516cux5f0f-10}
 
 \begin{itemize}
 \tightlist
 \item
-  比較判定／極限比較
+  比較判定（あるいは極限比較）
 \item
-  漸近：\((2\sqrt{n}-1)\sim 2\sqrt{n},\ (\sqrt{n}+1)\sim \sqrt{n}\)（\(n\to\infty\)）
+  漸近評価：\(n\to\infty\) で {[}
+  (2\sqrt{n}-1)\sim 2\sqrt{n},\qquad (\sqrt{n}+1)\sim \sqrt{n}. {]}
+\item
+  \(p\)-級数：\(\sum 1/n^p\) は \(p>1\) で収束、\(p\le 1\) で発散
 \end{itemize}
 
 \subsubsection{使う分野の知識}\label{ux4f7fux3046ux5206ux91ceux306eux77e5ux8b58-10}
@@ -550,7 +534,7 @@ L=\int\_0\^{}T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},d
 \begin{itemize}
 \tightlist
 \item
-  漸近評価、\(p\)-級数 \(\sum 1/n^p\)（\(p>1\) で収束）
+  漸近（支配項）、比較判定、\(p\)-級数
 \end{itemize}
 
 \subsubsection{解くための考え方}\label{ux89e3ux304fux305fux3081ux306eux8003ux3048ux65b9-10}
@@ -558,32 +542,32 @@ L=\int\_0\^{}T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},d
 \begin{itemize}
 \tightlist
 \item
-  分母の次数を読む：概ね \((2\sqrt{n})^2(\sqrt{n})^2=4n^2\)
+  分母の次数だけ読む：概ね {[}
+  (2\sqrt{n})\textsuperscript{2(\sqrt{n})}2=4n\^{}2 {]} なので一般項は
+  \(\sim \dfrac{1}{4n}\) と読める
 \item
-  よって一般項は \(n/(4n^2)\sim 1/(4n)\) の調和級数型と比較する
+  調和級数型（\(\sum 1/n\)）との比較で結論を出す
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \subsection{\texorpdfstring{(2)
-\(\sum_{n=1}^\infty \dfrac{(\sqrt{2})^n}{n^2}\)}{(2) \textbackslash sum\_\{n=1\}\^{}\textbackslash infty \textbackslash dfrac\{(\textbackslash sqrt\{2\})\^{}n\}\{n\^{}2\}}}\label{sum_n1infty-dfracsqrt2nn2}
+\(\displaystyle \sum_{n=1}^{\infty}\frac{(\sqrt{2})^n}{n^2}\)}{(2) \textbackslash displaystyle \textbackslash sum\_\{n=1\}\^{}\{\textbackslash infty\}\textbackslash frac\{(\textbackslash sqrt\{2\})\^{}n\}\{n\^{}2\}}}\label{displaystyle-sum_n1inftyfracsqrt2nn2}
 
 \subsubsection{解くための公式}\label{ux89e3ux304fux305fux3081ux306eux516cux5f0f-11}
 
-\begin{itemize}
-\tightlist
-\item
-  比の判定法： {[}
-  \lim\_\{n\to\infty\}\frac{a_{n+1}}{a_n}=L,\quad L\textgreater1
-  \Rightarrow \text{発散} {]}
-\end{itemize}
+比の判定法： {[} a\_n=\frac{(\sqrt{2})^n}{n^2},\qquad
+\lim\_\{n\to\infty\}\frac{a_{n+1}}{a_n}=L,\quad
+L\textgreater1\Rightarrow \text{発散}. {]}
 
 \subsubsection{使う分野の知識}\label{ux4f7fux3046ux5206ux91ceux306eux77e5ux8b58-11}
 
 \begin{itemize}
 \tightlist
 \item
-  指数増加は多項式減衰に勝つ、比の判定法
+  比の判定法
+\item
+  「指数増加は多項式減衰に勝つ」
 \end{itemize}
 
 \subsubsection{解くための考え方}\label{ux89e3ux304fux305fux3081ux306eux8003ux3048ux65b9-11}
@@ -591,42 +575,43 @@ L=\int\_0\^{}T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},d
 \begin{itemize}
 \tightlist
 \item
-  比を取ると {[}
-  \frac{a_{n+1}}{a_n}=\sqrt{2}\cdot\frac{n^2}{(n+1)^2}\to \sqrt{2}\textgreater1
-  {]} で一撃
+  比を取って {[} \frac{a_{n+1}}{a_n}
+  =\sqrt{2}\cdot \frac{n^2}{(n+1)^2}\to \sqrt{2}\textgreater1 {]}
+  を示せば一撃
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \section{\texorpdfstring{問題6（\(\log(1+x)\)
-の整級数）}{問題6（\textbackslash log(1+x) の整級数）}}\label{ux554fux984c6log1x-ux306eux6574ux7d1aux6570}
+の整級数展開）}{問題6（\textbackslash log(1+x) の整級数展開）}}\label{ux554fux984c6log1x-ux306eux6574ux7d1aux6570ux5c55ux958b}
+
+\subsection{\texorpdfstring{(1)
+\(\dfrac{1}{1-x}=\sum_{n=0}^{\infty}x^n\)
+を用いる}{(1) \textbackslash dfrac\{1\}\{1-x\}=\textbackslash sum\_\{n=0\}\^{}\{\textbackslash infty\}x\^{}n を用いる}}\label{dfrac11-xsum_n0inftyxn-ux3092ux7528ux3044ux308b}
 
 \subsubsection{解くための公式}\label{ux89e3ux304fux305fux3081ux306eux516cux5f0f-12}
 
-\begin{itemize}
-\tightlist
-\item
-  幾何級数（\(|x|<1\)）： {[}
-  \frac{1}{1-x}=\sum\_\{n=0\}\textsuperscript{\{\infty\}x}n {]}
-\item
-  置換 \(x\mapsto -x\)： {[}
-  \frac{1}{1+x}=\frac{1}{1-(-x)}=\sum\_\{n=0\}\textsuperscript{\{\infty\}(-1)}n
-  x\^{}n\quad (\textbar x\textbar\textless1) {]}
-\item
-  項別積分： {[} \log(1+x)=\int \frac{1}{1+x},dx
-  =\sum\emph{\{n=0\}\textsuperscript{\{\infty\}(-1)}n\frac{x^{n+1}}{n+1}
-  =\sum}\{n=1\}\textsuperscript{\{\infty\}(-1)}\{n-1\}\frac{x^{n}}{n}
-  {]} かつ \(\log(1+0)=0\) で積分定数を決める
-\end{itemize}
+幾何級数（\(|x|<1\)）： {[}
+\frac{1}{1-x}=\sum\emph{\{n=0\}\textsuperscript{\{\infty\}x}n. {]} 置換
+\(x\mapsto -x\) により {[}
+\frac{1}{1+x}=\frac{1}{1-(-x)}=\sum}\{n=0\}\textsuperscript{\{\infty\}(-1)}n
+x\^{}n\qquad(\textbar x\textbar\textless1). {]} 両辺を項別積分して {[}
+\log(1+x)=\int \frac{1}{1+x},dx
+=\sum\emph{\{n=0\}\textsuperscript{\{\infty\}(-1)}n\frac{x^{n+1}}{n+1}
+=\sum}\{n=1\}\textsuperscript{\{\infty\}(-1)}\{n-1\}\frac{x^n}{n}. {]}
+積分定数は \(\log(1+0)=0\) で決める。
+
+\subsection{(2)
+級数展開が成立する範囲}\label{ux7d1aux6570ux5c55ux958bux304cux6210ux7acbux3059ux308bux7bc4ux56f2}
 
 \subsubsection{使う分野の知識}\label{ux4f7fux3046ux5206ux91ceux306eux77e5ux8b58-12}
 
 \begin{itemize}
 \tightlist
 \item
-  べき級数、項別積分、収束半径（まず \(|x|<1\)）
+  べき級数、項別積分、収束半径
 \item
-  端点 \(x=\pm 1\) は別判定（問題が範囲も要求しているため）
+  端点での収束判定（必要なら交代級数判定など）
 \end{itemize}
 
 \subsubsection{解くための考え方}\label{ux89e3ux304fux305fux3081ux306eux8003ux3048ux65b9-12}
@@ -634,13 +619,11 @@ L=\int\_0\^{}T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},d
 \begin{itemize}
 \tightlist
 \item
-  「与えられた級数 \(\to\) 形を合わせる（\(-x\)）」→「積分して \(\log\)
-  を作る」→「定数を初期条件で決める」
+  まず変形で得た等式は \(|x|<1\) で保証される
 \item
-  成立範囲は基本 \(|x|<1\)、端点は収束判定で詰める
+  「範囲を求めよ」がある場合は \(x=1,-1\)
+  を別途判定して最終範囲を確定する
 \end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 
 
