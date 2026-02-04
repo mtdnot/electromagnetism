@@ -15,14 +15,11 @@ execute:
 ---
 
 ## 対象ファイル
-Exam2024_prb（問題1〜6） :contentReference[oaicite:0]{index=0}
-
+Exam2024_prb（問題1〜6）
 ---
 
-## 問題1（空欄補充：微分・極値・重積分・変数変換） :contentReference[oaicite:1]{index=1}
-
-### (1) 2階偏導関数：$z=\log|x^2-2y|$ :contentReference[oaicite:2]{index=2}
-
+## 問題1（空欄補充：微分・極値・重積分・変数変換）
+### (1) 2階偏導関数：$z=\log|x^2-2y|$
 #### 解くための公式
 - 置換 $u=x^2-2y$ とすると
   \[
@@ -47,8 +44,7 @@ Exam2024_prb（問題1〜6） :contentReference[oaicite:0]{index=0}
 
 ---
 
-### (2) 連鎖律：$z=f(x,y),\ x=a\cos t,\ y=b\sin t$ :contentReference[oaicite:3]{index=3}
-
+### (2) 連鎖律：$z=f(x,y),\ x=a\cos t,\ y=b\sin t$
 #### 解くための公式
 - 1階：
   \[
@@ -73,8 +69,7 @@ Exam2024_prb（問題1〜6） :contentReference[oaicite:0]{index=0}
 
 ---
 
-### (3) 2次関数の最大値：$f,g,h$ の比較 :contentReference[oaicite:4]{index=4}
-
+### (3) 2次関数の最大値：$f,g,h$ の比較
 #### 解くための公式
 - 極値点：$\nabla Q=0$
 - 判定（ヘッセ行列 $H$）：
@@ -100,8 +95,7 @@ Exam2024_prb（問題1〜6） :contentReference[oaicite:0]{index=0}
 
 ---
 
-### (4) 二重積分：$\iint_D x\,dxdy$（$y$ の上下が2つの放物線） :contentReference[oaicite:5]{index=5}
-
+### (4) 二重積分：$\iint_D x\,dxdy$（$y$ の上下が2つの放物線）
 #### 解くための公式
 - 縦に積分：
   \[
@@ -122,8 +116,7 @@ Exam2024_prb（問題1〜6） :contentReference[oaicite:0]{index=0}
 
 ---
 
-### (5) 変数変換：$u=x+y,\ v=3x-y$ による $\iint_D y\,dxdy$ :contentReference[oaicite:6]{index=6}
-
+### (5) 変数変換：$u=x+y,\ v=3x-y$ による $\iint_D y\,dxdy$
 #### 解くための公式
 - 線形変換：
   \[
@@ -145,10 +138,8 @@ Exam2024_prb（問題1〜6） :contentReference[oaicite:0]{index=0}
 
 ---
 
-## 問題2（媒介変数曲線：長さ・面積） :contentReference[oaicite:7]{index=7}
-
-### (1) 長さ（$0\le t\le T$） :contentReference[oaicite:8]{index=8}
-
+## 問題2（媒介変数曲線：長さ・面積）
+### (1) 長さ（$0\le t\le T$）
 #### 解くための公式
 \[
 L=\int_0^T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}\,dt
@@ -162,8 +153,7 @@ L=\int_0^T\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}\,dt
 
 ---
 
-### (2) 面積（$0\le t\le 2\pi$） :contentReference[oaicite:9]{index=9}
-
+### (2) 面積（$0\le t\le 2\pi$）
 #### 解くための公式
 \[
 A=\int y\,dx=\int_0^{2\pi}y(t)\frac{dx}{dt}\,dt
@@ -177,10 +167,8 @@ A=\int y\,dx=\int_0^{2\pi}y(t)\frac{dx}{dt}\,dt
 
 ---
 
-## 問題3（極値と最大最小） :contentReference[oaicite:10]{index=10}
-
-### (1) 極値調査：$z=-\frac94 x^3-\frac23 y^3+9xy$ :contentReference[oaicite:11]{index=11}
-
+## 問題3（極値と最大最小）
+### (1) 極値調査：$z=-\frac94 x^3-\frac23 y^3+9xy$
 #### 解くための公式
 - 臨界点：
   \[
@@ -204,8 +192,7 @@ A=\int y\,dx=\int_0^{2\pi}y(t)\frac{dx}{dt}\,dt
 
 ---
 
-### (2) 極大/極小が最大/最小か :contentReference[oaicite:12]{index=12}
-
+### (2) 極大/極小が最大/最小か
 #### 解くための公式
 - 局所極値 $\not\Rightarrow$ 全体最大/最小
 - 無限遠での挙動：支配項（最高次数項）で $z\to \pm\infty$ を判定
@@ -219,8 +206,7 @@ A=\int y\,dx=\int_0^{2\pi}y(t)\frac{dx}{dt}\,dt
 
 ---
 
-## 問題4（極座標で二重積分） :contentReference[oaicite:13]{index=13}
-
+## 問題4（極座標で二重積分）
 #### 解くための公式
 - 極座標：
   \[
@@ -239,10 +225,8 @@ A=\int y\,dx=\int_0^{2\pi}y(t)\frac{dx}{dt}\,dt
 
 ---
 
-## 問題5（級数の収束・発散） :contentReference[oaicite:14]{index=14}
-
-### (1) $\sum_{n=1}^\infty \dfrac{n}{(2\sqrt{n}-1)^2(\sqrt{n}+1)^2}$ :contentReference[oaicite:15]{index=15}
-
+## 問題5（級数の収束・発散）
+### (1) $\sum_{n=1}^\infty \dfrac{n}{(2\sqrt{n}-1)^2(\sqrt{n}+1)^2}$
 #### 解くための公式
 - 比較判定／極限比較
 - 漸近：$(2\sqrt{n}-1)\sim 2\sqrt{n},\ (\sqrt{n}+1)\sim \sqrt{n}$（$n\to\infty$）
@@ -256,8 +240,7 @@ A=\int y\,dx=\int_0^{2\pi}y(t)\frac{dx}{dt}\,dt
 
 ---
 
-### (2) $\sum_{n=1}^\infty \dfrac{(\sqrt{2})^n}{n^2}$ :contentReference[oaicite:16]{index=16}
-
+### (2) $\sum_{n=1}^\infty \dfrac{(\sqrt{2})^n}{n^2}$
 #### 解くための公式
 - 比の判定法：
   \[
@@ -276,8 +259,7 @@ A=\int y\,dx=\int_0^{2\pi}y(t)\frac{dx}{dt}\,dt
 
 ---
 
-## 問題6（$\log(1+x)$ の整級数） :contentReference[oaicite:17]{index=17}
-
+## 問題6（$\log(1+x)$ の整級数）
 #### 解くための公式
 - 幾何級数（$|x|<1$）：
   \[
