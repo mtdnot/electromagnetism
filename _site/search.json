@@ -1,5 +1,96 @@
 [
   {
+    "objectID": "electromagnetism.html",
+    "href": "electromagnetism.html",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "",
+    "text": "なんかAIにさせたら型って表現されたが公式のこと\n\n\n\n\n\n\n\n\n型ID\n型の名前（作業用）\n最初に書く一行\n\n\n\n\nT1\nガウス即適用型\n\\(\\displaystyle \\oint \\mathbf{E}\\cdot\\mathbf{n}\\,dS = \\frac{Q}{\\varepsilon_0}\\)\n\n\nT2\nガウス＋対称性型\n\\(E=\\text{const} \\Rightarrow \\oint\\) 簡略\n\n\nT3\nガウス微分形型\n\\(\\nabla\\cdot\\mathbf{E} = \\rho / \\varepsilon_0\\)\n\n\nT4\nポテンシャル起点型\n\\(\\mathbf{E} = -\\nabla \\phi\\)\n\n\nT5\n保存場判定型\n\\(\\nabla\\times\\mathbf{E} = 0\\)\n\n\nT6\n回路・オーム・時間発展型\n\\(V=IR,\\; I=\\dfrac{dQ}{dt}\\)\n\n\nT7\nローレンツ運動方程式型\n\\(m\\dfrac{d\\mathbf{v}}{dt} = q\\,\\mathbf{v}\\times\\mathbf{B}\\)\n\n\nT8\nアンペール積分型\n\\(\\displaystyle \\oint \\mathbf{B}\\cdot d\\mathbf{l} = \\mu_0 I\\)\n\n\nT9\nビオ・サバール積分型\n\\(d\\mathbf{B} \\propto \\dfrac{I\\,d\\mathbf{l}\\times\\mathbf{r}}{r^3}\\)\n\n\nT10\n電磁誘導・磁束型\n\\(\\mathcal{E} = -\\dfrac{d\\Phi}{dt}\\)\n\n\nT11\nインダクタンス・エネルギー型\n\\(L=\\dfrac{N\\Phi}{I},\\; U=\\dfrac12 L I^2\\)\n\n\nT12\nマクスウェル・波動方程式型\n\\(\\nabla\\times\\mathbf{E},\\;\\nabla\\times\\mathbf{B}\\) から開始"
+  },
+  {
+    "objectID": "electromagnetism.html#t1ガウス即適用型",
+    "href": "electromagnetism.html#t1ガウス即適用型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "2.1 T1：ガウス即適用型",
+    "text": "2.1 T1：ガウス即適用型\n\n主題：電場と電荷の直接関係\n\n判断基準：閉曲面が明示され、中の電荷が数えられる\n\n操作：電荷カウントのみで完結"
+  },
+  {
+    "objectID": "electromagnetism.html#t2ガウス対称性型",
+    "href": "electromagnetism.html#t2ガウス対称性型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "2.2 T2：ガウス＋対称性型",
+    "text": "2.2 T2：ガウス＋対称性型\n\n主題：球対称・円筒対称・平面対称\n\n判断基準：\\(\\mathbf{E}\\) が距離 \\(r\\) のみの関数\n\n操作：\\(E=\\text{const}\\) 宣言 → 場合分け\n\n備考：試験頻出・最重要型"
+  },
+  {
+    "objectID": "electromagnetism.html#t3ガウス微分形型",
+    "href": "electromagnetism.html#t3ガウス微分形型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "2.3 T3：ガウス微分形型",
+    "text": "2.3 T3：ガウス微分形型\n\n主題：電荷密度と電場分布\n\n判断基準：\\(\\rho(\\mathbf{r})\\) や \\(\\mathbf{E}(\\mathbf{r})\\) が与えられる\n\n操作：発散の計算"
+  },
+  {
+    "objectID": "electromagnetism.html#t4ポテンシャル起点型",
+    "href": "electromagnetism.html#t4ポテンシャル起点型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "2.4 T4：ポテンシャル起点型",
+    "text": "2.4 T4：ポテンシャル起点型\n\n主題：電位と電場の関係\n\n判断基準：\\(\\phi\\) が与えられる／\\(\\phi\\) を求める\n\n操作：偏微分＋境界条件"
+  },
+  {
+    "objectID": "electromagnetism.html#t5保存場判定型",
+    "href": "electromagnetism.html#t5保存場判定型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "2.5 T5：保存場判定型",
+    "text": "2.5 T5：保存場判定型\n\n主題：保存力・経路独立性\n\n判断基準：「保存場であることを示せ」\n\n操作：回転（rot）の計算\n\n備考：頻度は低いが論証問題"
+  },
+  {
+    "objectID": "electromagnetism.html#t6回路オーム時間発展型",
+    "href": "electromagnetism.html#t6回路オーム時間発展型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "2.6 T6：回路・オーム・時間発展型",
+    "text": "2.6 T6：回路・オーム・時間発展型\n\n主題：電流・電圧・時間変化\n\n判断基準：\\(R, V, I, t\\) が同時に登場\n\n操作：微分方程式・エネルギー収支"
+  },
+  {
+    "objectID": "electromagnetism.html#t7ローレンツ運動方程式型",
+    "href": "electromagnetism.html#t7ローレンツ運動方程式型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "2.7 T7：ローレンツ運動方程式型",
+    "text": "2.7 T7：ローレンツ運動方程式型\n\n主題：磁場中の粒子運動\n\n判断基準：「磁場中を運動する粒子」\n\n操作：成分分解 → 円運動・らせん運動"
+  },
+  {
+    "objectID": "electromagnetism.html#t8アンペール積分型",
+    "href": "electromagnetism.html#t8アンペール積分型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "2.8 T8：アンペール積分型",
+    "text": "2.8 T8：アンペール積分型\n\n主題：電流が作る磁場\n\n判断基準：無限長・対称な電流配置\n\n操作：積分経路選択 → \\(\\mathbf{B}\\) 一定化"
+  },
+  {
+    "objectID": "electromagnetism.html#t9ビオサバール積分型",
+    "href": "electromagnetism.html#t9ビオサバール積分型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "2.9 T9：ビオ・サバール積分型",
+    "text": "2.9 T9：ビオ・サバール積分型\n\n主題：有限電流配置の磁場\n\n判断基準：電流素片 \\(d\\mathbf{l}\\) と距離 \\(\\mathbf{r}\\)\n\n操作：座標設定 → 積分変数変換\n\n備考：計算負荷が高い"
+  },
+  {
+    "objectID": "electromagnetism.html#t10電磁誘導磁束型",
+    "href": "electromagnetism.html#t10電磁誘導磁束型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "2.10 T10：電磁誘導・磁束型",
+    "text": "2.10 T10：電磁誘導・磁束型\n\n主題：磁束変化と起電力\n\n判断基準：磁束 \\(\\Phi\\) が登場\n\n操作：磁束計算 → 時間微分"
+  },
+  {
+    "objectID": "electromagnetism.html#t11インダクタンスエネルギー型",
+    "href": "electromagnetism.html#t11インダクタンスエネルギー型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "2.11 T11：インダクタンス・エネルギー型",
+    "text": "2.11 T11：インダクタンス・エネルギー型\n\n主題：自己・相互インダクタンス\n\n判断基準：コイル・\\(L\\)・\\(M\\)・エネルギー\n\n操作：磁場 → 磁束 → \\(L, U\\)"
+  },
+  {
+    "objectID": "electromagnetism.html#t12マクスウェル波動方程式型",
+    "href": "electromagnetism.html#t12マクスウェル波動方程式型",
+    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "section": "2.12 T12：マクスウェル・波動方程式型",
+    "text": "2.12 T12：マクスウェル・波動方程式型\n\n主題：電磁場の時間発展・波動\n\n判断基準：\\(\\nabla\\times\\mathbf{E},\\;\\nabla\\times\\mathbf{B}\\) が主役\n\n操作：回転をとる → 波動方程式"
+  },
+  {
     "objectID": "class.html",
     "href": "class.html",
     "title": "電磁気学（第7回〜第13回）体系ノート",
@@ -112,95 +203,60 @@
     "text": "5.2 8.2 ポインティングベクトル\n\\[\n\\mathbf{S}=\\frac{1}{\\mu_0}\\mathbf{E}\\times\\mathbf{B}\n\\]"
   },
   {
-    "objectID": "electromagnetism.html",
-    "href": "electromagnetism.html",
-    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
+    "objectID": "biseki.html",
+    "href": "biseki.html",
+    "title": "過去問分析（Exam2024_prb）",
     "section": "",
-    "text": "なんかAIにさせたら型って表現されたが公式のこと\n\n\n\n\n\n\n\n\n型ID\n型の名前（作業用）\n最初に書く一行\n\n\n\n\nT1\nガウス即適用型\n\\(\\displaystyle \\oint \\mathbf{E}\\cdot\\mathbf{n}\\,dS = \\frac{Q}{\\varepsilon_0}\\)\n\n\nT2\nガウス＋対称性型\n\\(E=\\text{const} \\Rightarrow \\oint\\) 簡略\n\n\nT3\nガウス微分形型\n\\(\\nabla\\cdot\\mathbf{E} = \\rho / \\varepsilon_0\\)\n\n\nT4\nポテンシャル起点型\n\\(\\mathbf{E} = -\\nabla \\phi\\)\n\n\nT5\n保存場判定型\n\\(\\nabla\\times\\mathbf{E} = 0\\)\n\n\nT6\n回路・オーム・時間発展型\n\\(V=IR,\\; I=\\dfrac{dQ}{dt}\\)\n\n\nT7\nローレンツ運動方程式型\n\\(m\\dfrac{d\\mathbf{v}}{dt} = q\\,\\mathbf{v}\\times\\mathbf{B}\\)\n\n\nT8\nアンペール積分型\n\\(\\displaystyle \\oint \\mathbf{B}\\cdot d\\mathbf{l} = \\mu_0 I\\)\n\n\nT9\nビオ・サバール積分型\n\\(d\\mathbf{B} \\propto \\dfrac{I\\,d\\mathbf{l}\\times\\mathbf{r}}{r^3}\\)\n\n\nT10\n電磁誘導・磁束型\n\\(\\mathcal{E} = -\\dfrac{d\\Phi}{dt}\\)\n\n\nT11\nインダクタンス・エネルギー型\n\\(L=\\dfrac{N\\Phi}{I},\\; U=\\dfrac12 L I^2\\)\n\n\nT12\nマクスウェル・波動方程式型\n\\(\\nabla\\times\\mathbf{E},\\;\\nabla\\times\\mathbf{B}\\) から開始"
+    "text": "Exam2024_prb（問題1〜6）"
   },
   {
-    "objectID": "electromagnetism.html#t1ガウス即適用型",
-    "href": "electromagnetism.html#t1ガウス即適用型",
-    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
-    "section": "2.1 T1：ガウス即適用型",
-    "text": "2.1 T1：ガウス即適用型\n\n主題：電場と電荷の直接関係\n\n判断基準：閉曲面が明示され、中の電荷が数えられる\n\n操作：電荷カウントのみで完結"
+    "objectID": "biseki.html#対象ファイル",
+    "href": "biseki.html#対象ファイル",
+    "title": "過去問分析（Exam2024_prb）",
+    "section": "",
+    "text": "Exam2024_prb（問題1〜6）"
   },
   {
-    "objectID": "electromagnetism.html#t2ガウス対称性型",
-    "href": "electromagnetism.html#t2ガウス対称性型",
-    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
-    "section": "2.2 T2：ガウス＋対称性型",
-    "text": "2.2 T2：ガウス＋対称性型\n\n主題：球対称・円筒対称・平面対称\n\n判断基準：\\(\\mathbf{E}\\) が距離 \\(r\\) のみの関数\n\n操作：\\(E=\\text{const}\\) 宣言 → 場合分け\n\n備考：試験頻出・最重要型"
+    "objectID": "biseki.html#問題1空欄補充微分極値重積分変数変換",
+    "href": "biseki.html#問題1空欄補充微分極値重積分変数変換",
+    "title": "過去問分析（Exam2024_prb）",
+    "section": "2 問題1（空欄補充：微分・極値・重積分・変数変換）",
+    "text": "2 問題1（空欄補充：微分・極値・重積分・変数変換）\n\n2.1 (1) 2階偏導関数：\\(z=\\log|x^2-2y|\\)\n\n2.1.1 解くための公式\n\n置換 \\(u=x^2-2y\\) とすると [ z=|u|, =, =(u) ]\n2階偏導・混合偏導 [ =(), =() ]\n\n\n\n2.1.2 使う分野の知識\n\n多変数微分、合成関数の微分（連鎖律）\n\\(\\log|u|\\) の微分は \\(\\log u\\) と同形だが、定義域として \\(u\\neq 0\\) を意識\n\n\n\n2.1.3 解くための考え方\n\nまず \\(u=x^2-2y\\) と置き、\\(\\partial z/\\partial x,\\partial z/\\partial y\\) を出す\nその式をもう一度微分して2階へ（分数の微分で符号ミス注意）\n\n\n\n\n\n2.2 (2) 連鎖律：\\(z=f(x,y),\\ x=a\\cos t,\\ y=b\\sin t\\)\n\n2.2.1 解くための公式\n\n1階： [ =f_x+f_y ]\n2階（標準形）： [ =f_{xx}()^2 +2f_{xy}()() +f_{yy}()^2 +f_x +f_y ]\n\n\n\n2.2.2 使う分野の知識\n\n多変数の連鎖律（1階・2階）、偏微分記号\n\n\n\n2.2.3 解くための考え方\n\n先に \\(dx/dt,dy/dt,d^2x/dt^2,d^2y/dt^2\\) を確定（\\(\\sin,\\cos\\) の微分は機械的）\n2階は「\\(f\\) の2階偏微分ブロック」＋「\\(f\\) の1階偏微分×2階導関数ブロック」に分けて整理\n\n\n\n\n\n2.3 (3) 2次関数の最大値：\\(f,g,h\\) の比較\n\n2.3.1 解くための公式\n\n極値点：\\(\\nabla Q=0\\)\n判定（ヘッセ行列 \\(H\\)）： [ H=\n\\[\\begin{pmatrix}Q_{xx}&Q_{xy}\\\\Q_{yx}&Q_{yy}\\end{pmatrix}\\]\n, D=H=Q_{xx}Q_{yy}-Q_{xy}^2 ] [ D&gt;0, Q_{xx}&lt;0 D&gt;0, Q_{xx}&gt;0 D&lt;0 ]\n2次関数が負定値なら 全体最大値 をもつ（上に凸ではなく「下に凸の逆」）\n\n\n\n2.3.2 使う分野の知識\n\n多変数関数の極値、二次形式、ヘッセ行列の符号判定\n\n\n\n2.3.3 解くための考え方\n\nまず各関数の \\(H\\) を見て「最大値を持ちうる（負定値か）」を即判定\n候補だけ \\(\\nabla Q=0\\) を解いて点を出し、代入して最大値を比較\n\n\n\n\n\n2.4 (4) 二重積分：\\(\\iint_D x\\,dxdy\\)（\\(y\\) の上下が2つの放物線）\n\n2.4.1 解くための公式\n\n縦に積分： [ D x,dxdy={}^{}(_{y=(x)}^{(x)} x,dy)dx ]\n内側は [ x,dy=x((x)-(x)) ]\n\\(x\\) 範囲は \\(\\mathrm{lower}(x)\\le \\mathrm{upper}(x)\\) から決める\n\n\n\n2.4.2 使う分野の知識\n\n二重積分、領域分割、曲線の交点（2次方程式）\n\n\n\n2.4.3 解くための考え方\n\n交点で \\(\\alpha,\\beta\\) を確定し、内側積分は「長さ×\\(x\\)」に落とす\n外側は1変数積分として計算\n\n\n\n\n\n2.5 (5) 変数変換：\\(u=x+y,\\ v=3x-y\\) による \\(\\iint_D y\\,dxdy\\)\n\n2.5.1 解くための公式\n\n線形変換： [ u=x+y,v=3x-y ]\nヤコビアン： [ dxdy=||,dudv =,dudv ]\n被積分関数を \\(y=y(u,v)\\) として書き換える（\\(x,y\\) を連立一次で解く）\n\n\n\n2.5.2 使う分野の知識\n\n2変数の変数変換、ヤコビアン、領域の写像（不等式が長方形になる典型）\n\n\n\n2.5.3 解くための考え方\n\nまず新領域 \\(K\\) は条件から即決（\\(0\\le u\\le 2,\\ 0\\le v\\le 3\\) の形）\n次に逆変換で \\(y(u,v)\\) と \\(|J|\\) を出して、長方形上の通常積分にする"
   },
   {
-    "objectID": "electromagnetism.html#t3ガウス微分形型",
-    "href": "electromagnetism.html#t3ガウス微分形型",
-    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
-    "section": "2.3 T3：ガウス微分形型",
-    "text": "2.3 T3：ガウス微分形型\n\n主題：電荷密度と電場分布\n\n判断基準：\\(\\rho(\\mathbf{r})\\) や \\(\\mathbf{E}(\\mathbf{r})\\) が与えられる\n\n操作：発散の計算"
+    "objectID": "biseki.html#問題2媒介変数曲線長さ面積",
+    "href": "biseki.html#問題2媒介変数曲線長さ面積",
+    "title": "過去問分析（Exam2024_prb）",
+    "section": "3 問題2（媒介変数曲線：長さ・面積）",
+    "text": "3 問題2（媒介変数曲線：長さ・面積）\n\n3.1 (1) 長さ（\\(0\\le t\\le T\\)）\n\n3.1.1 解くための公式\n[ L=_0^T,dt ]\n\n\n3.1.2 使う分野の知識\n\n媒介変数表示、弧長公式、三角恒等式 \\(\\sin^2 t+\\cos^2 t=1\\)\n\n\n\n3.1.3 解くための考え方\n\n\\(dx/dt,dy/dt\\) を計算してルート内を恒等式で簡約し、積分する\n\n\n\n\n\n3.2 (2) 面積（\\(0\\le t\\le 2\\pi\\)）\n\n3.2.1 解くための公式\n[ A=y,dx=_0^{2}y(t),dt ]\n\n\n3.2.2 使う分野の知識\n\n線積分による面積、パラメトリック積分\n\n\n\n3.2.3 解くための考え方\n\n(1)で得た \\(dx/dt\\) を流用して \\(y(t)\\,dx/dt\\) を整理し、周期性も使って積分"
   },
   {
-    "objectID": "electromagnetism.html#t4ポテンシャル起点型",
-    "href": "electromagnetism.html#t4ポテンシャル起点型",
-    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
-    "section": "2.4 T4：ポテンシャル起点型",
-    "text": "2.4 T4：ポテンシャル起点型\n\n主題：電位と電場の関係\n\n判断基準：\\(\\phi\\) が与えられる／\\(\\phi\\) を求める\n\n操作：偏微分＋境界条件"
+    "objectID": "biseki.html#問題3極値と最大最小",
+    "href": "biseki.html#問題3極値と最大最小",
+    "title": "過去問分析（Exam2024_prb）",
+    "section": "4 問題3（極値と最大最小）",
+    "text": "4 問題3（極値と最大最小）\n\n4.1 (1) 極値調査：\\(z=-\\frac94 x^3-\\frac23 y^3+9xy\\)\n\n4.1.1 解くための公式\n\n臨界点： [ z_x=0,z_y=0 ]\n判定： [ D=z_{xx}z_{yy}-z_{xy}^2 ] [ D&gt;0, z_{xx}&gt;0 , D&gt;0, z_{xx}&lt;0 , D&lt;0 ]\n\n\n\n4.1.2 使う分野の知識\n\n多変数微分、2階微分判定、非線形連立方程式\n\n\n\n4.1.3 解くための考え方\n\nまず臨界点を列挙→ヘッセ情報で分類→最後に \\(z\\) の値を代入で明記\n\n\n\n\n\n4.2 (2) 極大/極小が最大/最小か\n\n4.2.1 解くための公式\n\n局所極値 \\(\\not\\Rightarrow\\) 全体最大/最小\n無限遠での挙動：支配項（最高次数項）で \\(z\\to \\pm\\infty\\) を判定\n\n\n\n4.2.2 使う分野の知識\n\n最適化の存在判定、無限遠解析（方向による発散）\n\n\n\n4.2.3 解くための考え方\n\n\\(x\\) や \\(y\\) を大きくしたときに \\(z\\) がどちらへ発散するか、複数方向で確認\n一方で \\(+\\infty\\)、別方向で \\(-\\infty\\) へ行くなら最大/最小は存在しない、などを論理で示す"
   },
   {
-    "objectID": "electromagnetism.html#t5保存場判定型",
-    "href": "electromagnetism.html#t5保存場判定型",
-    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
-    "section": "2.5 T5：保存場判定型",
-    "text": "2.5 T5：保存場判定型\n\n主題：保存力・経路独立性\n\n判断基準：「保存場であることを示せ」\n\n操作：回転（rot）の計算\n\n備考：頻度は低いが論証問題"
+    "objectID": "biseki.html#問題4極座標で二重積分",
+    "href": "biseki.html#問題4極座標で二重積分",
+    "title": "過去問分析（Exam2024_prb）",
+    "section": "5 問題4（極座標で二重積分）",
+    "text": "5 問題4（極座標で二重積分）\n\n5.0.1 解くための公式\n\n極座標： [ x=r,y=r,dxdy=r,dr,d ]\n領域 \\(x^2+y^2\\le 9\\)： [ 0r, ]\n\n\n\n5.0.2 使う分野の知識\n\n極座標変換、ヤコビアン \\(r\\)\n\n\n\n5.0.3 解くための考え方\n\n被積分関数が \\(x^2+y^2=r^2\\) のみ依存なので、\\(\\theta\\) は \\(2\\pi\\) で因数分離できる"
   },
   {
-    "objectID": "electromagnetism.html#t6回路オーム時間発展型",
-    "href": "electromagnetism.html#t6回路オーム時間発展型",
-    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
-    "section": "2.6 T6：回路・オーム・時間発展型",
-    "text": "2.6 T6：回路・オーム・時間発展型\n\n主題：電流・電圧・時間変化\n\n判断基準：\\(R, V, I, t\\) が同時に登場\n\n操作：微分方程式・エネルギー収支"
+    "objectID": "biseki.html#問題5級数の収束発散",
+    "href": "biseki.html#問題5級数の収束発散",
+    "title": "過去問分析（Exam2024_prb）",
+    "section": "6 問題5（級数の収束・発散）",
+    "text": "6 問題5（級数の収束・発散）\n\n6.1 (1) \\(\\sum_{n=1}^\\infty \\dfrac{n}{(2\\sqrt{n}-1)^2(\\sqrt{n}+1)^2}\\)\n\n6.1.1 解くための公式\n\n比較判定／極限比較\n漸近：\\((2\\sqrt{n}-1)\\sim 2\\sqrt{n},\\ (\\sqrt{n}+1)\\sim \\sqrt{n}\\)（\\(n\\to\\infty\\)）\n\n\n\n6.1.2 使う分野の知識\n\n漸近評価、\\(p\\)-級数 \\(\\sum 1/n^p\\)（\\(p&gt;1\\) で収束）\n\n\n\n6.1.3 解くための考え方\n\n分母の次数を読む：概ね \\((2\\sqrt{n})^2(\\sqrt{n})^2=4n^2\\)\nよって一般項は \\(n/(4n^2)\\sim 1/(4n)\\) の調和級数型と比較する\n\n\n\n\n\n6.2 (2) \\(\\sum_{n=1}^\\infty \\dfrac{(\\sqrt{2})^n}{n^2}\\)\n\n6.2.1 解くための公式\n\n比の判定法： [ _{n}=L,L&gt;1 ]\n\n\n\n6.2.2 使う分野の知識\n\n指数増加は多項式減衰に勝つ、比の判定法\n\n\n\n6.2.3 解くための考え方\n\n比を取ると [ =&gt;1 ] で一撃"
   },
   {
-    "objectID": "electromagnetism.html#t7ローレンツ運動方程式型",
-    "href": "electromagnetism.html#t7ローレンツ運動方程式型",
-    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
-    "section": "2.7 T7：ローレンツ運動方程式型",
-    "text": "2.7 T7：ローレンツ運動方程式型\n\n主題：磁場中の粒子運動\n\n判断基準：「磁場中を運動する粒子」\n\n操作：成分分解 → 円運動・らせん運動"
-  },
-  {
-    "objectID": "electromagnetism.html#t8アンペール積分型",
-    "href": "electromagnetism.html#t8アンペール積分型",
-    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
-    "section": "2.8 T8：アンペール積分型",
-    "text": "2.8 T8：アンペール積分型\n\n主題：電流が作る磁場\n\n判断基準：無限長・対称な電流配置\n\n操作：積分経路選択 → \\(\\mathbf{B}\\) 一定化"
-  },
-  {
-    "objectID": "electromagnetism.html#t9ビオサバール積分型",
-    "href": "electromagnetism.html#t9ビオサバール積分型",
-    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
-    "section": "2.9 T9：ビオ・サバール積分型",
-    "text": "2.9 T9：ビオ・サバール積分型\n\n主題：有限電流配置の磁場\n\n判断基準：電流素片 \\(d\\mathbf{l}\\) と距離 \\(\\mathbf{r}\\)\n\n操作：座標設定 → 積分変数変換\n\n備考：計算負荷が高い"
-  },
-  {
-    "objectID": "electromagnetism.html#t10電磁誘導磁束型",
-    "href": "electromagnetism.html#t10電磁誘導磁束型",
-    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
-    "section": "2.10 T10：電磁誘導・磁束型",
-    "text": "2.10 T10：電磁誘導・磁束型\n\n主題：磁束変化と起電力\n\n判断基準：磁束 \\(\\Phi\\) が登場\n\n操作：磁束計算 → 時間微分"
-  },
-  {
-    "objectID": "electromagnetism.html#t11インダクタンスエネルギー型",
-    "href": "electromagnetism.html#t11インダクタンスエネルギー型",
-    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
-    "section": "2.11 T11：インダクタンス・エネルギー型",
-    "text": "2.11 T11：インダクタンス・エネルギー型\n\n主題：自己・相互インダクタンス\n\n判断基準：コイル・\\(L\\)・\\(M\\)・エネルギー\n\n操作：磁場 → 磁束 → \\(L, U\\)"
-  },
-  {
-    "objectID": "electromagnetism.html#t12マクスウェル波動方程式型",
-    "href": "electromagnetism.html#t12マクスウェル波動方程式型",
-    "title": "電磁気学演習（第1回〜第14回）解答パターン（型）整理",
-    "section": "2.12 T12：マクスウェル・波動方程式型",
-    "text": "2.12 T12：マクスウェル・波動方程式型\n\n主題：電磁場の時間発展・波動\n\n判断基準：\\(\\nabla\\times\\mathbf{E},\\;\\nabla\\times\\mathbf{B}\\) が主役\n\n操作：回転をとる → 波動方程式"
+    "objectID": "biseki.html#問題6log1x-の整級数",
+    "href": "biseki.html#問題6log1x-の整級数",
+    "title": "過去問分析（Exam2024_prb）",
+    "section": "7 問題6（\\(\\log(1+x)\\) の整級数）",
+    "text": "7 問題6（\\(\\log(1+x)\\) の整級数）\n\n7.0.1 解くための公式\n\n幾何級数（\\(|x|&lt;1\\)）： [ =_{n=0}{}xn ]\n置換 \\(x\\mapsto -x\\)： [ ==_{n=0}{}(-1)n x^n(|x|&lt;1) ]\n項別積分： [ (1+x)=,dx ={n=0}{}(-1)n ={n=1}{}(-1){n-1} ] かつ \\(\\log(1+0)=0\\) で積分定数を決める\n\n\n\n7.0.2 使う分野の知識\n\nべき級数、項別積分、収束半径（まず \\(|x|&lt;1\\)）\n端点 \\(x=\\pm 1\\) は別判定（問題が範囲も要求しているため）\n\n\n\n7.0.3 解くための考え方\n\n「与えられた級数 \\(\\to\\) 形を合わせる（\\(-x\\)）」→「積分して \\(\\log\\) を作る」→「定数を初期条件で決める」\n成立範囲は基本 \\(|x|&lt;1\\)、端点は収束判定で詰める"
   },
   {
     "objectID": "index.html",

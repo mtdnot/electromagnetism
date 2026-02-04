@@ -4,10 +4,6 @@ format:
   html:
     toc: true
     toc-depth: 3
-  pdf:
-    documentclass: article
-    toc: true
-    number-sections: true
 execute:
   echo: false
   warning: false
