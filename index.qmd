@@ -21,7 +21,7 @@ format:
 
 - [微積](biseki.html)
 
-- [電磁気過去問](denjiki_kakomon.qmd)
+- [電磁気過去問](denjiki_kakomon2.qmd)
 
 </div>
 <div class="g-col-12 g-col-md-6">

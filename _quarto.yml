@@ -9,6 +9,7 @@ format:
     number-sections: true
     code-fold: true
     smooth-scroll: true
+    html-math-method: mathjax
 
 website:
   title: "Electromagnetism"

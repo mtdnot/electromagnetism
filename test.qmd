@@ -1,0 +1,6 @@
+Inline: $E=mc^2$
+
+Block:
+$$
+\mathbf{E}=\rho\mathbf{J}
+$$

@@ -203,62 +203,6 @@
     "text": "5.2 8.2 ポインティングベクトル\n\\[\n\\mathbf{S}=\\frac{1}{\\mu_0}\\mathbf{E}\\times\\mathbf{B}\n\\]"
   },
   {
-    "objectID": "biseki.html",
-    "href": "biseki.html",
-    "title": "過去問分析（Exam2024_prb）",
-    "section": "",
-    "text": "Exam2024_prb（問題1〜6）"
-  },
-  {
-    "objectID": "biseki.html#対象",
-    "href": "biseki.html#対象",
-    "title": "過去問分析（Exam2024_prb）",
-    "section": "",
-    "text": "Exam2024_prb（問題1〜6）"
-  },
-  {
-    "objectID": "biseki.html#問題1空欄補充微分極値重積分変数変換",
-    "href": "biseki.html#問題1空欄補充微分極値重積分変数変換",
-    "title": "過去問分析（Exam2024_prb）",
-    "section": "2 問題1（空欄補充：微分・極値・重積分・変数変換）",
-    "text": "2 問題1（空欄補充：微分・極値・重積分・変数変換）\n\n2.1 (1) 2階偏導関数：\\(z=\\log|x^2-2y|\\)\n\n2.1.1 解くための公式\n置換 \\(u=x^2-2y\\) とすると [ z=|u|, =, =(u). ] 2階偏導・混合偏導は [ =(), =(). ]\n\n\n2.1.2 使う分野の知識\n\n多変数微分、合成関数（連鎖律）\n\\(\\log|u|\\) の定義域（\\(u\\neq 0\\)）\n\n\n\n2.1.3 解くための考え方\n\nまず \\(u\\) を置いて \\(\\partial z/\\partial x,\\partial z/\\partial y\\) を作る\nその式をもう一回微分して2階へ（分数微分の符号ミスに注意）\n\n\n\n\n\n2.2 (2) 連鎖律：\\(z=f(x,y),\\ x=a\\cos t,\\ y=b\\sin t\\)\n\n2.2.1 解くための公式\n1階： [ =f_x+f_y. ] 2階（標準形）： [ =f_{xx}()^2 +2f_{xy}()() +f_{yy}()^2 +f_x +f_y. ]\n\n\n2.2.2 使う分野の知識\n\n多変数の連鎖律（1階・2階）\n偏微分記号（\\(f_x,f_{xy}\\) など）\n\n\n\n2.2.3 解くための考え方\n\n先に \\(dx/dt,dy/dt,d^2x/dt^2,d^2y/dt^2\\) を確定（\\(\\sin,\\cos\\) の微分）\n2階は「2階偏微分ブロック」＋「1階偏微分×2階導関数ブロック」に分けて整理\n\n\n\n\n\n2.3 (3) 2次関数の最大値：\\(f,g,h\\) のうち最大値をもつもの\n\n2.3.1 解くための公式\n2変数2次関数 \\(Q(x,y)\\) に対し、ヘッセ行列 [ H=\n\\[\\begin{pmatrix}Q_{xx}&Q_{xy}\\\\Q_{yx}&Q_{yy}\\end{pmatrix}\\]\n, D=H=Q_{xx}Q_{yy}-Q_{xy}^2. ] 判定： [ D&gt;0, Q_{xx}&lt;0 , D&gt;0, Q_{xx}&gt;0 , D&lt;0 . ] 極値点は \\(\\nabla Q=0\\)（連立一次方程式）で求まる。2次関数が負定値なら全体最大値をもつ。\n\n\n2.3.2 使う分野の知識\n\n多変数関数の極値、ヘッセ行列、二次形式\n\n\n\n2.3.3 解くための考え方\n\nまず \\(H\\) の符号（負定値か）で「最大値を持ちうるか」を絞る\n候補だけ \\(\\nabla Q=0\\) を解いて点を出し、代入して値を比較\n\n\n\n\n\n2.4 (4) 二重積分：\\(\\iint_D x\\,dx\\,dy\\)（\\(y\\) の上下が2つの放物線）\n\n2.4.1 解くための公式\n縦に積分： [ {D} x,dx,dy = {}^{} ( {y=(x)}^{u(x)} x,dy ),dx. ] 内側は \\(x\\) が \\(y\\) に依らないので [ {y=(x)}^{u(x)} x,dy = x(u(x)-(x)). ] ここで \\(x\\) の範囲 \\([\\alpha,\\beta]\\) は、領域が存在する条件 \\(\\ell(x)\\le u(x)\\)（上下曲線の交点）から決める。\n\n\n2.4.2 使う分野の知識\n\n二重積分、領域の切り出し、交点（2次方程式）\n\n\n\n2.4.3 解くための考え方\n\n交点で \\(\\alpha,\\beta\\) を確定\n内側は「長さ \\(u(x)-\\ell(x)\\) × \\(x\\)」に落として外側を1変数積分で処理\n\n\n\n\n\n2.5 (5) 変数変換：\\(0\\le x+y\\le 2,\\ 0\\le 3x-y\\le 3\\) の領域で \\(\\iint_D y\\,dx\\,dy\\)\n\n2.5.1 解くための公式\n線形変換 [ u=x+y,v=3x-y. ] ヤコビアン： [ dx,dy=||,du,dv =,du,dv. ] （\\(\\partial(u,v)/\\partial(x,y)\\) は一定なので計算は楽） また、被積分関数 \\(y\\) を \\(y(u,v)\\) に直すために、\\(u,v\\) から \\(x,y\\) を連立一次で解く。\n\n\n2.5.2 使う分野の知識\n\n変数変換（2変数）、ヤコビアン、逆変換（連立一次）\n\n\n\n2.5.3 解くための考え方\n\n条件がそのまま \\(0\\le u\\le 2,\\ 0\\le v\\le 3\\) の長方形になる（典型）\n\\(y(u,v)\\) と \\(|J|\\) を出して長方形上の通常の二重積分にする"
-  },
-  {
-    "objectID": "biseki.html#問題2媒介変数曲線長さ面積",
-    "href": "biseki.html#問題2媒介変数曲線長さ面積",
-    "title": "過去問分析（Exam2024_prb）",
-    "section": "3 問題2（媒介変数曲線：長さ・面積）",
-    "text": "3 問題2（媒介変数曲線：長さ・面積）\n与えられた曲線 [ x=a(t-t),y=a(1-t). ]\n\n3.1 (1) 長さ（\\(0\\le t\\le T\\)）\n\n3.1.1 解くための公式\n媒介変数の弧長： [ L=_{0}^{T},dt. ]\n\n\n3.1.2 使う分野の知識\n\n媒介変数表示、弧長公式\n三角恒等式 \\(\\sin^2 t+\\cos^2 t=1\\)\n\n\n\n3.1.3 解くための考え方\n\n\\(dx/dt,dy/dt\\) を作ってルート内を整理（恒等式で簡約される形が多い）\n整理後に1変数積分を実行\n\n\n\n\n\n3.2 (2) \\(x\\)軸と囲む面積（\\(0\\le t\\le 2\\pi\\)）\n\n3.2.1 解くための公式\n[ A=y,dx=_{0}^{2}y(t),dt. ]\n\n\n3.2.2 使う分野の知識\n\n線積分（面積公式）\nパラメトリック積分\n\n\n\n3.2.3 解くための考え方\n\n(1)で得た \\(dx/dt\\) を流用\n\\(y(t)\\,dx/dt\\) を三角関数として整理し、周期性も使って積分"
-  },
-  {
-    "objectID": "biseki.html#問題3極値と最大最小",
-    "href": "biseki.html#問題3極値と最大最小",
-    "title": "過去問分析（Exam2024_prb）",
-    "section": "4 問題3（極値と最大・最小）",
-    "text": "4 問題3（極値と最大・最小）\n\n4.1 (1) \\(z=-\\dfrac94 x^3-\\dfrac23 y^3+9xy\\) の極値\n\n4.1.1 解くための公式\n臨界点： [ z_x=0,z_y=0. ] 2階判定（2変数）： [ D=z_{xx}z_{yy}-z_{xy}^2. ] [ D&gt;0, z_{xx}&gt;0 , D&gt;0, z_{xx}&lt;0 , D&lt;0 . ]\n\n\n4.1.2 使う分野の知識\n\n多変数微分、偏微分、2階微分判定\n非線形連立方程式の解法（ここでは \\(x,y\\) が3次の式になる）\n\n\n\n4.1.3 解くための考え方\n\nまず \\(z_x,z_y\\) を計算して臨界点を列挙\n次に \\(z_{xx},z_{yy},z_{xy}\\) で分類\n要求されるなら臨界点へ代入して \\(z\\) の値も明記\n\n\n\n\n\n4.2 (2) 極大/極小が「最大/最小」かどうか\n\n4.2.1 解くための公式\n\n局所極値 \\(\\Rightarrow\\) 全体最大/最小 とは限らない\n無限遠の挙動は支配項（最高次数項）で概ね判定できる\n（例えば、ある方向で \\(z\\to +\\infty\\) なら最大値は存在しない、など）\n\n\n\n4.2.2 使う分野の知識\n\n関数の発散（無限遠解析）、存在判定（最大値・最小値の有無）\n\n\n\n4.2.3 解くための考え方\n\n\\(x\\to\\infty\\) や \\(y\\to\\infty\\) など複数方向で \\(z\\) の符号・発散先を確認\n「別方向で \\(+\\infty\\) と \\(-\\infty\\) の両方へ行く」なら最大も最小も成立しない、等を論理で詰める"
-  },
-  {
-    "objectID": "biseki.html#問題4極座標で二重積分",
-    "href": "biseki.html#問題4極座標で二重積分",
-    "title": "過去問分析（Exam2024_prb）",
-    "section": "5 問題4（極座標で二重積分）",
-    "text": "5 問題4（極座標で二重積分）\n\n5.0.1 解くための公式\n極座標変換： [ x=r,y=r,dx,dy=r,dr,d. ] 領域 \\(x^2+y^2\\le 9\\) は [ 0r,. ] また \\(x^2+y^2=r^2\\)。\n\n\n5.0.2 使う分野の知識\n\n極座標変換、ヤコビアン \\(r\\)\n半径のみ依存する関数の積分（\\(\\theta\\) が分離できる）\n\n\n\n5.0.3 解くための考え方\n\n被積分関数が \\(x^2+y^2\\)（つまり \\(r^2\\)）のみに依存する形なので極座標が最短\n\\(\\theta\\) 積分は \\(2\\pi\\) の因子として抜け、\\(r\\) の1変数積分に落ちる"
-  },
-  {
-    "objectID": "biseki.html#問題5級数収束発散判定",
-    "href": "biseki.html#問題5級数収束発散判定",
-    "title": "過去問分析（Exam2024_prb）",
-    "section": "6 問題5（級数：収束・発散判定）",
-    "text": "6 問題5（級数：収束・発散判定）\n\n6.1 (1) \\(\\displaystyle \\sum_{n=1}^{\\infty}\\frac{n}{(2\\sqrt{n}-1)^2(\\sqrt{n}+1)^2}\\)\n\n6.1.1 解くための公式\n\n比較判定（あるいは極限比較）\n漸近評価：\\(n\\to\\infty\\) で [ (2-1)2,(+1). ]\n\\(p\\)-級数：\\(\\sum 1/n^p\\) は \\(p&gt;1\\) で収束、\\(p\\le 1\\) で発散\n\n\n\n6.1.2 使う分野の知識\n\n漸近（支配項）、比較判定、\\(p\\)-級数\n\n\n\n6.1.3 解くための考え方\n\n分母の次数だけ読む：概ね [ (2)2()2=4n^2 ] なので一般項は \\(\\sim \\dfrac{1}{4n}\\) と読める\n調和級数型（\\(\\sum 1/n\\)）との比較で結論を出す\n\n\n\n\n\n6.2 (2) \\(\\displaystyle \\sum_{n=1}^{\\infty}\\frac{(\\sqrt{2})^n}{n^2}\\)\n\n6.2.1 解くための公式\n比の判定法： [ a_n=, _{n}=L, L&gt;1. ]\n\n\n6.2.2 使う分野の知識\n\n比の判定法\n「指数増加は多項式減衰に勝つ」\n\n\n\n6.2.3 解くための考え方\n\n比を取って [ =&gt;1 ] を示せば一撃"
-  },
-  {
-    "objectID": "biseki.html#問題6log1x-の整級数展開",
-    "href": "biseki.html#問題6log1x-の整級数展開",
-    "title": "過去問分析（Exam2024_prb）",
-    "section": "7 問題6（\\(\\log(1+x)\\) の整級数展開）",
-    "text": "7 問題6（\\(\\log(1+x)\\) の整級数展開）\n\n7.1 (1) \\(\\dfrac{1}{1-x}=\\sum_{n=0}^{\\infty}x^n\\) を用いる\n\n7.1.1 解くための公式\n幾何級数（\\(|x|&lt;1\\)）： [ ={n=0}{}xn. ] 置換 \\(x\\mapsto -x\\) により [ =={n=0}{}(-1)n x^n(|x|&lt;1). ] 両辺を項別積分して [ (1+x)=,dx ={n=0}{}(-1)n ={n=1}{}(-1){n-1}. ] 積分定数は \\(\\log(1+0)=0\\) で決める。\n\n\n\n7.2 (2) 級数展開が成立する範囲\n\n7.2.1 使う分野の知識\n\nべき級数、項別積分、収束半径\n端点での収束判定（必要なら交代級数判定など）\n\n\n\n7.2.2 解くための考え方\n\nまず変形で得た等式は \\(|x|&lt;1\\) で保証される\n「範囲を求めよ」がある場合は \\(x=1,-1\\) を別途判定して最終範囲を確定する"
-  },
-  {
     "objectID": "denjiki_kakomon.html",
     "href": "denjiki_kakomon.html",
     "title": "電磁気学 期末試験（2022-02-07） 解答・解説",
@@ -331,6 +275,146 @@
   {
     "objectID": "denjiki_kakomon.html#まとめこの試験の典型パターン",
     "href": "denjiki_kakomon.html#まとめこの試験の典型パターン",
+    "title": "電磁気学 期末試験（2022-02-07） 解答・解説",
+    "section": "10 まとめ（この試験の典型パターン）",
+    "text": "10 まとめ（この試験の典型パターン）\n\n運動（問1,5）：力（ローレンツ/電流×磁場）→ 運動方程式。回路が絡むなら KVL で \\(I\\) を消去して一次微分方程式へ。\n場の計算（問2,6,8）：\n\nベクトル解析（div/curl）\n\nアンペール（+マクスウェル補正）\n\nビオ・サバール（外積の向きが最重要）\n\nエネルギー（問4,7）：\n\n\\(u=\\frac12\\varepsilon_0E^2+\\frac1{2\\mu_0}B^2\\)\n\n\\(\\mathbf{S}=\\frac1{\\mu_0}\\mathbf{E}\\times\\mathbf{B}\\)\n\n\\(\\partial_t u+\\nabla\\cdot\\mathbf{S}=0\\)（ポインティングの定理）"
+  },
+  {
+    "objectID": "biseki.html",
+    "href": "biseki.html",
+    "title": "過去問分析（Exam2024_prb）",
+    "section": "",
+    "text": "Exam2024_prb（問題1〜6）"
+  },
+  {
+    "objectID": "biseki.html#対象",
+    "href": "biseki.html#対象",
+    "title": "過去問分析（Exam2024_prb）",
+    "section": "",
+    "text": "Exam2024_prb（問題1〜6）"
+  },
+  {
+    "objectID": "biseki.html#問題1空欄補充微分極値重積分変数変換",
+    "href": "biseki.html#問題1空欄補充微分極値重積分変数変換",
+    "title": "過去問分析（Exam2024_prb）",
+    "section": "2 問題1（空欄補充：微分・極値・重積分・変数変換）",
+    "text": "2 問題1（空欄補充：微分・極値・重積分・変数変換）\n\n2.1 (1) 2階偏導関数：\\(z=\\log|x^2-2y|\\)\n\n2.1.1 解くための公式\n置換 \\(u=x^2-2y\\) とすると [ z=|u|, =, =(u). ] 2階偏導・混合偏導は [ =(), =(). ]\n\n\n2.1.2 使う分野の知識\n\n多変数微分、合成関数（連鎖律）\n\\(\\log|u|\\) の定義域（\\(u\\neq 0\\)）\n\n\n\n2.1.3 解くための考え方\n\nまず \\(u\\) を置いて \\(\\partial z/\\partial x,\\partial z/\\partial y\\) を作る\nその式をもう一回微分して2階へ（分数微分の符号ミスに注意）\n\n\n\n\n\n2.2 (2) 連鎖律：\\(z=f(x,y),\\ x=a\\cos t,\\ y=b\\sin t\\)\n\n2.2.1 解くための公式\n1階： [ =f_x+f_y. ] 2階（標準形）： [ =f_{xx}()^2 +2f_{xy}()() +f_{yy}()^2 +f_x +f_y. ]\n\n\n2.2.2 使う分野の知識\n\n多変数の連鎖律（1階・2階）\n偏微分記号（\\(f_x,f_{xy}\\) など）\n\n\n\n2.2.3 解くための考え方\n\n先に \\(dx/dt,dy/dt,d^2x/dt^2,d^2y/dt^2\\) を確定（\\(\\sin,\\cos\\) の微分）\n2階は「2階偏微分ブロック」＋「1階偏微分×2階導関数ブロック」に分けて整理\n\n\n\n\n\n2.3 (3) 2次関数の最大値：\\(f,g,h\\) のうち最大値をもつもの\n\n2.3.1 解くための公式\n2変数2次関数 \\(Q(x,y)\\) に対し、ヘッセ行列 [ H=\n\\[\\begin{pmatrix}Q_{xx}&Q_{xy}\\\\Q_{yx}&Q_{yy}\\end{pmatrix}\\]\n, D=H=Q_{xx}Q_{yy}-Q_{xy}^2. ] 判定： [ D&gt;0, Q_{xx}&lt;0 , D&gt;0, Q_{xx}&gt;0 , D&lt;0 . ] 極値点は \\(\\nabla Q=0\\)（連立一次方程式）で求まる。2次関数が負定値なら全体最大値をもつ。\n\n\n2.3.2 使う分野の知識\n\n多変数関数の極値、ヘッセ行列、二次形式\n\n\n\n2.3.3 解くための考え方\n\nまず \\(H\\) の符号（負定値か）で「最大値を持ちうるか」を絞る\n候補だけ \\(\\nabla Q=0\\) を解いて点を出し、代入して値を比較\n\n\n\n\n\n2.4 (4) 二重積分：\\(\\iint_D x\\,dx\\,dy\\)（\\(y\\) の上下が2つの放物線）\n\n2.4.1 解くための公式\n縦に積分： [ {D} x,dx,dy = {}^{} ( {y=(x)}^{u(x)} x,dy ),dx. ] 内側は \\(x\\) が \\(y\\) に依らないので [ {y=(x)}^{u(x)} x,dy = x(u(x)-(x)). ] ここで \\(x\\) の範囲 \\([\\alpha,\\beta]\\) は、領域が存在する条件 \\(\\ell(x)\\le u(x)\\)（上下曲線の交点）から決める。\n\n\n2.4.2 使う分野の知識\n\n二重積分、領域の切り出し、交点（2次方程式）\n\n\n\n2.4.3 解くための考え方\n\n交点で \\(\\alpha,\\beta\\) を確定\n内側は「長さ \\(u(x)-\\ell(x)\\) × \\(x\\)」に落として外側を1変数積分で処理\n\n\n\n\n\n2.5 (5) 変数変換：\\(0\\le x+y\\le 2,\\ 0\\le 3x-y\\le 3\\) の領域で \\(\\iint_D y\\,dx\\,dy\\)\n\n2.5.1 解くための公式\n線形変換 [ u=x+y,v=3x-y. ] ヤコビアン： [ dx,dy=||,du,dv =,du,dv. ] （\\(\\partial(u,v)/\\partial(x,y)\\) は一定なので計算は楽） また、被積分関数 \\(y\\) を \\(y(u,v)\\) に直すために、\\(u,v\\) から \\(x,y\\) を連立一次で解く。\n\n\n2.5.2 使う分野の知識\n\n変数変換（2変数）、ヤコビアン、逆変換（連立一次）\n\n\n\n2.5.3 解くための考え方\n\n条件がそのまま \\(0\\le u\\le 2,\\ 0\\le v\\le 3\\) の長方形になる（典型）\n\\(y(u,v)\\) と \\(|J|\\) を出して長方形上の通常の二重積分にする"
+  },
+  {
+    "objectID": "biseki.html#問題2媒介変数曲線長さ面積",
+    "href": "biseki.html#問題2媒介変数曲線長さ面積",
+    "title": "過去問分析（Exam2024_prb）",
+    "section": "3 問題2（媒介変数曲線：長さ・面積）",
+    "text": "3 問題2（媒介変数曲線：長さ・面積）\n与えられた曲線 [ x=a(t-t),y=a(1-t). ]\n\n3.1 (1) 長さ（\\(0\\le t\\le T\\)）\n\n3.1.1 解くための公式\n媒介変数の弧長： [ L=_{0}^{T},dt. ]\n\n\n3.1.2 使う分野の知識\n\n媒介変数表示、弧長公式\n三角恒等式 \\(\\sin^2 t+\\cos^2 t=1\\)\n\n\n\n3.1.3 解くための考え方\n\n\\(dx/dt,dy/dt\\) を作ってルート内を整理（恒等式で簡約される形が多い）\n整理後に1変数積分を実行\n\n\n\n\n\n3.2 (2) \\(x\\)軸と囲む面積（\\(0\\le t\\le 2\\pi\\)）\n\n3.2.1 解くための公式\n[ A=y,dx=_{0}^{2}y(t),dt. ]\n\n\n3.2.2 使う分野の知識\n\n線積分（面積公式）\nパラメトリック積分\n\n\n\n3.2.3 解くための考え方\n\n(1)で得た \\(dx/dt\\) を流用\n\\(y(t)\\,dx/dt\\) を三角関数として整理し、周期性も使って積分"
+  },
+  {
+    "objectID": "biseki.html#問題3極値と最大最小",
+    "href": "biseki.html#問題3極値と最大最小",
+    "title": "過去問分析（Exam2024_prb）",
+    "section": "4 問題3（極値と最大・最小）",
+    "text": "4 問題3（極値と最大・最小）\n\n4.1 (1) \\(z=-\\dfrac94 x^3-\\dfrac23 y^3+9xy\\) の極値\n\n4.1.1 解くための公式\n臨界点： [ z_x=0,z_y=0. ] 2階判定（2変数）： [ D=z_{xx}z_{yy}-z_{xy}^2. ] [ D&gt;0, z_{xx}&gt;0 , D&gt;0, z_{xx}&lt;0 , D&lt;0 . ]\n\n\n4.1.2 使う分野の知識\n\n多変数微分、偏微分、2階微分判定\n非線形連立方程式の解法（ここでは \\(x,y\\) が3次の式になる）\n\n\n\n4.1.3 解くための考え方\n\nまず \\(z_x,z_y\\) を計算して臨界点を列挙\n次に \\(z_{xx},z_{yy},z_{xy}\\) で分類\n要求されるなら臨界点へ代入して \\(z\\) の値も明記\n\n\n\n\n\n4.2 (2) 極大/極小が「最大/最小」かどうか\n\n4.2.1 解くための公式\n\n局所極値 \\(\\Rightarrow\\) 全体最大/最小 とは限らない\n無限遠の挙動は支配項（最高次数項）で概ね判定できる\n（例えば、ある方向で \\(z\\to +\\infty\\) なら最大値は存在しない、など）\n\n\n\n4.2.2 使う分野の知識\n\n関数の発散（無限遠解析）、存在判定（最大値・最小値の有無）\n\n\n\n4.2.3 解くための考え方\n\n\\(x\\to\\infty\\) や \\(y\\to\\infty\\) など複数方向で \\(z\\) の符号・発散先を確認\n「別方向で \\(+\\infty\\) と \\(-\\infty\\) の両方へ行く」なら最大も最小も成立しない、等を論理で詰める"
+  },
+  {
+    "objectID": "biseki.html#問題4極座標で二重積分",
+    "href": "biseki.html#問題4極座標で二重積分",
+    "title": "過去問分析（Exam2024_prb）",
+    "section": "5 問題4（極座標で二重積分）",
+    "text": "5 問題4（極座標で二重積分）\n\n5.0.1 解くための公式\n極座標変換： [ x=r,y=r,dx,dy=r,dr,d. ] 領域 \\(x^2+y^2\\le 9\\) は [ 0r,. ] また \\(x^2+y^2=r^2\\)。\n\n\n5.0.2 使う分野の知識\n\n極座標変換、ヤコビアン \\(r\\)\n半径のみ依存する関数の積分（\\(\\theta\\) が分離できる）\n\n\n\n5.0.3 解くための考え方\n\n被積分関数が \\(x^2+y^2\\)（つまり \\(r^2\\)）のみに依存する形なので極座標が最短\n\\(\\theta\\) 積分は \\(2\\pi\\) の因子として抜け、\\(r\\) の1変数積分に落ちる"
+  },
+  {
+    "objectID": "biseki.html#問題5級数収束発散判定",
+    "href": "biseki.html#問題5級数収束発散判定",
+    "title": "過去問分析（Exam2024_prb）",
+    "section": "6 問題5（級数：収束・発散判定）",
+    "text": "6 問題5（級数：収束・発散判定）\n\n6.1 (1) \\(\\displaystyle \\sum_{n=1}^{\\infty}\\frac{n}{(2\\sqrt{n}-1)^2(\\sqrt{n}+1)^2}\\)\n\n6.1.1 解くための公式\n\n比較判定（あるいは極限比較）\n漸近評価：\\(n\\to\\infty\\) で [ (2-1)2,(+1). ]\n\\(p\\)-級数：\\(\\sum 1/n^p\\) は \\(p&gt;1\\) で収束、\\(p\\le 1\\) で発散\n\n\n\n6.1.2 使う分野の知識\n\n漸近（支配項）、比較判定、\\(p\\)-級数\n\n\n\n6.1.3 解くための考え方\n\n分母の次数だけ読む：概ね [ (2)2()2=4n^2 ] なので一般項は \\(\\sim \\dfrac{1}{4n}\\) と読める\n調和級数型（\\(\\sum 1/n\\)）との比較で結論を出す\n\n\n\n\n\n6.2 (2) \\(\\displaystyle \\sum_{n=1}^{\\infty}\\frac{(\\sqrt{2})^n}{n^2}\\)\n\n6.2.1 解くための公式\n比の判定法： [ a_n=, _{n}=L, L&gt;1. ]\n\n\n6.2.2 使う分野の知識\n\n比の判定法\n「指数増加は多項式減衰に勝つ」\n\n\n\n6.2.3 解くための考え方\n\n比を取って [ =&gt;1 ] を示せば一撃"
+  },
+  {
+    "objectID": "biseki.html#問題6log1x-の整級数展開",
+    "href": "biseki.html#問題6log1x-の整級数展開",
+    "title": "過去問分析（Exam2024_prb）",
+    "section": "7 問題6（\\(\\log(1+x)\\) の整級数展開）",
+    "text": "7 問題6（\\(\\log(1+x)\\) の整級数展開）\n\n7.1 (1) \\(\\dfrac{1}{1-x}=\\sum_{n=0}^{\\infty}x^n\\) を用いる\n\n7.1.1 解くための公式\n幾何級数（\\(|x|&lt;1\\)）： [ ={n=0}{}xn. ] 置換 \\(x\\mapsto -x\\) により [ =={n=0}{}(-1)n x^n(|x|&lt;1). ] 両辺を項別積分して [ (1+x)=,dx ={n=0}{}(-1)n ={n=1}{}(-1){n-1}. ] 積分定数は \\(\\log(1+0)=0\\) で決める。\n\n\n\n7.2 (2) 級数展開が成立する範囲\n\n7.2.1 使う分野の知識\n\nべき級数、項別積分、収束半径\n端点での収束判定（必要なら交代級数判定など）\n\n\n\n7.2.2 解くための考え方\n\nまず変形で得た等式は \\(|x|&lt;1\\) で保証される\n「範囲を求めよ」がある場合は \\(x=1,-1\\) を別途判定して最終範囲を確定する"
+  },
+  {
+    "objectID": "test.html",
+    "href": "test.html",
+    "title": "Electromagnetism",
+    "section": "",
+    "text": "Inline: \\(E=mc^2\\)\nBlock: \\[\n\\mathbf{E}=\\rho\\mathbf{J}\n\\]"
+  },
+  {
+    "objectID": "denjiki_kakomon2.html",
+    "href": "denjiki_kakomon2.html",
+    "title": "電磁気学 期末試験（2022-02-07） 解答・解説",
+    "section": "",
+    "text": "真空の透磁率：\\(\\mu_0\\)，誘電率：\\(\\varepsilon_0\\)\n単位ベクトル：\\(\\mathbf{i},\\mathbf{j},\\mathbf{k}\\) はそれぞれ \\(x,y,z\\) 方向\nベクトル解析：\n\n\\[\n\\nabla\\cdot\\mathbf{A}=\\frac{\\partial A_x}{\\partial x}+\\frac{\\partial A_y}{\\partial y}+\\frac{\\partial A_z}{\\partial z},\\quad\n\\nabla\\times\\mathbf{A}=\\begin{pmatrix}\n\\frac{\\partial A_z}{\\partial y}-\\frac{\\partial A_y}{\\partial z}\\\\\n\\frac{\\partial A_x}{\\partial z}-\\frac{\\partial A_z}{\\partial x}\\\\\n\\frac{\\partial A_y}{\\partial x}-\\frac{\\partial A_x}{\\partial y}\n\\end{pmatrix}\n\\]\n\nマクスウェル方程式（真空）：\n\n\\[\n\\nabla\\times\\mathbf{E}=-\\frac{\\partial\\mathbf{B}}{\\partial t},\\quad\n\\nabla\\times\\mathbf{B}=\\mu_0\\varepsilon_0\\frac{\\partial\\mathbf{E}}{\\partial t},\\quad\n\\nabla\\times\\mathbf{B}=\\mu_0\\mathbf{J}\\;(\\text{静磁場})\n\\]\n\nローレンツ力：\n\n\\[\nm\\frac{d\\mathbf{v}}{dt}=q(\\mathbf{E}+\\mathbf{v}\\times\\mathbf{B})\n\\]"
+  },
+  {
+    "objectID": "denjiki_kakomon2.html#使う前提共通",
+    "href": "denjiki_kakomon2.html#使う前提共通",
+    "title": "電磁気学 期末試験（2022-02-07） 解答・解説",
+    "section": "",
+    "text": "真空の透磁率：\\(\\mu_0\\)，誘電率：\\(\\varepsilon_0\\)\n単位ベクトル：\\(\\mathbf{i},\\mathbf{j},\\mathbf{k}\\) はそれぞれ \\(x,y,z\\) 方向\nベクトル解析：\n\n\\[\n\\nabla\\cdot\\mathbf{A}=\\frac{\\partial A_x}{\\partial x}+\\frac{\\partial A_y}{\\partial y}+\\frac{\\partial A_z}{\\partial z},\\quad\n\\nabla\\times\\mathbf{A}=\\begin{pmatrix}\n\\frac{\\partial A_z}{\\partial y}-\\frac{\\partial A_y}{\\partial z}\\\\\n\\frac{\\partial A_x}{\\partial z}-\\frac{\\partial A_z}{\\partial x}\\\\\n\\frac{\\partial A_y}{\\partial x}-\\frac{\\partial A_x}{\\partial y}\n\\end{pmatrix}\n\\]\n\nマクスウェル方程式（真空）：\n\n\\[\n\\nabla\\times\\mathbf{E}=-\\frac{\\partial\\mathbf{B}}{\\partial t},\\quad\n\\nabla\\times\\mathbf{B}=\\mu_0\\varepsilon_0\\frac{\\partial\\mathbf{E}}{\\partial t},\\quad\n\\nabla\\times\\mathbf{B}=\\mu_0\\mathbf{J}\\;(\\text{静磁場})\n\\]\n\nローレンツ力：\n\n\\[\nm\\frac{d\\mathbf{v}}{dt}=q(\\mathbf{E}+\\mathbf{v}\\times\\mathbf{B})\n\\]"
+  },
+  {
+    "objectID": "denjiki_kakomon2.html#問1荷電粒子の円運動",
+    "href": "denjiki_kakomon2.html#問1荷電粒子の円運動",
+    "title": "電磁気学 期末試験（2022-02-07） 解答・解説",
+    "section": "2 問1（荷電粒子の円運動）",
+    "text": "2 問1（荷電粒子の円運動）\n問題の型\n一様磁場中の荷電粒子運動は「ローレンツ力 \\(q\\mathbf{v}\\times\\mathbf{B}\\) が速度に垂直」なので、速度の大きさが一定になり、等速円運動（またはらせん）になる。ここでは \\(xy\\) 平面内運動。\n設定\n一様磁場 \\(\\mathbf{B}=B\\mathbf{k}\\) 中で、質量 \\(m\\)、電荷 \\(q\\) の粒子が\n\\[\n\\mathbf{v}=v_x\\mathbf{i}+v_y\\mathbf{j}\n\\]\nで運動。\n\n2.1 (1) 運動方程式の \\(x,y\\) 成分（\\(\\omega=qB/m\\) を用いる）\n\\[\nm\\frac{d\\mathbf{v}}{dt}=q(\\mathbf{v}\\times\\mathbf{B})\n\\]\n\\[\n\\mathbf{v}\\times\\mathbf{B}=\n(v_x\\mathbf{i}+v_y\\mathbf{j})\\times(B\\mathbf{k})\n= B\\,(v_y\\mathbf{i}-v_x\\mathbf{j})\n\\]\nよって\n\\[\nm\\frac{dv_x}{dt}=qB\\,v_y,\\quad\nm\\frac{dv_y}{dt}=-qB\\,v_x\n\\]\n\\(\\omega=\\dfrac{qB}{m}\\) とおけば\n\\[\n\\boxed{\\frac{dv_x}{dt}=\\omega v_y,\\qquad \\frac{dv_y}{dt}=-\\omega v_x}\n\\]\n\n\n2.2 (2) 初期条件 \\(v_x(0)=0,\\ v_y(0)=v_0\\) のとき \\(v_x(t),v_y(t)\\)\n\nの連立をもう一度微分して\n\n\\[\n\\frac{d^2v_x}{dt^2}=\\omega\\frac{dv_y}{dt}=-\\omega^2 v_x\n\\]\nよって\n\\[\nv_x(t)=A\\sin(\\omega t)+B\\cos(\\omega t)\n\\]\n初期条件 \\(v_x(0)=0\\) から \\(B=0\\)。また\n\\[\n\\frac{dv_x}{dt}=\\omega v_y\n\\Rightarrow v_y(0)=\\frac{1}{\\omega}\\frac{dv_x}{dt}\\Big|_{t=0}\n=\\frac{1}{\\omega}(A\\omega)=A\n\\]\nより \\(A=v_0\\)。\nしたがって\n\\[\n\\boxed{v_x(t)=v_0\\sin(\\omega t),\\qquad v_y(t)=v_0\\cos(\\omega t)}\n\\]\n\n\n2.3 (3) さらに \\(x(0)=x_0,\\ y(0)=0\\) のとき \\(x(t),y(t)\\)\n\\[\n\\frac{dx}{dt}=v_x(t)=v_0\\sin(\\omega t)\n\\Rightarrow x(t)=x_0+\\int_0^t v_0\\sin(\\omega t')dt'\n\\]\n\\[\nx(t)=x_0+\\frac{v_0}{\\omega}\\left(1-\\cos(\\omega t)\\right)\n\\]\n同様に\n\\[\n\\frac{dy}{dt}=v_y(t)=v_0\\cos(\\omega t)\n\\Rightarrow y(t)=0+\\int_0^t v_0\\cos(\\omega t')dt'\n=\\frac{v_0}{\\omega}\\sin(\\omega t)\n\\]\n\\[\n\\boxed{x(t)=x_0+\\frac{v_0}{\\omega}\\left(1-\\cos\\omega t\\right),\\qquad\ny(t)=\\frac{v_0}{\\omega}\\sin\\omega t}\n\\]"
+  },
+  {
+    "objectID": "denjiki_kakomon2.html#問2ベクトルポテンシャルと電流密度",
+    "href": "denjiki_kakomon2.html#問2ベクトルポテンシャルと電流密度",
+    "title": "電磁気学 期末試験（2022-02-07） 解答・解説",
+    "section": "3 問2（ベクトルポテンシャルと電流密度）",
+    "text": "3 問2（ベクトルポテンシャルと電流密度）\n問題の型\n(1) は定義計算。\n(2) は「一様磁場の代表的ゲージ \\(\\mathbf{A}=\\frac12\\mathbf{B}\\times\\mathbf{r}\\)」が \\(\\nabla\\cdot\\mathbf{A}=0\\) を満たし、\\(\\nabla\\times\\mathbf{A}=\\mathbf{B}\\) を与えることを確かめる。\n(3) は静磁場なので \\(\\nabla\\times\\mathbf{B}=\\mu_0\\mathbf{i}\\)（電流密度）で求める。\n\n3.1 (1) \\(\\nabla\\cdot \\mathbf{A}(r)\\) と \\(\\nabla\\times \\mathbf{A}(r)\\) を成分で表せ\n\\(\\mathbf{A}(r)=(A_x,A_y,A_z)\\) とすると\n\\[\n\\boxed{\\nabla\\cdot\\mathbf{A}\n=\\frac{\\partial A_x}{\\partial x}+\\frac{\\partial A_y}{\\partial y}+\\frac{\\partial A_z}{\\partial z}}\n\\]\n\\[\n\\boxed{\\nabla\\times\\mathbf{A}\n=\\left(\n\\frac{\\partial A_z}{\\partial y}-\\frac{\\partial A_y}{\\partial z},\\\n\\frac{\\partial A_x}{\\partial z}-\\frac{\\partial A_z}{\\partial x},\\\n\\frac{\\partial A_y}{\\partial x}-\\frac{\\partial A_x}{\\partial y}\n\\right)}\n\\]\n\n\n3.2 (2) 一様 \\(\\mathbf{B}=(B_x,B_y,B_z)\\) に対し \\(\\mathbf{A}(r)=\\frac12\\mathbf{B}\\times\\mathbf{r}\\) とおく。\\(\\nabla\\cdot\\mathbf{A}\\) と \\(\\nabla\\times\\mathbf{A}\\)\nまず\n\\[\n\\mathbf{r}=(x,y,z),\\quad \\mathbf{B}\\times\\mathbf{r}=\n\\begin{pmatrix}\nB_y z-B_z y\\\\\nB_z x-B_x z\\\\\nB_x y-B_y x\n\\end{pmatrix}\n\\]\n\\[\n\\Rightarrow \\mathbf{A}=\\frac12\n\\begin{pmatrix}\nB_y z-B_z y\\\\\nB_z x-B_x z\\\\\nB_x y-B_y x\n\\end{pmatrix}\n\\]\n発散\n\\[\n\\nabla\\cdot\\mathbf{A}\n=\\frac{\\partial A_x}{\\partial x}+\\frac{\\partial A_y}{\\partial y}+\\frac{\\partial A_z}{\\partial z}\n\\]\nここで \\(A_x\\) は \\(x\\) を含まず、\\(A_y\\) は \\(y\\) を含まず、\\(A_z\\) は \\(z\\) を含まないので、全部 0。\n\\[\n\\boxed{\\nabla\\cdot\\mathbf{A}=0}\n\\]\n回転（カール）\n成分計算すると（定数 \\(B_x,B_y,B_z\\) を用いる）\n\\[\n(\\nabla\\times\\mathbf{A})_x=\\frac{\\partial A_z}{\\partial y}-\\frac{\\partial A_y}{\\partial z}\n=\\frac12(B_x)-\\frac12(-B_x)=B_x\n\\]\n同様に\n\\[\n(\\nabla\\times\\mathbf{A})_y=B_y,\\qquad (\\nabla\\times\\mathbf{A})_z=B_z\n\\]\nよって\n\\[\n\\boxed{\\nabla\\times\\mathbf{A}=\\mathbf{B}}\n\\]\n\n\n3.3 (3) \\(\\mathbf{B}(r)=\\left(-k(x^2+y^2)y,\\ k(x^2+y^2)x,\\ 0\\right)\\) に対し電流密度 \\(\\mathbf{i}(r)\\) を求めよ\n静磁場なので\n\\[\n\\nabla\\times\\mathbf{B}=\\mu_0\\mathbf{i}\n\\Rightarrow \\mathbf{i}=\\frac{1}{\\mu_0}\\nabla\\times\\mathbf{B}\n\\]\nここで \\(B_z=0\\) かつ \\(z\\) 依存がないので\n\\[\n(\\nabla\\times\\mathbf{B})_x=(\\nabla\\times\\mathbf{B})_y=0\n\\]\n\\[\n(\\nabla\\times\\mathbf{B})_z=\\frac{\\partial B_y}{\\partial x}-\\frac{\\partial B_x}{\\partial y}\n\\]\n\\[\nB_y=kx(x^2+y^2)\\Rightarrow \\frac{\\partial B_y}{\\partial x}\n=k\\big((x^2+y^2)+2x^2\\big)=k(3x^2+y^2)\n\\]\n\\[\nB_x=-ky(x^2+y^2)\\Rightarrow \\frac{\\partial B_x}{\\partial y}\n=-k\\big((x^2+y^2)+2y^2\\big)=-k(x^2+3y^2)\n\\]\nよって\n\\[\n(\\nabla\\times\\mathbf{B})_z=k(3x^2+y^2)-\\big(-k(x^2+3y^2)\\big)=4k(x^2+y^2)\n\\]\n\\[\n\\boxed{\\mathbf{i}(r)=\\left(0,\\ 0,\\ \\frac{4k(x^2+y^2)}{\\mu_0}\\right)}\n\\]"
+  },
+  {
+    "objectID": "denjiki_kakomon2.html#問3トロイダルコイル",
+    "href": "denjiki_kakomon2.html#問3トロイダルコイル",
+    "title": "電磁気学 期末試験（2022-02-07） 解答・解説",
+    "section": "4 問3（トロイダル・コイル）",
+    "text": "4 問3（トロイダル・コイル）\n問題の型\nトロイドは「アンペールの法則」で \\(B\\) が一撃で出る。\n次に \\(\\Phi=BA\\) で磁束、\\(L=N\\Phi/I\\)。\n誘導起電力は \\(\\mathcal{E}=-L\\,dI/dt\\)。\nエネルギー密度は \\(u_m=B^2/(2\\mu_0)\\)、総エネルギーは \\(U_m=\\frac12 LI^2\\)（整合確認にも使える）。\n設定\n半径 \\(a\\) の小円（断面）をもつトロイド。中心線の半径を \\(r\\)（\\(a\\ll r\\)）。巻数 \\(N\\)、電流 \\(I\\)。\n\n4.1 (1) 円周 \\(C\\)（半径 \\(r\\)）上での磁場 \\(B\\)\nアンペールの法則：\n\\[\n\\oint_C \\mathbf{B}\\cdot d\\mathbf{l}=\\mu_0 NI\n\\]\n対称性より \\(C\\) 上で \\(B\\) 一定、接線方向：\n\\[\nB(2\\pi r)=\\mu_0 NI\n\\Rightarrow\n\\boxed{B=\\frac{\\mu_0 NI}{2\\pi r}}\n\\]\n\n\n4.2 (2) コイルの自己インダクタンス \\(L\\)\n1巻を貫く磁束（断面積 \\(A=\\pi a^2\\)、一様近似）：\n\\[\n\\Phi = BA = \\frac{\\mu_0 NI}{2\\pi r}\\cdot \\pi a^2\n=\\frac{\\mu_0 NI a^2}{2r}\n\\]\n自己インダクタンス定義：\n\\[\nL=\\frac{N\\Phi}{I}\n\\Rightarrow\n\\boxed{L=\\frac{\\mu_0 N^2 a^2}{2r}}\n\\]\n\n\n4.3 (3) \\(I(t)=I_0\\cos(\\omega t)\\) のとき誘導起電力 \\(\\mathcal{E}_{em}\\)\n\\[\n\\mathcal{E}_{em}=-L\\frac{dI}{dt}\n\\]\n\\[\n\\frac{dI}{dt}=-\\omega I_0\\sin(\\omega t)\n\\Rightarrow\n\\boxed{\\mathcal{E}_{em}=L\\omega I_0\\sin(\\omega t)}\n\\]\n\n\n4.4 (4) 磁場エネルギー密度 \\(u_m\\) と総エネルギー \\(U_m\\)\n磁場：\n\\[\nB(t)=\\frac{\\mu_0 N I(t)}{2\\pi r}\n\\]\nよって\n\\[\nu_m(t)=\\frac{B(t)^2}{2\\mu_0}\n=\\frac{1}{2\\mu_0}\\left(\\frac{\\mu_0 N I(t)}{2\\pi r}\\right)^2\n=\n\\boxed{u_m(t)=\\frac{\\mu_0 N^2 I(t)^2}{8\\pi^2 r^2}}\n\\]\n総エネルギーは\n\\[\nU_m=\\frac12 L I(t)^2\n=\\frac12\\cdot\\frac{\\mu_0 N^2 a^2}{2r}\\,I(t)^2\n=\n\\boxed{U_m(t)=\\frac{\\mu_0 N^2 a^2}{4r}\\,I(t)^2}\n\\]"
+  },
+  {
+    "objectID": "denjiki_kakomon2.html#問4導体中のエネルギー流ポインティング",
+    "href": "denjiki_kakomon2.html#問4導体中のエネルギー流ポインティング",
+    "title": "電磁気学 期末試験（2022-02-07） 解答・解説",
+    "section": "5 問4（導体中のエネルギー流：ポインティング）",
+    "text": "5 問4（導体中のエネルギー流：ポインティング）\n問題の型\n導体内部でも電磁エネルギーは \\(\\mathbf{S}=\\frac1{\\mu_0}\\mathbf{E}\\times\\mathbf{B}\\) で流れ、体積内のジュール熱 \\(J\\cdot E\\) と釣り合う。\n(1) はオームの法則とアンペール則で \\(\\mathbf{E},\\mathbf{B}\\) を出して \\(\\mathbf{S}\\)。\n(2) は「表面から入るエネルギー流量＝体積でのジュール発熱」を示す問題。\n設定\n厚さ \\(2d\\) の無限平板導体。面は \\(z=\\pm d\\)。抵抗率 \\(\\rho\\)。\n電流密度が \\(x\\) 方向に一様：\\(\\mathbf{J}=i_c\\,\\mathbf{i}\\)。\n\n5.1 (1) 点 \\(P(0,h,h)\\)（\\(0&lt;h&lt;d\\)）での \\(\\mathbf{E},\\mathbf{B},\\mathbf{S}\\)\n電場（オームの法則 \\(\\mathbf{E}=\\rho\\mathbf{J}\\)）：\n\\[\n\\boxed{\\mathbf{E}=\\rho i_c\\,\\mathbf{i}}\n\\]\n磁場\n対称性より \\(\\mathbf{B}=B_y(z)\\mathbf{j}\\) とおける。静磁場で\n\\[\n\\nabla\\times\\mathbf{B}=\\mu_0\\mathbf{J}\n\\]\n\\(\\mathbf{B}=B_y(z)\\mathbf{j}\\) のとき\n\\[\n(\\nabla\\times\\mathbf{B})_x=-\\frac{dB_y}{dz}=\\mu_0 J_x=\\mu_0 i_c\n\\Rightarrow \\frac{dB_y}{dz}=-\\mu_0 i_c\n\\]\n中心 \\(z=0\\) で対称性から \\(B_y(0)=0\\)（奇関数）なので\n\\[\nB_y(z)=-\\mu_0 i_c z\n\\]\n点 \\(P\\) は \\(z=h\\) なので\n\\[\n\\boxed{\\mathbf{B}(P)=-\\mu_0 i_c h\\,\\mathbf{j}}\n\\]\nポインティングベクトル\n\\[\n\\mathbf{S}=\\frac{1}{\\mu_0}\\mathbf{E}\\times\\mathbf{B}\n=\\frac{1}{\\mu_0}(\\rho i_c\\mathbf{i})\\times(-\\mu_0 i_c h\\mathbf{j})\n\\]\n\\[\n\\boxed{\\mathbf{S}(P)=-\\rho i_c^2 h\\,\\mathbf{k}}\n\\]\n（\\(z&gt;0\\) 側では \\(-z\\) 方向にエネルギーが流れる＝導体内部の発熱へ供給される）\n\n\n5.2 (2) 直方体（\\(x=\\pm d,\\ y=\\pm d,\\ z=\\pm h\\)）へ単位時間に流れ込むエネルギー総和\n\\(\\mathbf{S}\\) は \\(z\\) 成分のみで\n\\[\nS_z(z)=-\\rho i_c^2 z\n\\]\n外向き法線 \\(\\mathbf{n}\\) に対する外向きフラックス：\n\n上面 \\(z=+h\\)：\\(\\mathbf{n}=+\\mathbf{k}\\)\n\n\\[\n\\int S\\cdot n\\,dA=S_z(h)\\cdot(4d^2)=(-\\rho i_c^2 h)(4d^2)\n\\]\n\n下面 \\(z=-h\\)：\\(\\mathbf{n}=-\\mathbf{k}\\)\n\n\\[\nS\\cdot n=S_z(-h)(-1)=\\big(+\\rho i_c^2 h\\big)(-1)=-\\rho i_c^2 h\n\\Rightarrow (-\\rho i_c^2 h)(4d^2)\n\\]\n側面（\\(x=\\pm d,y=\\pm d\\)）は \\(S\\cdot n=0\\)。\nよって外向き総フラックスは\n\\[\n\\oint \\mathbf{S}\\cdot \\mathbf{n}\\,dA\n=2\\cdot(-\\rho i_c^2 h)(4d^2)=-8\\rho i_c^2 h d^2\n\\]\n「流れ込む（内向き）」エネルギーは外向きの符号反転：\n\\[\n\\boxed{P_{\\text{in}}=-\\oint \\mathbf{S}\\cdot \\mathbf{n}\\,dA\n=8\\rho i_c^2 h d^2}\n\\]\n（確認）体積 \\(V=(2d)(2d)(2h)=8d^2h\\)、ジュール発熱密度 \\(J\\cdot E=\\rho i_c^2\\) なので\n\\[\n\\int_V \\rho i_c^2\\,dV=\\rho i_c^2(8d^2h)=8\\rho i_c^2 h d^2\n\\]\nで一致。"
+  },
+  {
+    "objectID": "denjiki_kakomon2.html#問5レールガン運動方程式回路方程式",
+    "href": "denjiki_kakomon2.html#問5レールガン運動方程式回路方程式",
+    "title": "電磁気学 期末試験（2022-02-07） 解答・解説",
+    "section": "6 問5（レールガン：運動方程式＋回路方程式）",
+    "text": "6 問5（レールガン：運動方程式＋回路方程式）\n問題の型\n「動く導体棒」＋「一様磁場」＝運動起電力 \\(\\mathcal{E}_{ind}=Bav\\)。\n回路は KVL（オームの法則）で \\(I\\) を \\(v\\) に結びつける。\n力は \\(\\mathbf{F}=I\\mathbf{l}\\times\\mathbf{B}\\) で、最終的に 一次遅れ \\(dv/dt + \\gamma v = \\text{const}\\) になる。\n設定\n間隔 \\(a\\) の平行レールに電圧 \\(V\\) の電池。上向き一様磁場 \\(B\\)。\n質量 \\(M\\)、抵抗 \\(R\\) の導体棒が滑る。摩擦なし。レール抵抗・自己インダクタンス無視。初速 \\(v_0=0\\)。\n棒の速度を \\(v\\)、電流を \\(I\\) とする。\n\n6.1 (1) 磁場から受ける力を考えて運動方程式\n棒（長さ \\(a\\)）に流れる電流 \\(I\\) と磁場 \\(B\\) により\n\\[\n|\\mathbf{F}| = I a B\n\\]\n（向きはレンツの法則で決まるが、ここでは「正方向の運動方程式」に \\(I\\) の符号を含める流儀で進める）\n\\[\n\\boxed{M\\frac{dv}{dt}=I a B}\n\\]\n\n\n6.2 (2) 誘導起電力を考え、\\(I\\) のオームの法則\n棒が速度 \\(v\\) で動くと、面積変化により運動起電力の大きさ\n\\[\n\\mathcal{E}_{ind}=Bav\n\\]\nが生じ、電池起電力 \\(V\\) と反対向きに働く（速度が増えるほど電流が減る向き）。\nよって KVL：\n\\[\nV-\\mathcal{E}_{ind}-IR=0\n\\Rightarrow\n\\boxed{IR=V-Bav}\n\\]\n\\[\n\\boxed{I=\\frac{V-Bav}{R}}\n\\]\n\n\n6.3 (3) 時刻 \\(t\\) における \\(I(t)\\) と \\(v(t)\\)\n(1)(2) を連立：\n\\[\nM\\frac{dv}{dt}=aB\\frac{V-Bav}{R}\n\\Rightarrow\n\\frac{dv}{dt}+\\frac{B^2a^2}{MR}v=\\frac{aBV}{MR}\n\\]\n時定数\n\\[\n\\tau=\\frac{MR}{B^2a^2},\\qquad\nv_\\infty=\\frac{V}{Ba}\n\\]\nとおくと\n\\[\nv(t)=v_\\infty\\left(1-e^{-t/\\tau}\\right)\n\\]\n初期条件 \\(v(0)=0\\) を満たす。\nしたがって\n\\[\n\\boxed{v(t)=\\frac{V}{Ba}\\left(1-e^{-t/\\tau}\\right),\\quad \\tau=\\frac{MR}{B^2a^2}}\n\\]\n電流は\n\\[\nI(t)=\\frac{V-Bav(t)}{R}\n=\\frac{V}{R}e^{-t/\\tau}\n\\]\n\\[\n\\boxed{I(t)=\\frac{V}{R}e^{-t/\\tau}}\n\\]\n\n\n6.4 (4) \\(t\\to\\infty\\) までの全ジュール熱 \\(E_J\\)\n\\[\nE_J=\\int_0^\\infty I(t)^2R\\,dt\n=\\int_0^\\infty \\left(\\frac{V}{R}\\right)^2 e^{-2t/\\tau}R\\,dt\n=\\frac{V^2}{R}\\cdot\\frac{\\tau}{2}\n\\]\n\\[\n\\boxed{E_J=\\frac{V^2\\tau}{2R}=\\frac{MV^2}{2B^2a^2}}\n\\]\n（チェック）最終速度 \\(v_\\infty=V/(Ba)\\) なので\n\\[\n\\frac12 Mv_\\infty^2=\\frac{MV^2}{2B^2a^2}\n\\]\nとなり、ここではジュール熱がちょうどこの値になっている（電池の供給エネルギーはその2倍で、残り半分が運動エネルギー）。"
+  },
+  {
+    "objectID": "denjiki_kakomon2.html#問6変位電流と磁場",
+    "href": "denjiki_kakomon2.html#問6変位電流と磁場",
+    "title": "電磁気学 期末試験（2022-02-07） 解答・解説",
+    "section": "7 問6（変位電流と磁場）",
+    "text": "7 問6（変位電流と磁場）\n問題の型\n(1) は \\(I=dQ/dt\\) の積分。\n(2) は平行板近似で \\(E=Q/(\\varepsilon_0A)\\)、変位電流密度 \\(J_d=\\varepsilon_0\\partial E/\\partial t\\)。\n(3) はアンペール・マクスウェル\n\\[\n\\oint \\mathbf{B}\\cdot d\\mathbf{l}=\\mu_0\\left(I_{\\text{cond}}+\\varepsilon_0\\frac{d\\Phi_E}{dt}\\right)\n\\]\nで円対称により \\(B(2\\pi r)=\\mu_0 I_{\\text{enc}}\\)。\n設定\n半径 \\(R\\) の円形導体板を間隔 \\(d\\) で向かい合わせたコンデンサー。\n電流 \\(I(t)=I_0 e^{-\\alpha t}\\)（\\(I_0,\\alpha&gt;0\\)）。端効果無視。\n\n7.1 (1) 電荷 \\(Q(t)\\)（\\(Q(0)=0\\)）\n\\[\nI(t)=\\frac{dQ}{dt}=I_0e^{-\\alpha t}\n\\Rightarrow\nQ(t)=\\int_0^t I_0e^{-\\alpha t'}dt'\n=\\frac{I_0}{\\alpha}\\left(1-e^{-\\alpha t}\\right)\n\\]\n\\[\n\\boxed{Q(t)=\\frac{I_0}{\\alpha}\\left(1-e^{-\\alpha t}\\right)}\n\\]\n\n\n7.2 (2) 極板間の電場 \\(E\\) と変位電流密度\n面積 \\(A=\\pi R^2\\)、平行板近似で\n\\[\nE(t)=\\frac{Q(t)}{\\varepsilon_0 A}\n=\\frac{Q(t)}{\\varepsilon_0\\pi R^2}\n\\]\n\\[\n\\boxed{E(t)=\\frac{1}{\\varepsilon_0\\pi R^2}\\,Q(t)}\n\\]\n変位電流密度\n\\[\nJ_d=\\varepsilon_0\\frac{\\partial E}{\\partial t}\n=\\varepsilon_0\\cdot\\frac{1}{\\varepsilon_0\\pi R^2}\\frac{dQ}{dt}\n=\\frac{I(t)}{\\pi R^2}\n\\]\n\\[\n\\boxed{J_d(t)=\\frac{I(t)}{\\pi R^2}}\n\\]\n\n\n7.3 (3) 中心軸から距離 \\(r\\) の磁場（\\(r&lt;R\\) と \\(r&gt;R\\)）\n円周半径 \\(r\\) のアンペール経路で、\\(\\mathbf{B}\\) は方位方向（\\(\\mathbf{e}_\\phi\\)）で一定。\n\n\\(r&lt;R\\)：包む変位電流は面積比で\n\n\\[\nI_{\\text{enc}}=J_d\\cdot\\pi r^2 = I(t)\\frac{r^2}{R^2}\n\\]\nよって\n\\[\nB(2\\pi r)=\\mu_0 I(t)\\frac{r^2}{R^2}\n\\Rightarrow\n\\boxed{B(r,t)=\\frac{\\mu_0 I(t)}{2\\pi}\\frac{r}{R^2}\\quad (r&lt;R)}\n\\]\n\n\\(r&gt;R\\)：全電流を包むので \\(I_{\\text{enc}}=I(t)\\)\n\n\\[\nB(2\\pi r)=\\mu_0 I(t)\n\\Rightarrow\n\\boxed{B(r,t)=\\frac{\\mu_0 I(t)}{2\\pi r}\\quad (r&gt;R)}\n\\]"
+  },
+  {
+    "objectID": "denjiki_kakomon2.html#問7平面電磁波の基本エネルギー保存",
+    "href": "denjiki_kakomon2.html#問7平面電磁波の基本エネルギー保存",
+    "title": "電磁気学 期末試験（2022-02-07） 解答・解説",
+    "section": "8 問7（平面電磁波の基本：エネルギー保存）",
+    "text": "8 問7（平面電磁波の基本：エネルギー保存）\n問題の型\n「\\(E\\) が \\(x\\) 成分のみ」「\\(B\\) が \\(y\\) 成分のみ」「両方とも \\(z,t\\) のみ依存」なら、マクスウェル方程式は偏微分2本に落ちる。\n(2) はポインティングの定理 \\(\\partial_t u + \\nabla\\cdot S=0\\) を直接計算で示す。\n設定\n真空中、電荷も電流もない。\n\\[\n\\mathbf{E}(r,t)=E_x(z,t)\\mathbf{i},\\qquad\n\\mathbf{B}(r,t)=B_y(z,t)\\mathbf{j}\n\\]\n\n8.1 (1) ファラデー則の \\(y\\) 成分と、アンペール・マクスウェルの \\(x\\) 成分を書け\nファラデー則\n\\[\n\\nabla\\times\\mathbf{E}=-\\frac{\\partial\\mathbf{B}}{\\partial t}\n\\]\n\\(\\mathbf{E}=(E_x(z,t),0,0)\\) なので\n\\[\n\\nabla\\times\\mathbf{E}=(0,\\ \\frac{\\partial E_x}{\\partial z},\\ 0)\n\\]\n右辺は \\(-(0,\\frac{\\partial B_y}{\\partial t},0)\\)。よって \\(y\\) 成分：\n\\[\n\\boxed{\\frac{\\partial E_x}{\\partial z}=-\\frac{\\partial B_y}{\\partial t}}\n\\]\nアンペール・マクスウェル\n\\[\n\\nabla\\times\\mathbf{B}=\\mu_0\\varepsilon_0\\frac{\\partial\\mathbf{E}}{\\partial t}\n\\]\n\\(\\mathbf{B}=(0,B_y(z,t),0)\\) なので\n\\[\n\\nabla\\times\\mathbf{B}=(-\\frac{\\partial B_y}{\\partial z},0,0)\n\\]\n右辺は \\((\\mu_0\\varepsilon_0\\frac{\\partial E_x}{\\partial t},0,0)\\)。よって \\(x\\) 成分：\n\\[\n\\boxed{-\\frac{\\partial B_y}{\\partial z}=\\mu_0\\varepsilon_0\\frac{\\partial E_x}{\\partial t}}\n\\]\n\n\n8.2 (2) \\(u_{em}\\) と \\(\\mathbf{S}\\) に対し \\(\\partial_t u_{em}+\\nabla\\cdot\\mathbf{S}=0\\) を示せ\n与えられた\n\\[\nu_{em}=\\frac12\\varepsilon_0E^2+\\frac{1}{2\\mu_0}B^2\n=\\frac12\\varepsilon_0E_x^2+\\frac{1}{2\\mu_0}B_y^2\n\\]\n\\[\n\\mathbf{S}=\\frac{1}{\\mu_0}\\mathbf{E}\\times\\mathbf{B}\n=\\frac{1}{\\mu_0}(E_x\\mathbf{i})\\times(B_y\\mathbf{j})\n=\\frac{E_xB_y}{\\mu_0}\\mathbf{k}\n\\]\nまず時間微分：\n\\[\n\\frac{\\partial u_{em}}{\\partial t}\n=\\varepsilon_0E_x\\frac{\\partial E_x}{\\partial t}\n+\\frac{1}{\\mu_0}B_y\\frac{\\partial B_y}{\\partial t}\n\\]\n次に発散（\\(\\mathbf{S}\\) は \\(z\\) 成分のみ）：\n\\[\n\\nabla\\cdot\\mathbf{S}=\\frac{\\partial S_z}{\\partial z}\n=\\frac{\\partial}{\\partial z}\\left(\\frac{E_xB_y}{\\mu_0}\\right)\n=\\frac{1}{\\mu_0}\\left(\nB_y\\frac{\\partial E_x}{\\partial z}\n+E_x\\frac{\\partial B_y}{\\partial z}\n\\right)\n\\]\n\nの関係を代入：\n\n\\[\n\\frac{\\partial E_x}{\\partial z}=-\\frac{\\partial B_y}{\\partial t},\\qquad\n\\frac{\\partial B_y}{\\partial z}=-\\mu_0\\varepsilon_0\\frac{\\partial E_x}{\\partial t}\n\\]\nすると\n\\[\n\\nabla\\cdot\\mathbf{S}\n=\\frac{1}{\\mu_0}\\left(\nB_y\\left(-\\frac{\\partial B_y}{\\partial t}\\right)\n+E_x\\left(-\\mu_0\\varepsilon_0\\frac{\\partial E_x}{\\partial t}\\right)\n\\right)\n=-\\frac{1}{\\mu_0}B_y\\frac{\\partial B_y}{\\partial t}\n-\\varepsilon_0E_x\\frac{\\partial E_x}{\\partial t}\n\\]\nよって\n\\[\n\\frac{\\partial u_{em}}{\\partial t}+\\nabla\\cdot\\mathbf{S}\n=\\left(\\varepsilon_0E_x\\frac{\\partial E_x}{\\partial t}\n+\\frac{1}{\\mu_0}B_y\\frac{\\partial B_y}{\\partial t}\\right)\n+\\left(-\\varepsilon_0E_x\\frac{\\partial E_x}{\\partial t}\n-\\frac{1}{\\mu_0}B_y\\frac{\\partial B_y}{\\partial t}\\right)=0\n\\]\n\\[\n\\boxed{\\frac{\\partial u_{em}}{\\partial t}+\\nabla\\cdot\\mathbf{S}=0}\n\\]"
+  },
+  {
+    "objectID": "denjiki_kakomon2.html#問8ビオサバールと直線電流の磁場",
+    "href": "denjiki_kakomon2.html#問8ビオサバールと直線電流の磁場",
+    "title": "電磁気学 期末試験（2022-02-07） 解答・解説",
+    "section": "9 問8（ビオ・サバールと直線電流の磁場）",
+    "text": "9 問8（ビオ・サバールと直線電流の磁場）\n問題の型\n(1) はビオ・サバールの微小寄与の向き（外積）と距離。\n(2) は既知の積分で \\(B=\\mu_0I/(2\\pi a)\\) を再現。\n(3) は2本の直線電流の重ね合わせ。対称性で成分が消える。\n与式（ビオ・サバール）\n\\[\nd\\mathbf{B}(r)=\\frac{\\mu_0 I}{4\\pi}\\frac{d\\mathbf{r}'\\times(\\mathbf{r}-\\mathbf{r}')}{|\\mathbf{r}-\\mathbf{r}'|^3}\n\\]\n\n9.1 (1) \\(z\\) 軸に沿う無限直線電流 \\(I\\)。\\(r'=(0,0,z')\\) の電流素片 \\(Id\\mathbf{r}'=(0,0,Idz')\\) が \\(r=(a,0,0)\\) に作る \\(d\\mathbf{B}\\)\n\\[\nd\\mathbf{r}'=\\mathbf{k}\\,dz',\\quad\n\\mathbf{r}-\\mathbf{r}'=(a,0,-z')\n\\]\n外積：\n\\[\nd\\mathbf{r}'\\times(\\mathbf{r}-\\mathbf{r}')\n=\\mathbf{k}dz'\\times(a\\mathbf{i}-z'\\mathbf{k})\n=a(\\mathbf{k}\\times\\mathbf{i})dz'\n=a\\mathbf{j}\\,dz'\n\\]\n距離：\n\\[\n|\\mathbf{r}-\\mathbf{r}'|=\\sqrt{a^2+z'^2}\n\\Rightarrow |\\mathbf{r}-\\mathbf{r}'|^3=(a^2+z'^2)^{3/2}\n\\]\nしたがって\n\\[\n\\boxed{\nd\\mathbf{B}\n=\\frac{\\mu_0 I}{4\\pi}\\frac{a\\,dz'}{(a^2+z'^2)^{3/2}}\\,\\mathbf{j}\n}\n\\]\n\n\n9.2 (2) (1) を積分して直線電流全体が \\(r=(a,0,0)\\) に作る磁場\n\\[\n\\mathbf{B}=\\int_{-\\infty}^{\\infty} d\\mathbf{B}\n=\\frac{\\mu_0 I a}{4\\pi}\\mathbf{j}\\int_{-\\infty}^{\\infty}\\frac{dz'}{(a^2+z'^2)^{3/2}}\n\\]\n既知積分：\n\\[\n\\int_{-\\infty}^{\\infty}\\frac{dz'}{(a^2+z'^2)^{3/2}}=\\frac{2}{a^2}\n\\]\nよって\n\\[\n\\boxed{\n\\mathbf{B}=\\frac{\\mu_0 I}{2\\pi a}\\,\\mathbf{j}\n}\n\\]\n\n\n9.3 (3) 2本の無限直線電流：1本は \\((a,0,0)\\) を通り \\(+z\\) 向きに \\(I\\)、もう1本は \\((-a,0,0)\\) を通り \\(+z\\) 向きに \\(I\\)。点 \\(P(0,y,z)\\) の磁場\n無限直線電流（\\(+z\\) 方向）の磁場は、線からの横ベクトル \\(\\boldsymbol{\\rho}\\) に対し\n\\[\n\\mathbf{B}=\\frac{\\mu_0 I}{2\\pi \\rho^2}\\,(\\mathbf{k}\\times\\boldsymbol{\\rho})\n\\quad(\\rho=|\\boldsymbol{\\rho}|)\n\\]\nここでは \\(P\\) の \\(x=0\\) なので \\(z\\) に依存しない（距離は \\(xy\\) 平面で決まる）。\n\n線1（\\(x=a\\)）から：\\(\\boldsymbol{\\rho}_1=(-a)\\mathbf{i}+y\\mathbf{j}\\)、\\(\\rho_1^2=a^2+y^2\\)\n\n\\[\n\\mathbf{k}\\times\\boldsymbol{\\rho}_1=\\mathbf{k}\\times(-a\\mathbf{i}+y\\mathbf{j})\n=-a\\mathbf{j}-y\\mathbf{i}\n\\]\n\\[\n\\mathbf{B}_1=\\frac{\\mu_0 I}{2\\pi(a^2+y^2)}(-y\\mathbf{i}-a\\mathbf{j})\n\\]\n\n線2（\\(x=-a\\)）から：\\(\\boldsymbol{\\rho}_2=a\\mathbf{i}+y\\mathbf{j}\\)、\\(\\rho_2^2=a^2+y^2\\)\n\n\\[\n\\mathbf{k}\\times\\boldsymbol{\\rho}_2=a\\mathbf{j}-y\\mathbf{i}\n\\]\n\\[\n\\mathbf{B}_2=\\frac{\\mu_0 I}{2\\pi(a^2+y^2)}(-y\\mathbf{i}+a\\mathbf{j})\n\\]\n加えると \\(\\mathbf{j}\\) 成分が打ち消し：\n\\[\n\\mathbf{B}=\\mathbf{B}_1+\\mathbf{B}_2\n=\\frac{\\mu_0 I}{2\\pi(a^2+y^2)}\\left(-2y\\mathbf{i}\\right)\n\\]\n\\[\n\\boxed{\n\\mathbf{B}(0,y,z)= -\\frac{\\mu_0 I\\,y}{\\pi(a^2+y^2)}\\,\\mathbf{i}\n}\n\\]"
+  },
+  {
+    "objectID": "denjiki_kakomon2.html#まとめこの試験の典型パターン",
+    "href": "denjiki_kakomon2.html#まとめこの試験の典型パターン",
     "title": "電磁気学 期末試験（2022-02-07） 解答・解説",
     "section": "10 まとめ（この試験の典型パターン）",
     "text": "10 まとめ（この試験の典型パターン）\n\n運動（問1,5）：力（ローレンツ/電流×磁場）→ 運動方程式。回路が絡むなら KVL で \\(I\\) を消去して一次微分方程式へ。\n場の計算（問2,6,8）：\n\nベクトル解析（div/curl）\n\nアンペール（+マクスウェル補正）\n\nビオ・サバール（外積の向きが最重要）\n\nエネルギー（問4,7）：\n\n\\(u=\\frac12\\varepsilon_0E^2+\\frac1{2\\mu_0}B^2\\)\n\n\\(\\mathbf{S}=\\frac1{\\mu_0}\\mathbf{E}\\times\\mathbf{B}\\)\n\n\\(\\partial_t u+\\nabla\\cdot\\mathbf{S}=0\\)（ポインティングの定理）"
