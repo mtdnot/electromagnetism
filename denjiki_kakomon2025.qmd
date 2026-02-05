@@ -1,0 +1,395 @@
+---
+title: "電磁気学 期末試験（2025-02-06） 解答・解説"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    theme: cosmo
+html-math-method: mathjax
+---
+
+## 使う前提（共通）
+
+- 真空の誘電率・透磁率：$\varepsilon_0,\ \mu_0$
+- 単位ベクトル：$\mathbf{i},\mathbf{j},\mathbf{k}$ はそれぞれ $x,y,z$ 方向
+- ローレンツ力：
+$$
+m\frac{d\mathbf{v}}{dt}=q(\mathbf{E}+\mathbf{v}\times\mathbf{B})
+$$
+- ビオ・サバールの法則：
+$$
+d\mathbf{B}(\mathbf{r})=\frac{\mu_0 I}{4\pi}\frac{d\boldsymbol{\ell}\times\mathbf{R}}{|\mathbf{R}|^3},\quad
+\mathbf{R}=\mathbf{r}-\mathbf{r}'
+$$
+- アンペールの法則（静磁場）：
+$$
+\oint \mathbf{B}\cdot d\boldsymbol{\ell}=\mu_0 I_{\text{enc}}
+$$
+- アンペール・マクスウェルの法則：
+$$
+\nabla\times\mathbf{B}=\mu_0\varepsilon_0\frac{\partial\mathbf{E}}{\partial t}
+$$
+- ファラデーの法則：
+$$
+\nabla\times\mathbf{E}=-\frac{\partial\mathbf{B}}{\partial t}
+$$
+- ポインティングベクトル：
+$$
+\mathbf{S}=\frac{1}{\mu_0}\mathbf{E}\times\mathbf{B}
+$$
+- 電磁場エネルギー密度：
+$$
+u_{em}=\frac{1}{2}\varepsilon_0 E^2+\frac{1}{2\mu_0}B^2
+$$
+
+---
+
+## 問1（一様磁場中の荷電粒子運動）
+
+### 問題の型（方針）
+一様磁場 $\mathbf{B}=B\mathbf{k}$ の中で $\mathbf{E}=0$ なら、運動は
+- 力 $q\mathbf{v}\times\mathbf{B}$ が速度に常に垂直
+- 速度の大きさ $|\mathbf{v}|$ が一定
+- $xy$ 平面内では等速円運動（サイクロトロン運動）
+
+まず $x,y$ 成分の微分方程式を書き、次に連立を解く。最後に $x(t),y(t)$ を積分して「円の中心と半径」を読む。
+
+---
+
+### (1) $\omega=qB/m$ を用いて運動方程式の $x,y$ 成分を書け
+
+$\mathbf{v}=v_x\mathbf{i}+v_y\mathbf{j}$ とすると
+$$
+\mathbf{v}\times\mathbf{B}
+=(v_x\mathbf{i}+v_y\mathbf{j})\times(B\mathbf{k})
+= B(v_y\mathbf{i}-v_x\mathbf{j})
+$$
+
+よって
+$$
+m\frac{dv_x}{dt}=qBv_y,\qquad
+m\frac{dv_y}{dt}=-qBv_x
+$$
+
+$\omega=\dfrac{qB}{m}$ とおけば
+$$
+\boxed{\frac{dv_x}{dt}=\omega v_y,\qquad \frac{dv_y}{dt}=-\omega v_x}
+$$
+
+---
+
+### (2) $v_x(0)=\dfrac{v_0}{\sqrt{2}},\ v_y(0)=\dfrac{v_0}{\sqrt{2}}$ のとき $v_x(t),v_y(t)$
+
+(1) は「回転運動」の連立。一般解は初期値 $(v_{x0},v_{y0})$ を用いて
+$$
+v_x(t)=v_{x0}\cos(\omega t)+v_{y0}\sin(\omega t)
+$$
+$$
+v_y(t)=v_{y0}\cos(\omega t)-v_{x0}\sin(\omega t)
+$$
+
+ここで $v_{x0}=v_{y0}=v_0/\sqrt{2}$ を代入すると
+$$
+\boxed{
+v_x(t)=\frac{v_0}{\sqrt{2}}\big(\cos\omega t+\sin\omega t\big),\quad
+v_y(t)=\frac{v_0}{\sqrt{2}}\big(\cos\omega t-\sin\omega t\big)
+}
+$$
+
+---
+
+### (3) (2) のとき、$x(0)=0,\ y(0)=0$ として円軌道の半径と中心を求めよ
+
+速度を積分して位置を得る。一般に（(1) の連立の積分）
+$$
+x(t)=x(0)+\frac{v_{x0}}{\omega}\sin\omega t+\frac{v_{y0}}{\omega}\big(1-\cos\omega t\big)
+$$
+$$
+y(t)=y(0)+\frac{v_{y0}}{\omega}\sin\omega t-\frac{v_{x0}}{\omega}\big(1-\cos\omega t\big)
+$$
+
+ここで $x(0)=y(0)=0$、$v_{x0}=v_{y0}=v_0/\sqrt{2}$ より
+$$
+x(t)=\frac{v_0}{\sqrt{2}\,\omega}\sin\omega t+\frac{v_0}{\sqrt{2}\,\omega}(1-\cos\omega t)
+$$
+$$
+y(t)=\frac{v_0}{\sqrt{2}\,\omega}\sin\omega t-\frac{v_0}{\sqrt{2}\,\omega}(1-\cos\omega t)
+$$
+
+円の中心を読むために $x_c=\dfrac{v_{y0}}{\omega}$、$y_c=-\dfrac{v_{x0}}{\omega}$ を使う（上の形から定数項が中心を与える）：
+$$
+x_c=\frac{v_{y0}}{\omega}=\frac{v_0}{\sqrt{2}\,\omega},\qquad
+y_c=-\frac{v_{x0}}{\omega}=-\frac{v_0}{\sqrt{2}\,\omega}
+$$
+
+半径は速度の大きさ $v_\perp=\sqrt{v_{x0}^2+v_{y0}^2}=v_0$ より
+$$
+R=\frac{v_\perp}{\omega}=\frac{v_0}{\omega}
+$$
+
+したがって
+$$
+\boxed{R=\frac{v_0}{\omega}=\frac{mv_0}{qB}}
+$$
+$$
+\boxed{(x_c,y_c)=\left(\frac{v_0}{\sqrt{2}\,\omega},\ -\frac{v_0}{\sqrt{2}\,\omega}\right)}
+$$
+
+---
+
+## 問2（ベクトル解析とベクトルポテンシャル）
+
+### 問題の型（方針）
+(1) は定義の展開。  
+(2) は一様磁場の典型ゲージ $\mathbf{A}=\frac12\mathbf{B}\times\mathbf{r}$ が
+- $\nabla\cdot\mathbf{A}=0$（クーロンゲージ）
+- $\nabla\times\mathbf{A}=\mathbf{B}$
+を満たすことの確認。  
+(3) は静磁場のマクスウェル方程式 $\nabla\times\mathbf{B}=\mu_0\mathbf{J}$ を使うだけ。
+
+---
+
+### (1) $\nabla\cdot\mathbf{A}$ と $\nabla\times\mathbf{A}$ を $A_x,A_y,A_z$ で表せ
+
+$$
+\boxed{\nabla\cdot\mathbf{A}=
+\frac{\partial A_x}{\partial x}+\frac{\partial A_y}{\partial y}+\frac{\partial A_z}{\partial z}}
+$$
+
+$$
+\boxed{\nabla\times\mathbf{A}=
+\left(
+\frac{\partial A_z}{\partial y}-\frac{\partial A_y}{\partial z},\ 
+\frac{\partial A_x}{\partial z}-\frac{\partial A_z}{\partial x},\ 
+\frac{\partial A_y}{\partial x}-\frac{\partial A_x}{\partial y}
+\right)}
+$$
+
+---
+
+### (2) 一様 $\mathbf{B}=(B_x,B_y,B_z)$ に対し $\mathbf{A}=\frac12\mathbf{B}\times\mathbf{r}$ とおく。$\nabla\cdot\mathbf{A}$ と $\nabla\times\mathbf{A}$
+
+$\mathbf{r}=(x,y,z)$ として
+$$
+\mathbf{B}\times\mathbf{r}=
+\begin{pmatrix}
+B_y z-B_z y\\
+B_z x-B_x z\\
+B_x y-B_y x
+\end{pmatrix}
+\Rightarrow
+\mathbf{A}=\frac12
+\begin{pmatrix}
+B_y z-B_z y\\
+B_z x-B_x z\\
+B_x y-B_y x
+\end{pmatrix}
+$$
+
+**発散**：$A_x$ は $x$ を含まず、$A_y$ は $y$ を含まず、$A_z$ は $z$ を含まないので
+$$
+\boxed{\nabla\cdot\mathbf{A}=0}
+$$
+
+**回転**：成分計算で
+$$
+(\nabla\times\mathbf{A})_x=\frac{\partial A_z}{\partial y}-\frac{\partial A_y}{\partial z}=B_x
+$$
+同様に $y,z$ 成分も一致するため
+$$
+\boxed{\nabla\times\mathbf{A}=\mathbf{B}}
+$$
+
+---
+
+### (3) $\mathbf{B}(r)=\big(-k(x^2+y^2)y,\ k(x^2+y^2)x,\ 0\big)$ に対し電流密度 $\mathbf{J}(r)$ を求めよ
+
+静磁場なので
+$$
+\nabla\times\mathbf{B}=\mu_0\mathbf{J}
+\Rightarrow
+\mathbf{J}=\frac{1}{\mu_0}\nabla\times\mathbf{B}
+$$
+
+$B_z=0$ で $z$ 依存がないため $x,y$ 成分は 0。$z$ 成分だけ：
+$$
+(\nabla\times\mathbf{B})_z=\frac{\partial B_y}{\partial x}-\frac{\partial B_x}{\partial y}
+$$
+
+$$
+B_y=kx(x^2+y^2)\Rightarrow \frac{\partial B_y}{\partial x}=k(3x^2+y^2)
+$$
+$$
+B_x=-ky(x^2+y^2)\Rightarrow \frac{\partial B_x}{\partial y}=-k(x^2+3y^2)
+$$
+
+よって
+$$
+(\nabla\times\mathbf{B})_z=k(3x^2+y^2)-\big(-k(x^2+3y^2)\big)=4k(x^2+y^2)
+$$
+
+$$
+\boxed{\mathbf{J}(r)=\left(0,\ 0,\ \frac{4k(x^2+y^2)}{\mu_0}\right)}
+$$
+
+---
+
+## 問3（有限直線電流と正方形回路の磁場）
+
+### 問題の型（方針）
+(1)(2) はビオ・サバールで「微小要素 → 積分」をやる。  
+有限直線電流の磁場は
+$$
+B=\frac{\mu_0 I}{4\pi r}(\sin\theta_1+\sin\theta_2)
+$$
+の形になる（$\theta$ は端点が見込む角）。  
+(3) は正方形の各辺の寄与を足し合わせる（対称性で大きさが揃う）。
+
+---
+
+### (1) 図の線分上の微小要素（長さ $dz$）が点 $P(r,0,0)$ に作る $d\mathbf{B}$ を求めよ（$z=r\tan\theta$ で表せ）
+
+線分 $AB$ を含む直線を $z$ 軸とみなす。電流要素は
+$$
+d\boldsymbol{\ell}=dz\,\mathbf{k}
+$$
+点 $P$ を $\mathbf{r}=(r,0,0)$、要素位置を $\mathbf{r}'=(0,0,z)$ とすると
+$$
+\mathbf{R}=\mathbf{r}-\mathbf{r}'=(r,0,-z)
+$$
+
+外積：
+$$
+d\boldsymbol{\ell}\times\mathbf{R}
+=dz\,\mathbf{k}\times(r\mathbf{i}-z\mathbf{k})
+= r\,dz\,(\mathbf{k}\times\mathbf{i})
+=r\,dz\,\mathbf{j}
+$$
+
+大きさは $|\mathbf{R}|^3=(r^2+z^2)^{3/2}$ なので
+$$
+d\mathbf{B}
+=\frac{\mu_0 I}{4\pi}\frac{r\,dz}{(r^2+z^2)^{3/2}}\,\mathbf{j}
+$$
+
+ここで $z=r\tan\theta$ と置換すると
+$$
+dz=r\sec^2\theta\,d\theta,\quad (r^2+z^2)^{3/2}=r^3\sec^3\theta
+$$
+したがって
+$$
+d\mathbf{B}
+=\frac{\mu_0 I}{4\pi}\frac{r\cdot r\sec^2\theta}{r^3\sec^3\theta}\,d\theta\,\mathbf{j}
+=\frac{\mu_0 I}{4\pi r}\cos\theta\,d\theta\,\mathbf{j}
+$$
+
+$$
+\boxed{d\mathbf{B}=\frac{\mu_0 I}{4\pi r}\cos\theta\,d\theta\,\mathbf{j}}
+$$
+
+---
+
+### (2) $\angle APO=\alpha,\ \angle BPO=\beta$ として、(1) を $-\beta\le\theta\le\alpha$ で積分し、線分 $AB$ 全体の磁場を求めよ
+
+(1) を積分する：
+$$
+\mathbf{B}
+=\int_{-\beta}^{\alpha}\frac{\mu_0 I}{4\pi r}\cos\theta\,d\theta\,\mathbf{j}
+=\frac{\mu_0 I}{4\pi r}\big(\sin\alpha+\sin\beta\big)\mathbf{j}
+$$
+
+$$
+\boxed{\mathbf{B}(P)=\frac{\mu_0 I}{4\pi r}\big(\sin\alpha+\sin\beta\big)\mathbf{j}}
+$$
+
+---
+
+### (3) 右図の正方形回路（1辺 $2a$）の電流が中心に作る磁場を求めよ
+
+中心から各辺までの距離は $a$。各辺は有限直線電流として (2) の形を使える。
+
+中心から見た各辺の両端は対称で、見込み角は
+$$
+\tan\theta=\frac{a}{a}=1\Rightarrow \theta=\frac{\pi}{4}
+$$
+よって各辺の寄与（大きさ）は
+$$
+B_{\text{side}}=\frac{\mu_0 I}{4\pi a}\big(\sin\theta+\sin\theta\big)
+=\frac{\mu_0 I}{4\pi a}\cdot 2\cdot \frac{\sqrt{2}}{2}
+=\frac{\mu_0 I}{4\pi a}\sqrt{2}
+$$
+
+4 辺分を足すと
+$$
+B_{\text{total}}=4B_{\text{side}}=\frac{\mu_0 I}{\pi a}\sqrt{2}
+$$
+
+向きは右ねじ（図の電流向きが時計回りなら $-\mathbf{k}$、反時計回りなら $+\mathbf{k}$）。図の向きに従って書くなら：
+$$
+\boxed{\ |\mathbf{B}|=\frac{\mu_0 I}{\pi a}\sqrt{2},\quad \mathbf{B}\ \text{は回路面に垂直}\ }
+$$
+
+---
+
+## 問4（レール＋導体棒：運動方程式と回路方程式）
+
+### 問題の型（方針）
+「動く導体棒」＋「一様磁場」では運動起電力 $\mathcal{E}_{ind}=Bav$ が生じる。  
+回路方程式（KVL）で $I$ を $v$ に結びつけ、運動方程式 $M\dot v = I aB$ に代入すると一次微分方程式になる。
+
+---
+
+### (1) 運動方程式を書け
+
+磁場中で電流 $I$ が流れる棒（長さ $a$）が受ける力の大きさは
+$$
+F=I a B
+$$
+よって（棒の運動方向を正にとる）
+$$
+\boxed{M\frac{dv}{dt}=I a B}
+$$
+
+---
+
+### (2) 誘導起電力を考え、オームの法則を書け
+
+棒の運動による起電力（面積変化）：
+$$
+\mathcal{E}_{ind}=Bav
+$$
+これは電池 $V$ を打ち消す向きに働くので
+$$
+V-\mathcal{E}_{ind}-IR=0
+\Rightarrow
+\boxed{IR=V-Bav}
+$$
+$$
+\boxed{I=\frac{V-Bav}{R}}
+$$
+
+---
+
+### (3) 時刻 $t$ における $I(t)$ と $v(t)$ を求めよ（初速 $v(0)=0$）
+
+(1)(2) を連立：
+$$
+M\frac{dv}{dt}=aB\frac{V-Bav}{R}
+$$
+$$
+\frac{dv}{dt}+\frac{B^2a^2}{MR}v=\frac{aBV}{MR}
+$$
+
+時定数と終端速度
+$$
+\tau=\frac{MR}{B^2a^2},\qquad v_\infty=\frac{V}{Ba}
+$$
+で解くと
+$$
+\boxed{v(t)=v_\infty\left(1-e^{-t/\tau}\right)=\frac{V}{Ba}\left(1-e^{-t/\tau}\right)}
+$$
+
+電流は
+$$
+I(t)=\frac{V-Bav(t
