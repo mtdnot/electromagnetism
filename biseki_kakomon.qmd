@@ -1,0 +1,297 @@
+---
+title: "微分積分学 期末試験 解答・解説"
+---
+
+## 問題1（空欄補充）
+
+### (1) 二階偏導関数
+
+#### 問題
+$z = \log|x^2 - 2y|$ に対して  
+$\frac{\partial^2 z}{\partial x^2}$，$\frac{\partial^2 z}{\partial y \partial x}$ を求める。
+
+#### 手順
+まず
+$$
+z = \log|x^2 - 2y|
+$$
+より，一階偏導関数を計算する。
+
+$$
+\frac{\partial z}{\partial x}
+= \frac{1}{x^2 - 2y} \cdot 2x
+= \frac{2x}{x^2 - 2y}
+$$
+
+$$
+\frac{\partial z}{\partial y}
+= \frac{1}{x^2 - 2y} \cdot (-2)
+= -\frac{2}{x^2 - 2y}
+$$
+
+次に二階偏導関数。
+
+$$
+\frac{\partial^2 z}{\partial x^2}
+= \frac{(2)(x^2 - 2y) - 2x(2x)}{(x^2 - 2y)^2}
+= \frac{-2x^2 - 4y}{(x^2 - 2y)^2}
+$$
+
+$$
+\frac{\partial^2 z}{\partial y \partial x}
+= \frac{\partial}{\partial y}
+\left( \frac{2x}{x^2 - 2y} \right)
+= \frac{4x}{(x^2 - 2y)^2}
+$$
+
+#### 解答
+- ア：$\displaystyle \frac{-2x^2 - 4y}{(x^2 - 2y)^2}$
+- イ：$\displaystyle \frac{4x}{(x^2 - 2y)^2}$
+
+---
+
+### (2) 合成関数の微分
+
+#### 問題
+$z = f(x,y)$，$x = a \cos t$，$y = b \sin t$ のとき  
+$\frac{dz}{dt}$，$\frac{d^2 z}{dt^2}$ を求める。
+
+#### 手順
+合成関数の微分公式を使う。
+
+$$
+\frac{dz}{dt}
+= f_x \frac{dx}{dt} + f_y \frac{dy}{dt}
+$$
+
+$$
+\frac{dx}{dt} = -a \sin t, \quad
+\frac{dy}{dt} = b \cos t
+$$
+
+よって
+$$
+\frac{dz}{dt}
+= -a f_x \sin t + b f_y \cos t
+$$
+
+二階微分はさらに微分する。
+
+$$
+\frac{d^2 z}{dt^2}
+= f_{xx} \left(\frac{dx}{dt}\right)^2
++ 2 f_{xy} \frac{dx}{dt}\frac{dy}{dt}
++ f_{yy} \left(\frac{dy}{dt}\right)^2
++ f_x \frac{d^2 x}{dt^2}
++ f_y \frac{d^2 y}{dt^2}
+$$
+
+$$
+\frac{d^2 x}{dt^2} = -a \cos t, \quad
+\frac{d^2 y}{dt^2} = -b \sin t
+$$
+
+#### 解答
+- ウ：$\displaystyle -a f_x \sin t + b f_y \cos t$
+- エ：上式の二階微分式
+
+---
+
+### (3) 二次関数の最大値
+
+#### 問題
+3つの二次関数のうち最大値をもつものを求める。
+
+#### 手順
+二次形式の係数行列を調べる。
+
+$f(x,y)$ は正定値 → 最小値  
+$g(x,y)$ は負定値 → 最大値  
+$h(x,y)$ は判別不能
+
+よって最大値をもつのは $g(x,y)$。
+
+$$
+g_x = -2x + 2y + 6 = 0
+$$
+$$
+g_y = 2x - 4y - 8 = 0
+$$
+
+解くと
+$$
+(x,y) = (2,1)
+$$
+
+代入すると
+$$
+g(2,1) = 4
+$$
+
+#### 解答
+- オ：$g(x,y)$
+- カ：$(2,1)$
+- キ：$4$
+
+---
+
+### (4) 重積分（$x$ のみ残す）
+
+#### 問題
+$$
+\iint_D x \, dx dy,
+\quad
+x^2 - 6x + 6 \le y \le -x^2 + 4x - 2
+$$
+
+#### 手順
+上下の曲線が交わる条件。
+
+$$
+x^2 - 6x + 6 = -x^2 + 4x - 2
+$$
+
+$$
+2x^2 - 10x + 8 = 0
+\Rightarrow x = 1, 4
+$$
+
+まず $y$ で積分。
+
+$$
+\int ( (-x^2 + 4x - 2) - (x^2 - 6x + 6) ) x \, dy
+$$
+
+$$
+= \int ( -2x^2 + 10x - 8 ) x \, dx
+$$
+
+計算すると
+$$
+6
+$$
+
+#### 解答
+- ク：$1 \le x \le 4$
+- ケ：$( -2x^2 + 10x - 8 )x$
+- コ：$6$
+
+---
+
+### (5) 変数変換
+
+#### 問題
+$$
+u = x + y, \quad v = 3x - y
+$$
+
+#### 手順
+ヤコビアンを計算。
+
+$$
+\left| \frac{\partial(x,y)}{\partial(u,v)} \right|
+= \frac{1}{4}
+$$
+
+領域は
+$$
+0 \le u \le 2, \quad 0 \le v \le 3
+$$
+
+被積分関数は
+$$
+y = \frac{3u - v}{4}
+$$
+
+よって
+$$
+\iint_K \frac{3u - v}{16} \, du dv
+$$
+
+計算すると
+$$
+\frac{3}{8}
+$$
+
+#### 解答
+- サ：$\displaystyle \frac{3u - v}{16}$
+- シ：$0 \le u \le 2,\ 0 \le v \le 3$
+- ス：$\displaystyle \frac{3}{8}$
+
+---
+
+## 問題2（サイクロイド）
+
+### (1) 弧長
+
+$$
+\frac{dx}{dt} = a(1 - \cos t), \quad
+\frac{dy}{dt} = a \sin t
+$$
+
+$$
+\sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2}
+= 2a \sin \frac{t}{2}
+$$
+
+$$
+L = \int_0^T 2a \sin \frac{t}{2} dt
+= 4a \left(1 - \cos \frac{T}{2}\right)
+$$
+
+---
+
+### (2) 面積
+
+$$
+S = \int_0^{2\pi} y \frac{dx}{dt} dt
+= 3\pi a^2
+$$
+
+---
+
+## 問題3（極値）
+
+停留点：
+$$
+(x,y) = (1,1), (-1,-1)
+$$
+
+$(1,1)$：極大  
+$(-1,-1)$：極小  
+
+いずれも全体の最大・最小ではない（無限に発散）。
+
+---
+
+## 問題4（極座標）
+
+$$
+\iint_D \frac{dxdy}{(1 + x^2 + y^2)^{3/2}}
+= 2\pi \int_0^3 \frac{r}{(1+r^2)^{3/2}} dr
+= 2\pi \left(1 - \frac{1}{\sqrt{10}}\right)
+$$
+
+---
+
+## 問題5（級数）
+
+### (1)
+比較判定より **収束**
+
+### (2)
+比の判定より **収束**
+
+---
+
+## 問題6（整級数）
+
+$$
+\log(1+x)
+= x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots
+$$
+
+成立範囲：
+$$
+-1 < x \le 1
+$$

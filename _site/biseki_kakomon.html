@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Electromagnetism</title>
+<title>微分積分学 期末試験 解答・解説 – Electromagnetism</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,10 +68,39 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -89,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -107,13 +136,41 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#問題1空欄補充" id="toc-問題1空欄補充" class="nav-link active" data-scroll-target="#問題1空欄補充"><span class="header-section-number">1</span> 問題1（空欄補充）</a>
+  <ul class="collapse">
+  <li><a href="#二階偏導関数" id="toc-二階偏導関数" class="nav-link" data-scroll-target="#二階偏導関数"><span class="header-section-number">1.1</span> (1) 二階偏導関数</a></li>
+  <li><a href="#合成関数の微分" id="toc-合成関数の微分" class="nav-link" data-scroll-target="#合成関数の微分"><span class="header-section-number">1.2</span> (2) 合成関数の微分</a></li>
+  <li><a href="#二次関数の最大値" id="toc-二次関数の最大値" class="nav-link" data-scroll-target="#二次関数の最大値"><span class="header-section-number">1.3</span> (3) 二次関数の最大値</a></li>
+  <li><a href="#重積分x-のみ残す" id="toc-重積分x-のみ残す" class="nav-link" data-scroll-target="#重積分x-のみ残す"><span class="header-section-number">1.4</span> (4) 重積分（<span class="math inline">\(x\)</span> のみ残す）</a></li>
+  <li><a href="#変数変換" id="toc-変数変換" class="nav-link" data-scroll-target="#変数変換"><span class="header-section-number">1.5</span> (5) 変数変換</a></li>
+  </ul></li>
+  <li><a href="#問題2サイクロイド" id="toc-問題2サイクロイド" class="nav-link" data-scroll-target="#問題2サイクロイド"><span class="header-section-number">2</span> 問題2（サイクロイド）</a>
+  <ul class="collapse">
+  <li><a href="#弧長" id="toc-弧長" class="nav-link" data-scroll-target="#弧長"><span class="header-section-number">2.1</span> (1) 弧長</a></li>
+  <li><a href="#面積" id="toc-面積" class="nav-link" data-scroll-target="#面積"><span class="header-section-number">2.2</span> (2) 面積</a></li>
+  </ul></li>
+  <li><a href="#問題3極値" id="toc-問題3極値" class="nav-link" data-scroll-target="#問題3極値"><span class="header-section-number">3</span> 問題3（極値）</a></li>
+  <li><a href="#問題4極座標" id="toc-問題4極座標" class="nav-link" data-scroll-target="#問題4極座標"><span class="header-section-number">4</span> 問題4（極座標）</a></li>
+  <li><a href="#問題5級数" id="toc-問題5級数" class="nav-link" data-scroll-target="#問題5級数"><span class="header-section-number">5</span> 問題5（級数）</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">5.1</span> (1)</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"><span class="header-section-number">5.2</span> (2)</a></li>
+  </ul></li>
+  <li><a href="#問題6整級数" id="toc-問題6整級数" class="nav-link" data-scroll-target="#問題6整級数"><span class="header-section-number">6</span> 問題6（整級数）</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Electromagnetism</h1>
+<h1 class="title">微分積分学 期末試験 解答・解説</h1>
 </div>
 
 
@@ -130,39 +187,279 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>**電磁気学演習（第1回〜第14回）</p>
-</div>
-</div>
-<section id="contents" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="contents"><span class="header-section-number">1</span> Contents</h2>
-<div class="grid">
-<div class="g-col-12 g-col-md-6">
-<p>##　リンク - <a href="electromagnetism.html">公式集</a></p>
-<ul>
-<li><p><a href="class.html">授業ノート</a></p></li>
-<li><p><a href="biseki.html">微積</a></p></li>
-<li><p><a href="denjiki_kakomon2.html">電磁気過去問</a></p></li>
-<li><p><a href="denjiki_kakomon2025.html">電磁気過去問令和最新版2025</a></p></li>
-<li><p><a href="biseki_kakomon.html">微積過去問</a></p></li>
-</ul>
-</div>
-<section id="参考" class="level3 g-col-12 g-col-md-6" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="参考"><span class="header-section-number">1.1</span> 参考</h3>
-<ul>
-<li>ガウスの法則 / アンペールの法則 / 誘導など</li>
-</ul>
+<section id="問題1空欄補充" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="問題1空欄補充"><span class="header-section-number">1</span> 問題1（空欄補充）</h2>
+<section id="二階偏導関数" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="二階偏導関数"><span class="header-section-number">1.1</span> (1) 二階偏導関数</h3>
+<section id="問題" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="問題"><span class="header-section-number">1.1.1</span> 問題</h4>
+<p><span class="math inline">\(z = \log|x^2 - 2y|\)</span> に対して<br>
+<span class="math inline">\(\frac{\partial^2 z}{\partial x^2}\)</span>，<span class="math inline">\(\frac{\partial^2 z}{\partial y \partial x}\)</span> を求める。</p>
 </section>
-</div>
+<section id="手順" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored" data-anchor-id="手順"><span class="header-section-number">1.1.2</span> 手順</h4>
+<p>まず <span class="math display">\[
+z = \log|x^2 - 2y|
+\]</span> より，一階偏導関数を計算する。</p>
+<p><span class="math display">\[
+\frac{\partial z}{\partial x}
+= \frac{1}{x^2 - 2y} \cdot 2x
+= \frac{2x}{x^2 - 2y}
+\]</span></p>
+<p><span class="math display">\[
+\frac{\partial z}{\partial y}
+= \frac{1}{x^2 - 2y} \cdot (-2)
+= -\frac{2}{x^2 - 2y}
+\]</span></p>
+<p>次に二階偏導関数。</p>
+<p><span class="math display">\[
+\frac{\partial^2 z}{\partial x^2}
+= \frac{(2)(x^2 - 2y) - 2x(2x)}{(x^2 - 2y)^2}
+= \frac{-2x^2 - 4y}{(x^2 - 2y)^2}
+\]</span></p>
+<p><span class="math display">\[
+\frac{\partial^2 z}{\partial y \partial x}
+= \frac{\partial}{\partial y}
+\left( \frac{2x}{x^2 - 2y} \right)
+= \frac{4x}{(x^2 - 2y)^2}
+\]</span></p>
+</section>
+<section id="解答" class="level4" data-number="1.1.3">
+<h4 data-number="1.1.3" class="anchored" data-anchor-id="解答"><span class="header-section-number">1.1.3</span> 解答</h4>
+<ul>
+<li>ア：<span class="math inline">\(\displaystyle \frac{-2x^2 - 4y}{(x^2 - 2y)^2}\)</span></li>
+<li>イ：<span class="math inline">\(\displaystyle \frac{4x}{(x^2 - 2y)^2}\)</span></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="合成関数の微分" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="合成関数の微分"><span class="header-section-number">1.2</span> (2) 合成関数の微分</h3>
+<section id="問題-1" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="問題-1"><span class="header-section-number">1.2.1</span> 問題</h4>
+<p><span class="math inline">\(z = f(x,y)\)</span>，<span class="math inline">\(x = a \cos t\)</span>，<span class="math inline">\(y = b \sin t\)</span> のとき<br>
+<span class="math inline">\(\frac{dz}{dt}\)</span>，<span class="math inline">\(\frac{d^2 z}{dt^2}\)</span> を求める。</p>
+</section>
+<section id="手順-1" class="level4" data-number="1.2.2">
+<h4 data-number="1.2.2" class="anchored" data-anchor-id="手順-1"><span class="header-section-number">1.2.2</span> 手順</h4>
+<p>合成関数の微分公式を使う。</p>
+<p><span class="math display">\[
+\frac{dz}{dt}
+= f_x \frac{dx}{dt} + f_y \frac{dy}{dt}
+\]</span></p>
+<p><span class="math display">\[
+\frac{dx}{dt} = -a \sin t, \quad
+\frac{dy}{dt} = b \cos t
+\]</span></p>
+<p>よって <span class="math display">\[
+\frac{dz}{dt}
+= -a f_x \sin t + b f_y \cos t
+\]</span></p>
+<p>二階微分はさらに微分する。</p>
+<p><span class="math display">\[
+\frac{d^2 z}{dt^2}
+= f_{xx} \left(\frac{dx}{dt}\right)^2
++ 2 f_{xy} \frac{dx}{dt}\frac{dy}{dt}
++ f_{yy} \left(\frac{dy}{dt}\right)^2
++ f_x \frac{d^2 x}{dt^2}
++ f_y \frac{d^2 y}{dt^2}
+\]</span></p>
+<p><span class="math display">\[
+\frac{d^2 x}{dt^2} = -a \cos t, \quad
+\frac{d^2 y}{dt^2} = -b \sin t
+\]</span></p>
+</section>
+<section id="解答-1" class="level4" data-number="1.2.3">
+<h4 data-number="1.2.3" class="anchored" data-anchor-id="解答-1"><span class="header-section-number">1.2.3</span> 解答</h4>
+<ul>
+<li>ウ：<span class="math inline">\(\displaystyle -a f_x \sin t + b f_y \cos t\)</span></li>
+<li>エ：上式の二階微分式</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="二次関数の最大値" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="二次関数の最大値"><span class="header-section-number">1.3</span> (3) 二次関数の最大値</h3>
+<section id="問題-2" class="level4" data-number="1.3.1">
+<h4 data-number="1.3.1" class="anchored" data-anchor-id="問題-2"><span class="header-section-number">1.3.1</span> 問題</h4>
+<p>3つの二次関数のうち最大値をもつものを求める。</p>
+</section>
+<section id="手順-2" class="level4" data-number="1.3.2">
+<h4 data-number="1.3.2" class="anchored" data-anchor-id="手順-2"><span class="header-section-number">1.3.2</span> 手順</h4>
+<p>二次形式の係数行列を調べる。</p>
+<p><span class="math inline">\(f(x,y)\)</span> は正定値 → 最小値<br>
+<span class="math inline">\(g(x,y)\)</span> は負定値 → 最大値<br>
+<span class="math inline">\(h(x,y)\)</span> は判別不能</p>
+<p>よって最大値をもつのは <span class="math inline">\(g(x,y)\)</span>。</p>
+<p><span class="math display">\[
+g_x = -2x + 2y + 6 = 0
+\]</span> <span class="math display">\[
+g_y = 2x - 4y - 8 = 0
+\]</span></p>
+<p>解くと <span class="math display">\[
+(x,y) = (2,1)
+\]</span></p>
+<p>代入すると <span class="math display">\[
+g(2,1) = 4
+\]</span></p>
+</section>
+<section id="解答-2" class="level4" data-number="1.3.3">
+<h4 data-number="1.3.3" class="anchored" data-anchor-id="解答-2"><span class="header-section-number">1.3.3</span> 解答</h4>
+<ul>
+<li>オ：<span class="math inline">\(g(x,y)\)</span></li>
+<li>カ：<span class="math inline">\((2,1)\)</span></li>
+<li>キ：<span class="math inline">\(4\)</span></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="重積分x-のみ残す" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="重積分x-のみ残す"><span class="header-section-number">1.4</span> (4) 重積分（<span class="math inline">\(x\)</span> のみ残す）</h3>
+<section id="問題-3" class="level4" data-number="1.4.1">
+<h4 data-number="1.4.1" class="anchored" data-anchor-id="問題-3"><span class="header-section-number">1.4.1</span> 問題</h4>
+<p><span class="math display">\[
+\iint_D x \, dx dy,
+\quad
+x^2 - 6x + 6 \le y \le -x^2 + 4x - 2
+\]</span></p>
+</section>
+<section id="手順-3" class="level4" data-number="1.4.2">
+<h4 data-number="1.4.2" class="anchored" data-anchor-id="手順-3"><span class="header-section-number">1.4.2</span> 手順</h4>
+<p>上下の曲線が交わる条件。</p>
+<p><span class="math display">\[
+x^2 - 6x + 6 = -x^2 + 4x - 2
+\]</span></p>
+<p><span class="math display">\[
+2x^2 - 10x + 8 = 0
+\Rightarrow x = 1, 4
+\]</span></p>
+<p>まず <span class="math inline">\(y\)</span> で積分。</p>
+<p><span class="math display">\[
+\int ( (-x^2 + 4x - 2) - (x^2 - 6x + 6) ) x \, dy
+\]</span></p>
+<p><span class="math display">\[
+= \int ( -2x^2 + 10x - 8 ) x \, dx
+\]</span></p>
+<p>計算すると <span class="math display">\[
+6
+\]</span></p>
+</section>
+<section id="解答-3" class="level4" data-number="1.4.3">
+<h4 data-number="1.4.3" class="anchored" data-anchor-id="解答-3"><span class="header-section-number">1.4.3</span> 解答</h4>
+<ul>
+<li>ク：<span class="math inline">\(1 \le x \le 4\)</span></li>
+<li>ケ：<span class="math inline">\(( -2x^2 + 10x - 8 )x\)</span></li>
+<li>コ：<span class="math inline">\(6\)</span></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="変数変換" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="変数変換"><span class="header-section-number">1.5</span> (5) 変数変換</h3>
+<section id="問題-4" class="level4" data-number="1.5.1">
+<h4 data-number="1.5.1" class="anchored" data-anchor-id="問題-4"><span class="header-section-number">1.5.1</span> 問題</h4>
+<p><span class="math display">\[
+u = x + y, \quad v = 3x - y
+\]</span></p>
+</section>
+<section id="手順-4" class="level4" data-number="1.5.2">
+<h4 data-number="1.5.2" class="anchored" data-anchor-id="手順-4"><span class="header-section-number">1.5.2</span> 手順</h4>
+<p>ヤコビアンを計算。</p>
+<p><span class="math display">\[
+\left| \frac{\partial(x,y)}{\partial(u,v)} \right|
+= \frac{1}{4}
+\]</span></p>
+<p>領域は <span class="math display">\[
+0 \le u \le 2, \quad 0 \le v \le 3
+\]</span></p>
+<p>被積分関数は <span class="math display">\[
+y = \frac{3u - v}{4}
+\]</span></p>
+<p>よって <span class="math display">\[
+\iint_K \frac{3u - v}{16} \, du dv
+\]</span></p>
+<p>計算すると <span class="math display">\[
+\frac{3}{8}
+\]</span></p>
+</section>
+<section id="解答-4" class="level4" data-number="1.5.3">
+<h4 data-number="1.5.3" class="anchored" data-anchor-id="解答-4"><span class="header-section-number">1.5.3</span> 解答</h4>
+<ul>
+<li>サ：<span class="math inline">\(\displaystyle \frac{3u - v}{16}\)</span></li>
+<li>シ：<span class="math inline">\(0 \le u \le 2,\ 0 \le v \le 3\)</span></li>
+<li>ス：<span class="math inline">\(\displaystyle \frac{3}{8}\)</span></li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+<section id="問題2サイクロイド" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="問題2サイクロイド"><span class="header-section-number">2</span> 問題2（サイクロイド）</h2>
+<section id="弧長" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="弧長"><span class="header-section-number">2.1</span> (1) 弧長</h3>
+<p><span class="math display">\[
+\frac{dx}{dt} = a(1 - \cos t), \quad
+\frac{dy}{dt} = a \sin t
+\]</span></p>
+<p><span class="math display">\[
+\sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2}
+= 2a \sin \frac{t}{2}
+\]</span></p>
+<p><span class="math display">\[
+L = \int_0^T 2a \sin \frac{t}{2} dt
+= 4a \left(1 - \cos \frac{T}{2}\right)
+\]</span></p>
+<hr>
+</section>
+<section id="面積" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="面積"><span class="header-section-number">2.2</span> (2) 面積</h3>
+<p><span class="math display">\[
+S = \int_0^{2\pi} y \frac{dx}{dt} dt
+= 3\pi a^2
+\]</span></p>
+<hr>
+</section>
+</section>
+<section id="問題3極値" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="問題3極値"><span class="header-section-number">3</span> 問題3（極値）</h2>
+<p>停留点： <span class="math display">\[
+(x,y) = (1,1), (-1,-1)
+\]</span></p>
+<p><span class="math inline">\((1,1)\)</span>：極大<br>
+<span class="math inline">\((-1,-1)\)</span>：極小</p>
+<p>いずれも全体の最大・最小ではない（無限に発散）。</p>
+<hr>
+</section>
+<section id="問題4極座標" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="問題4極座標"><span class="header-section-number">4</span> 問題4（極座標）</h2>
+<p><span class="math display">\[
+\iint_D \frac{dxdy}{(1 + x^2 + y^2)^{3/2}}
+= 2\pi \int_0^3 \frac{r}{(1+r^2)^{3/2}} dr
+= 2\pi \left(1 - \frac{1}{\sqrt{10}}\right)
+\]</span></p>
+<hr>
+</section>
+<section id="問題5級数" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="問題5級数"><span class="header-section-number">5</span> 問題5（級数）</h2>
+<section id="section" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="section"><span class="header-section-number">5.1</span> (1)</h3>
+<p>比較判定より <strong>収束</strong></p>
+</section>
+<section id="section-1" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="section-1"><span class="header-section-number">5.2</span> (2)</h3>
+<p>比の判定より <strong>収束</strong></p>
+<hr>
+</section>
+</section>
+<section id="問題6整級数" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="問題6整級数"><span class="header-section-number">6</span> 問題6（整級数）</h2>
+<p><span class="math display">\[
+\log(1+x)
+= x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots
+\]</span></p>
+<p>成立範囲： <span class="math display">\[
+-1 &lt; x \le 1
+\]</span></p>
 
 
 </section>
