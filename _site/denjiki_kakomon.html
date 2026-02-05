@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>denjiki_kakomon – Electromagnetism</title>
+<title>電磁気学 期末試験（2022-02-07） 解答・解説 – Electromagnetism</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -107,772 +136,364 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#使う前提共通" id="toc-使う前提共通" class="nav-link active" data-scroll-target="#使う前提共通"><span class="header-section-number">1</span> 使う前提（共通）</a></li>
+  <li><a href="#問1荷電粒子の円運動" id="toc-問1荷電粒子の円運動" class="nav-link" data-scroll-target="#問1荷電粒子の円運動"><span class="header-section-number">2</span> 問1（荷電粒子の円運動）</a>
+  <ul class="collapse">
+  <li><a href="#運動方程式の-xy-成分omegaqbm-を用いる" id="toc-運動方程式の-xy-成分omegaqbm-を用いる" class="nav-link" data-scroll-target="#運動方程式の-xy-成分omegaqbm-を用いる"><span class="header-section-number">2.1</span> (1) 運動方程式の <span class="math inline">\(x,y\)</span> 成分（<span class="math inline">\(\omega=qB/m\)</span> を用いる）</a></li>
+  <li><a href="#初期条件-v_x00-v_y0v_0-のとき-v_xtv_yt" id="toc-初期条件-v_x00-v_y0v_0-のとき-v_xtv_yt" class="nav-link" data-scroll-target="#初期条件-v_x00-v_y0v_0-のとき-v_xtv_yt"><span class="header-section-number">2.2</span> (2) 初期条件 <span class="math inline">\(v_x(0)=0,\ v_y(0)=v_0\)</span> のとき <span class="math inline">\(v_x(t),v_y(t)\)</span></a></li>
+  <li><a href="#さらに-x0x_0-y00-のとき-xtyt" id="toc-さらに-x0x_0-y00-のとき-xtyt" class="nav-link" data-scroll-target="#さらに-x0x_0-y00-のとき-xtyt"><span class="header-section-number">2.3</span> (3) さらに <span class="math inline">\(x(0)=x_0,\ y(0)=0\)</span> のとき <span class="math inline">\(x(t),y(t)\)</span></a></li>
+  </ul></li>
+  <li><a href="#問2ベクトルポテンシャルと電流密度" id="toc-問2ベクトルポテンシャルと電流密度" class="nav-link" data-scroll-target="#問2ベクトルポテンシャルと電流密度"><span class="header-section-number">3</span> 問2（ベクトルポテンシャルと電流密度）</a>
+  <ul class="collapse">
+  <li><a href="#nablacdot-mathbfar-と-nablatimes-mathbfar-を成分で表せ" id="toc-nablacdot-mathbfar-と-nablatimes-mathbfar-を成分で表せ" class="nav-link" data-scroll-target="#nablacdot-mathbfar-と-nablatimes-mathbfar-を成分で表せ"><span class="header-section-number">3.1</span> (1) <span class="math inline">\(\nabla\cdot \mathbf{A}(r)\)</span> と <span class="math inline">\(\nabla\times \mathbf{A}(r)\)</span> を成分で表せ</a></li>
+  <li><a href="#一様-mathbfbb_xb_yb_z-に対し-mathbfarfrac12mathbfbtimesmathbfr-とおくnablacdotmathbfa-と-nablatimesmathbfa" id="toc-一様-mathbfbb_xb_yb_z-に対し-mathbfarfrac12mathbfbtimesmathbfr-とおくnablacdotmathbfa-と-nablatimesmathbfa" class="nav-link" data-scroll-target="#一様-mathbfbb_xb_yb_z-に対し-mathbfarfrac12mathbfbtimesmathbfr-とおくnablacdotmathbfa-と-nablatimesmathbfa"><span class="header-section-number">3.2</span> (2) 一様 <span class="math inline">\(\mathbf{B}=(B_x,B_y,B_z)\)</span> に対し <span class="math inline">\(\mathbf{A}(r)=\frac12\mathbf{B}\times\mathbf{r}\)</span> とおく。<span class="math inline">\(\nabla\cdot\mathbf{A}\)</span> と <span class="math inline">\(\nabla\times\mathbf{A}\)</span></a></li>
+  <li><a href="#mathbfbrleft-kx2y2y-kx2y2x-0right-に対し電流密度-mathbfir-を求めよ" id="toc-mathbfbrleft-kx2y2y-kx2y2x-0right-に対し電流密度-mathbfir-を求めよ" class="nav-link" data-scroll-target="#mathbfbrleft-kx2y2y-kx2y2x-0right-に対し電流密度-mathbfir-を求めよ"><span class="header-section-number">3.3</span> (3) <span class="math inline">\(\mathbf{B}(r)=\left(-k(x^2+y^2)y,\ k(x^2+y^2)x,\ 0\right)\)</span> に対し電流密度 <span class="math inline">\(\mathbf{i}(r)\)</span> を求めよ</a></li>
+  </ul></li>
+  <li><a href="#問3トロイダルコイル" id="toc-問3トロイダルコイル" class="nav-link" data-scroll-target="#問3トロイダルコイル"><span class="header-section-number">4</span> 問3（トロイダル・コイル）</a>
+  <ul class="collapse">
+  <li><a href="#円周-c半径-r上での磁場-b" id="toc-円周-c半径-r上での磁場-b" class="nav-link" data-scroll-target="#円周-c半径-r上での磁場-b"><span class="header-section-number">4.1</span> (1) 円周 <span class="math inline">\(C\)</span>（半径 <span class="math inline">\(r\)</span>）上での磁場 <span class="math inline">\(B\)</span></a></li>
+  <li><a href="#コイルの自己インダクタンス-l" id="toc-コイルの自己インダクタンス-l" class="nav-link" data-scroll-target="#コイルの自己インダクタンス-l"><span class="header-section-number">4.2</span> (2) コイルの自己インダクタンス <span class="math inline">\(L\)</span></a></li>
+  <li><a href="#iti_0cosomega-t-のとき誘導起電力-mathcale_em" id="toc-iti_0cosomega-t-のとき誘導起電力-mathcale_em" class="nav-link" data-scroll-target="#iti_0cosomega-t-のとき誘導起電力-mathcale_em"><span class="header-section-number">4.3</span> (3) <span class="math inline">\(I(t)=I_0\cos(\omega t)\)</span> のとき誘導起電力 <span class="math inline">\(\mathcal{E}_{em}\)</span></a></li>
+  <li><a href="#磁場エネルギー密度-u_m-と総エネルギー-u_m" id="toc-磁場エネルギー密度-u_m-と総エネルギー-u_m" class="nav-link" data-scroll-target="#磁場エネルギー密度-u_m-と総エネルギー-u_m"><span class="header-section-number">4.4</span> (4) 磁場エネルギー密度 <span class="math inline">\(u_m\)</span> と総エネルギー <span class="math inline">\(U_m\)</span></a></li>
+  </ul></li>
+  <li><a href="#問4導体中のエネルギー流ポインティング" id="toc-問4導体中のエネルギー流ポインティング" class="nav-link" data-scroll-target="#問4導体中のエネルギー流ポインティング"><span class="header-section-number">5</span> 問4（導体中のエネルギー流：ポインティング）</a>
+  <ul class="collapse">
+  <li><a href="#点-p0hh0hdでの-mathbfemathbfbmathbfs" id="toc-点-p0hh0hdでの-mathbfemathbfbmathbfs" class="nav-link" data-scroll-target="#点-p0hh0hdでの-mathbfemathbfbmathbfs"><span class="header-section-number">5.1</span> (1) 点 <span class="math inline">\(P(0,h,h)\)</span>（<span class="math inline">\(0&lt;h&lt;d\)</span>）での <span class="math inline">\(\mathbf{E},\mathbf{B},\mathbf{S}\)</span></a></li>
+  <li><a href="#直方体xpm-d-ypm-d-zpm-hへ単位時間に流れ込むエネルギー総和" id="toc-直方体xpm-d-ypm-d-zpm-hへ単位時間に流れ込むエネルギー総和" class="nav-link" data-scroll-target="#直方体xpm-d-ypm-d-zpm-hへ単位時間に流れ込むエネルギー総和"><span class="header-section-number">5.2</span> (2) 直方体（<span class="math inline">\(x=\pm d,\ y=\pm d,\ z=\pm h\)</span>）へ単位時間に流れ込むエネルギー総和</a></li>
+  </ul></li>
+  <li><a href="#問5レールガン運動方程式回路方程式" id="toc-問5レールガン運動方程式回路方程式" class="nav-link" data-scroll-target="#問5レールガン運動方程式回路方程式"><span class="header-section-number">6</span> 問5（レールガン：運動方程式＋回路方程式）</a>
+  <ul class="collapse">
+  <li><a href="#磁場から受ける力を考えて運動方程式" id="toc-磁場から受ける力を考えて運動方程式" class="nav-link" data-scroll-target="#磁場から受ける力を考えて運動方程式"><span class="header-section-number">6.1</span> (1) 磁場から受ける力を考えて運動方程式</a></li>
+  <li><a href="#誘導起電力を考えi-のオームの法則" id="toc-誘導起電力を考えi-のオームの法則" class="nav-link" data-scroll-target="#誘導起電力を考えi-のオームの法則"><span class="header-section-number">6.2</span> (2) 誘導起電力を考え、<span class="math inline">\(I\)</span> のオームの法則</a></li>
+  <li><a href="#時刻-t-における-it-と-vt" id="toc-時刻-t-における-it-と-vt" class="nav-link" data-scroll-target="#時刻-t-における-it-と-vt"><span class="header-section-number">6.3</span> (3) 時刻 <span class="math inline">\(t\)</span> における <span class="math inline">\(I(t)\)</span> と <span class="math inline">\(v(t)\)</span></a></li>
+  <li><a href="#ttoinfty-までの全ジュール熱-e_j" id="toc-ttoinfty-までの全ジュール熱-e_j" class="nav-link" data-scroll-target="#ttoinfty-までの全ジュール熱-e_j"><span class="header-section-number">6.4</span> (4) <span class="math inline">\(t\to\infty\)</span> までの全ジュール熱 <span class="math inline">\(E_J\)</span></a></li>
+  </ul></li>
+  <li><a href="#問6変位電流と磁場" id="toc-問6変位電流と磁場" class="nav-link" data-scroll-target="#問6変位電流と磁場"><span class="header-section-number">7</span> 問6（変位電流と磁場）</a>
+  <ul class="collapse">
+  <li><a href="#電荷-qtq00" id="toc-電荷-qtq00" class="nav-link" data-scroll-target="#電荷-qtq00"><span class="header-section-number">7.1</span> (1) 電荷 <span class="math inline">\(Q(t)\)</span>（<span class="math inline">\(Q(0)=0\)</span>）</a></li>
+  <li><a href="#極板間の電場-e-と変位電流密度" id="toc-極板間の電場-e-と変位電流密度" class="nav-link" data-scroll-target="#極板間の電場-e-と変位電流密度"><span class="header-section-number">7.2</span> (2) 極板間の電場 <span class="math inline">\(E\)</span> と変位電流密度</a></li>
+  <li><a href="#中心軸から距離-r-の磁場rr-と-rr" id="toc-中心軸から距離-r-の磁場rr-と-rr" class="nav-link" data-scroll-target="#中心軸から距離-r-の磁場rr-と-rr"><span class="header-section-number">7.3</span> (3) 中心軸から距離 <span class="math inline">\(r\)</span> の磁場（<span class="math inline">\(r&lt;R\)</span> と <span class="math inline">\(r&gt;R\)</span>）</a></li>
+  </ul></li>
+  <li><a href="#問7平面電磁波の基本エネルギー保存" id="toc-問7平面電磁波の基本エネルギー保存" class="nav-link" data-scroll-target="#問7平面電磁波の基本エネルギー保存"><span class="header-section-number">8</span> 問7（平面電磁波の基本：エネルギー保存）</a>
+  <ul class="collapse">
+  <li><a href="#ファラデー則の-y-成分とアンペールマクスウェルの-x-成分を書け" id="toc-ファラデー則の-y-成分とアンペールマクスウェルの-x-成分を書け" class="nav-link" data-scroll-target="#ファラデー則の-y-成分とアンペールマクスウェルの-x-成分を書け"><span class="header-section-number">8.1</span> (1) ファラデー則の <span class="math inline">\(y\)</span> 成分と、アンペール・マクスウェルの <span class="math inline">\(x\)</span> 成分を書け</a></li>
+  <li><a href="#u_em-と-mathbfs-に対し-partial_t-u_emnablacdotmathbfs0-を示せ" id="toc-u_em-と-mathbfs-に対し-partial_t-u_emnablacdotmathbfs0-を示せ" class="nav-link" data-scroll-target="#u_em-と-mathbfs-に対し-partial_t-u_emnablacdotmathbfs0-を示せ"><span class="header-section-number">8.2</span> (2) <span class="math inline">\(u_{em}\)</span> と <span class="math inline">\(\mathbf{S}\)</span> に対し <span class="math inline">\(\partial_t u_{em}+\nabla\cdot\mathbf{S}=0\)</span> を示せ</a></li>
+  </ul></li>
+  <li><a href="#問8ビオサバールと直線電流の磁場" id="toc-問8ビオサバールと直線電流の磁場" class="nav-link" data-scroll-target="#問8ビオサバールと直線電流の磁場"><span class="header-section-number">9</span> 問8（ビオ・サバールと直線電流の磁場）</a>
+  <ul class="collapse">
+  <li><a href="#z-軸に沿う無限直線電流-ir00z-の電流素片-idmathbfr00idz-が-ra00-に作る-dmathbfb" id="toc-z-軸に沿う無限直線電流-ir00z-の電流素片-idmathbfr00idz-が-ra00-に作る-dmathbfb" class="nav-link" data-scroll-target="#z-軸に沿う無限直線電流-ir00z-の電流素片-idmathbfr00idz-が-ra00-に作る-dmathbfb"><span class="header-section-number">9.1</span> (1) <span class="math inline">\(z\)</span> 軸に沿う無限直線電流 <span class="math inline">\(I\)</span>。<span class="math inline">\(r'=(0,0,z')\)</span> の電流素片 <span class="math inline">\(Id\mathbf{r}'=(0,0,Idz')\)</span> が <span class="math inline">\(r=(a,0,0)\)</span> に作る <span class="math inline">\(d\mathbf{B}\)</span></a></li>
+  <li><a href="#を積分して直線電流全体が-ra00-に作る磁場" id="toc-を積分して直線電流全体が-ra00-に作る磁場" class="nav-link" data-scroll-target="#を積分して直線電流全体が-ra00-に作る磁場"><span class="header-section-number">9.2</span> (2) (1) を積分して直線電流全体が <span class="math inline">\(r=(a,0,0)\)</span> に作る磁場</a></li>
+  <li><a href="#本の無限直線電流1本は-a00-を通り-z-向きに-iもう1本は--a00-を通り-z-向きに-i点-p0yz-の磁場" id="toc-本の無限直線電流1本は-a00-を通り-z-向きに-iもう1本は--a00-を通り-z-向きに-i点-p0yz-の磁場" class="nav-link" data-scroll-target="#本の無限直線電流1本は-a00-を通り-z-向きに-iもう1本は--a00-を通り-z-向きに-i点-p0yz-の磁場"><span class="header-section-number">9.3</span> (3) 2本の無限直線電流：1本は <span class="math inline">\((a,0,0)\)</span> を通り <span class="math inline">\(+z\)</span> 向きに <span class="math inline">\(I\)</span>、もう1本は <span class="math inline">\((-a,0,0)\)</span> を通り <span class="math inline">\(+z\)</span> 向きに <span class="math inline">\(I\)</span>。点 <span class="math inline">\(P(0,y,z)\)</span> の磁場</a></li>
+  </ul></li>
+  <li><a href="#まとめこの試験の典型パターン" id="toc-まとめこの試験の典型パターン" class="nav-link" data-scroll-target="#まとめこの試験の典型パターン"><span class="header-section-number">10</span> まとめ（この試験の典型パターン）</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">電磁気学 期末試験（2022-02-07） 解答・解説</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<pre class="qmd"><code>---
-title: "電磁気学 期末試験（2022-02-07） 解答・解説"
-format:
-  html:
-    toc: true
-    toc-depth: 3
-    number-sections: true
-    theme: cosmo
-html-math-method: mathjax
----
+    
+  
+    
+  </div>
+  
 
-## 使う前提（共通）
 
-- 真空の透磁率：$\mu_0$，誘電率：$\varepsilon_0$
-- 単位ベクトル：$\mathbf{i},\mathbf{j},\mathbf{k}$ はそれぞれ $x,y,z$ 方向
-- ベクトル解析：
-  \[
-  \nabla\cdot\mathbf{A}=\frac{\partial A_x}{\partial x}+\frac{\partial A_y}{\partial y}+\frac{\partial A_z}{\partial z},\quad
-  \nabla\times\mathbf{A}=\begin{pmatrix}
-  \frac{\partial A_z}{\partial y}-\frac{\partial A_y}{\partial z}\\
-  \frac{\partial A_x}{\partial z}-\frac{\partial A_z}{\partial x}\\
-  \frac{\partial A_y}{\partial x}-\frac{\partial A_x}{\partial y}
-  \end{pmatrix}
-  \]
-- マクスウェル方程式（真空）：
-  \[
-  \nabla\times\mathbf{E}=-\frac{\partial\mathbf{B}}{\partial t},\quad
-  \nabla\times\mathbf{B}=\mu_0\varepsilon_0\frac{\partial\mathbf{E}}{\partial t},\quad
-  \nabla\times\mathbf{B}=\mu_0\mathbf{J}\;(\text{静磁場})
-  \]
-- ローレンツ力：
-  \[
-  m\frac{d\mathbf{v}}{dt}=q(\mathbf{E}+\mathbf{v}\times\mathbf{B})
-  \]
+</header>
 
----
 
-## 問1（荷電粒子の円運動）
-
-**問題の型**  
-一様磁場中の荷電粒子運動は「ローレンツ力 $q\mathbf{v}\times\mathbf{B}$ が速度に垂直」なので、速度の大きさが一定になり、等速円運動（またはらせん）になる。ここでは $xy$ 平面内運動。
-
-**設定**  
-一様磁場 $\mathbf{B}=B\mathbf{k}$ 中で、質量 $m$、電荷 $q$ の粒子が  
-\[
-\mathbf{v}=v_x\mathbf{i}+v_y\mathbf{j}
-\]
-で運動。
-
-### (1) 運動方程式の $x,y$ 成分（$\omega=qB/m$ を用いる）
-
-\[
-m\frac{d\mathbf{v}}{dt}=q(\mathbf{v}\times\mathbf{B})
-\]
-\[
-\mathbf{v}\times\mathbf{B}=
-(v_x\mathbf{i}+v_y\mathbf{j})\times(B\mathbf{k})
-= B\,(v_y\mathbf{i}-v_x\mathbf{j})
-\]
-
-よって
-\[
-m\frac{dv_x}{dt}=qB\,v_y,\quad
-m\frac{dv_y}{dt}=-qB\,v_x
-\]
-$\omega=\dfrac{qB}{m}$ とおけば
-\[
-\boxed{\frac{dv_x}{dt}=\omega v_y,\qquad \frac{dv_y}{dt}=-\omega v_x}
-\]
-
-### (2) 初期条件 $v_x(0)=0,\ v_y(0)=v_0$ のとき $v_x(t),v_y(t)$
-
-(1) の連立をもう一度微分して
-\[
-\frac{d^2v_x}{dt^2}=\omega\frac{dv_y}{dt}=-\omega^2 v_x
-\]
-よって
-\[
-v_x(t)=A\sin(\omega t)+B\cos(\omega t)
-\]
-初期条件 $v_x(0)=0$ から $B=0$。また
-\[
-\frac{dv_x}{dt}=\omega v_y
-\Rightarrow v_y(0)=\frac{1}{\omega}\frac{dv_x}{dt}\Big|_{t=0}
-=\frac{1}{\omega}(A\omega)=A
-\]
-より $A=v_0$。
-
-したがって
-\[
-\boxed{v_x(t)=v_0\sin(\omega t),\qquad v_y(t)=v_0\cos(\omega t)}
-\]
-
-### (3) さらに $x(0)=x_0,\ y(0)=0$ のとき $x(t),y(t)$
-
-\[
-\frac{dx}{dt}=v_x(t)=v_0\sin(\omega t)
-\Rightarrow x(t)=x_0+\int_0^t v_0\sin(\omega t')dt'
-\]
-\[
-x(t)=x_0+\frac{v_0}{\omega}\left(1-\cos(\omega t)\right)
-\]
-
-同様に
-\[
-\frac{dy}{dt}=v_y(t)=v_0\cos(\omega t)
-\Rightarrow y(t)=0+\int_0^t v_0\cos(\omega t')dt'
-=\frac{v_0}{\omega}\sin(\omega t)
-\]
-
-\[
-\boxed{x(t)=x_0+\frac{v_0}{\omega}\left(1-\cos\omega t\right),\qquad
-y(t)=\frac{v_0}{\omega}\sin\omega t}
-\]
-
----
-
-## 問2（ベクトルポテンシャルと電流密度）
-
-**問題の型**  
-(1) は定義計算。  
-(2) は「一様磁場の代表的ゲージ $ \mathbf{A}=\frac12\mathbf{B}\times\mathbf{r}$」が $\nabla\cdot\mathbf{A}=0$ を満たし、$\nabla\times\mathbf{A}=\mathbf{B}$ を与えることを確かめる。  
-(3) は静磁場なので $\nabla\times\mathbf{B}=\mu_0\mathbf{i}$（電流密度）で求める。
-
-### (1) $\nabla\cdot \mathbf{A}(r)$ と $\nabla\times \mathbf{A}(r)$ を成分で表せ
-
-$\mathbf{A}(r)=(A_x,A_y,A_z)$ とすると
-\[
-\boxed{\nabla\cdot\mathbf{A}
-=\frac{\partial A_x}{\partial x}+\frac{\partial A_y}{\partial y}+\frac{\partial A_z}{\partial z}}
-\]
-\[
-\boxed{\nabla\times\mathbf{A}
-=\left(
-\frac{\partial A_z}{\partial y}-\frac{\partial A_y}{\partial z},\ 
-\frac{\partial A_x}{\partial z}-\frac{\partial A_z}{\partial x},\ 
+<section id="使う前提共通" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="使う前提共通"><span class="header-section-number">1</span> 使う前提（共通）</h2>
+<ul>
+<li>真空の透磁率：<span class="math inline">\(\mu_0\)</span>，誘電率：<span class="math inline">\(\varepsilon_0\)</span></li>
+<li>単位ベクトル：<span class="math inline">\(\mathbf{i},\mathbf{j},\mathbf{k}\)</span> はそれぞれ <span class="math inline">\(x,y,z\)</span> 方向</li>
+<li>ベクトル解析： [ =++, =
+<span class="math display">\[\begin{pmatrix}
+\frac{\partial A_z}{\partial y}-\frac{\partial A_y}{\partial z}\\
+\frac{\partial A_x}{\partial z}-\frac{\partial A_z}{\partial x}\\
 \frac{\partial A_y}{\partial x}-\frac{\partial A_x}{\partial y}
-\right)}
-\]
-
-### (2) 一様 $\mathbf{B}=(B_x,B_y,B_z)$ に対し $\mathbf{A}(r)=\frac12\mathbf{B}\times\mathbf{r}$ とおく。$\nabla\cdot\mathbf{A}$ と $\nabla\times\mathbf{A}$
-
-まず
-\[
-\mathbf{r}=(x,y,z),\quad \mathbf{B}\times\mathbf{r}=
-\begin{pmatrix}
+\end{pmatrix}\]</span>
+]</li>
+<li>マクスウェル方程式（真空）： [ =-, =_0_0, =_0;() ]</li>
+<li>ローレンツ力： [ m=q(+) ]</li>
+</ul>
+<hr>
+</section>
+<section id="問1荷電粒子の円運動" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="問1荷電粒子の円運動"><span class="header-section-number">2</span> 問1（荷電粒子の円運動）</h2>
+<p><strong>問題の型</strong><br>
+一様磁場中の荷電粒子運動は「ローレンツ力 <span class="math inline">\(q\mathbf{v}\times\mathbf{B}\)</span> が速度に垂直」なので、速度の大きさが一定になり、等速円運動（またはらせん）になる。ここでは <span class="math inline">\(xy\)</span> 平面内運動。</p>
+<p><strong>設定</strong><br>
+一様磁場 <span class="math inline">\(\mathbf{B}=B\mathbf{k}\)</span> 中で、質量 <span class="math inline">\(m\)</span>、電荷 <span class="math inline">\(q\)</span> の粒子が<br>
+[ =v_x+v_y ] で運動。</p>
+<section id="運動方程式の-xy-成分omegaqbm-を用いる" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="運動方程式の-xy-成分omegaqbm-を用いる"><span class="header-section-number">2.1</span> (1) 運動方程式の <span class="math inline">\(x,y\)</span> 成分（<span class="math inline">\(\omega=qB/m\)</span> を用いる）</h3>
+<p>[ m=q() ] [ = (v_x+v_y)(B) = B,(v_y-v_x) ]</p>
+<p>よって [ m=qB,v_y, m=-qB,v_x ] <span class="math inline">\(\omega=\dfrac{qB}{m}\)</span> とおけば [ ]</p>
+</section>
+<section id="初期条件-v_x00-v_y0v_0-のとき-v_xtv_yt" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="初期条件-v_x00-v_y0v_0-のとき-v_xtv_yt"><span class="header-section-number">2.2</span> (2) 初期条件 <span class="math inline">\(v_x(0)=0,\ v_y(0)=v_0\)</span> のとき <span class="math inline">\(v_x(t),v_y(t)\)</span></h3>
+<ol type="1">
+<li>の連立をもう一度微分して [ ==-^2 v_x ] よって [ v_x(t)=A(t)+B(t) ] 初期条件 <span class="math inline">\(v_x(0)=0\)</span> から <span class="math inline">\(B=0\)</span>。また [ =v_y v_y(0)=|_{t=0} =(A)=A ] より <span class="math inline">\(A=v_0\)</span>。</li>
+</ol>
+<p>したがって [ ]</p>
+</section>
+<section id="さらに-x0x_0-y00-のとき-xtyt" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="さらに-x0x_0-y00-のとき-xtyt"><span class="header-section-number">2.3</span> (3) さらに <span class="math inline">\(x(0)=x_0,\ y(0)=0\)</span> のとき <span class="math inline">\(x(t),y(t)\)</span></h3>
+<p>[ =v_x(t)=v_0(t) x(t)=x_0+_0^t v_0(t’)dt’ ] [ x(t)=x_0+(1-(t)) ]</p>
+<p>同様に [ =v_y(t)=v_0(t) y(t)=0+_0^t v_0(t’)dt’ =(t) ]</p>
+<p>[ ]</p>
+<hr>
+</section>
+</section>
+<section id="問2ベクトルポテンシャルと電流密度" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="問2ベクトルポテンシャルと電流密度"><span class="header-section-number">3</span> 問2（ベクトルポテンシャルと電流密度）</h2>
+<p><strong>問題の型</strong><br>
+(1) は定義計算。<br>
+(2) は「一様磁場の代表的ゲージ $ =$」が <span class="math inline">\(\nabla\cdot\mathbf{A}=0\)</span> を満たし、<span class="math inline">\(\nabla\times\mathbf{A}=\mathbf{B}\)</span> を与えることを確かめる。<br>
+(3) は静磁場なので <span class="math inline">\(\nabla\times\mathbf{B}=\mu_0\mathbf{i}\)</span>（電流密度）で求める。</p>
+<section id="nablacdot-mathbfar-と-nablatimes-mathbfar-を成分で表せ" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="nablacdot-mathbfar-と-nablatimes-mathbfar-を成分で表せ"><span class="header-section-number">3.1</span> (1) <span class="math inline">\(\nabla\cdot \mathbf{A}(r)\)</span> と <span class="math inline">\(\nabla\times \mathbf{A}(r)\)</span> を成分で表せ</h3>
+<p><span class="math inline">\(\mathbf{A}(r)=(A_x,A_y,A_z)\)</span> とすると [ ] [ artial A_x}{z}-,&nbsp; - )} ]</p>
+</section>
+<section id="一様-mathbfbb_xb_yb_z-に対し-mathbfarfrac12mathbfbtimesmathbfr-とおくnablacdotmathbfa-と-nablatimesmathbfa" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="一様-mathbfbb_xb_yb_z-に対し-mathbfarfrac12mathbfbtimesmathbfr-とおくnablacdotmathbfa-と-nablatimesmathbfa"><span class="header-section-number">3.2</span> (2) 一様 <span class="math inline">\(\mathbf{B}=(B_x,B_y,B_z)\)</span> に対し <span class="math inline">\(\mathbf{A}(r)=\frac12\mathbf{B}\times\mathbf{r}\)</span> とおく。<span class="math inline">\(\nabla\cdot\mathbf{A}\)</span> と <span class="math inline">\(\nabla\times\mathbf{A}\)</span></h3>
+まず [ =(x,y,z),=
+<span class="math display">\[\begin{pmatrix}
 B_y z-B_z y\\
 B_z x-B_x z\\
 B_x y-B_y x
-\end{pmatrix}
-\]
-\[
-\Rightarrow \mathbf{A}=\frac12
-\begin{pmatrix}
+\end{pmatrix}\]</span>
+] [ =
+<span class="math display">\[\begin{pmatrix}
 B_y z-B_z y\\
 B_z x-B_x z\\
 B_x y-B_y x
-\end{pmatrix}
-\]
-
-**発散**
-\[
-\nabla\cdot\mathbf{A}
-=\frac{\partial A_x}{\partial x}+\frac{\partial A_y}{\partial y}+\frac{\partial A_z}{\partial z}
-\]
-ここで $A_x$ は $x$ を含まず、$A_y$ は $y$ を含まず、$A_z$ は $z$ を含まないので、全部 0。
-\[
-\boxed{\nabla\cdot\mathbf{A}=0}
-\]
-
-**回転（カール）**  
-成分計算すると（定数 $B_x,B_y,B_z$ を用いる）
-\[
-(\nabla\times\mathbf{A})_x=\frac{\partial A_z}{\partial y}-\frac{\partial A_y}{\partial z}
-=\frac12(B_x)-\frac12(-B_x)=B_x
-\]
-同様に
-\[
-(\nabla\times\mathbf{A})_y=B_y,\qquad (\nabla\times\mathbf{A})_z=B_z
-\]
-よって
-\[
-\boxed{\nabla\times\mathbf{A}=\mathbf{B}}
-\]
-
-### (3) $\mathbf{B}(r)=\left(-k(x^2+y^2)y,\ k(x^2+y^2)x,\ 0\right)$ に対し電流密度 $\mathbf{i}(r)$ を求めよ
-
-静磁場なので
-\[
-\nabla\times\mathbf{B}=\mu_0\mathbf{i}
-\Rightarrow \mathbf{i}=\frac{1}{\mu_0}\nabla\times\mathbf{B}
-\]
-
-ここで $B_z=0$ かつ $z$ 依存がないので
-\[
-(\nabla\times\mathbf{B})_x=(\nabla\times\mathbf{B})_y=0
-\]
-\[
-(\nabla\times\mathbf{B})_z=\frac{\partial B_y}{\partial x}-\frac{\partial B_x}{\partial y}
-\]
-
-\[
-B_y=kx(x^2+y^2)\Rightarrow \frac{\partial B_y}{\partial x}
-=k\big((x^2+y^2)+2x^2\big)=k(3x^2+y^2)
-\]
-\[
-B_x=-ky(x^2+y^2)\Rightarrow \frac{\partial B_x}{\partial y}
-=-k\big((x^2+y^2)+2y^2\big)=-k(x^2+3y^2)
-\]
-よって
-\[
-(\nabla\times\mathbf{B})_z=k(3x^2+y^2)-\big(-k(x^2+3y^2)\big)=4k(x^2+y^2)
-\]
-
-\[
-\boxed{\mathbf{i}(r)=\left(0,\ 0,\ \frac{4k(x^2+y^2)}{\mu_0}\right)}
-\]
-
----
-
-## 問3（トロイダル・コイル）
-
-**問題の型**  
-トロイドは「アンペールの法則」で $B$ が一撃で出る。  
-次に $\Phi=BA$ で磁束、$L=N\Phi/I$。  
-誘導起電力は $\mathcal{E}=-L\,dI/dt$。  
-エネルギー密度は $u_m=B^2/(2\mu_0)$、総エネルギーは $U_m=\frac12 LI^2$（整合確認にも使える）。
-
-**設定**  
-半径 $a$ の小円（断面）をもつトロイド。中心線の半径を $r$（$a\ll r$）。巻数 $N$、電流 $I$。
-
-### (1) 円周 $C$（半径 $r$）上での磁場 $B$
-
-アンペールの法則：
-\[
-\oint_C \mathbf{B}\cdot d\mathbf{l}=\mu_0 NI
-\]
-対称性より $C$ 上で $B$ 一定、接線方向：
-\[
-B(2\pi r)=\mu_0 NI
-\Rightarrow
-\boxed{B=\frac{\mu_0 NI}{2\pi r}}
-\]
-
-### (2) コイルの自己インダクタンス $L$
-
-1巻を貫く磁束（断面積 $A=\pi a^2$、一様近似）：
-\[
-\Phi = BA = \frac{\mu_0 NI}{2\pi r}\cdot \pi a^2
-=\frac{\mu_0 NI a^2}{2r}
-\]
-自己インダクタンス定義：
-\[
-L=\frac{N\Phi}{I}
-\Rightarrow
-\boxed{L=\frac{\mu_0 N^2 a^2}{2r}}
-\]
-
-### (3) $I(t)=I_0\cos(\omega t)$ のとき誘導起電力 $\mathcal{E}_{em}$
-
-\[
-\mathcal{E}_{em}=-L\frac{dI}{dt}
-\]
-\[
-\frac{dI}{dt}=-\omega I_0\sin(\omega t)
-\Rightarrow
-\boxed{\mathcal{E}_{em}=L\omega I_0\sin(\omega t)}
-\]
-
-### (4) 磁場エネルギー密度 $u_m$ と総エネルギー $U_m$
-
-磁場：
-\[
-B(t)=\frac{\mu_0 N I(t)}{2\pi r}
-\]
-よって
-\[
-u_m(t)=\frac{B(t)^2}{2\mu_0}
-=\frac{1}{2\mu_0}\left(\frac{\mu_0 N I(t)}{2\pi r}\right)^2
-=
-\boxed{u_m(t)=\frac{\mu_0 N^2 I(t)^2}{8\pi^2 r^2}}
-\]
-
-総エネルギーは
-\[
-U_m=\frac12 L I(t)^2
-=\frac12\cdot\frac{\mu_0 N^2 a^2}{2r}\,I(t)^2
-=
-\boxed{U_m(t)=\frac{\mu_0 N^2 a^2}{4r}\,I(t)^2}
-\]
-
----
-
-## 問4（導体中のエネルギー流：ポインティング）
-
-**問題の型**  
-導体内部でも電磁エネルギーは $\mathbf{S}=\frac1{\mu_0}\mathbf{E}\times\mathbf{B}$ で流れ、体積内のジュール熱 $J\cdot E$ と釣り合う。  
-(1) はオームの法則とアンペール則で $\mathbf{E},\mathbf{B}$ を出して $\mathbf{S}$。  
-(2) は「表面から入るエネルギー流量＝体積でのジュール発熱」を示す問題。
-
-**設定**  
-厚さ $2d$ の無限平板導体。面は $z=\pm d$。抵抗率 $\rho$。  
-電流密度が $x$ 方向に一様：$\mathbf{J}=i_c\,\mathbf{i}$。
-
-### (1) 点 $P(0,h,h)$（$0&lt;h&lt;d$）での $\mathbf{E},\mathbf{B},\mathbf{S}$
-
-**電場**（オームの法則 $\mathbf{E}=\rho\mathbf{J}$）：
-\[
-\boxed{\mathbf{E}=\rho i_c\,\mathbf{i}}
-\]
-
-**磁場**  
-対称性より $\mathbf{B}=B_y(z)\mathbf{j}$ とおける。静磁場で
-\[
-\nabla\times\mathbf{B}=\mu_0\mathbf{J}
-\]
-$\mathbf{B}=B_y(z)\mathbf{j}$ のとき
-\[
-(\nabla\times\mathbf{B})_x=-\frac{dB_y}{dz}=\mu_0 J_x=\mu_0 i_c
-\Rightarrow \frac{dB_y}{dz}=-\mu_0 i_c
-\]
-中心 $z=0$ で対称性から $B_y(0)=0$（奇関数）なので
-\[
-B_y(z)=-\mu_0 i_c z
-\]
-点 $P$ は $z=h$ なので
-\[
-\boxed{\mathbf{B}(P)=-\mu_0 i_c h\,\mathbf{j}}
-\]
-
-**ポインティングベクトル**
-\[
-\mathbf{S}=\frac{1}{\mu_0}\mathbf{E}\times\mathbf{B}
-=\frac{1}{\mu_0}(\rho i_c\mathbf{i})\times(-\mu_0 i_c h\mathbf{j})
-\]
-\[
-\boxed{\mathbf{S}(P)=-\rho i_c^2 h\,\mathbf{k}}
-\]
-（$z&gt;0$ 側では $-z$ 方向にエネルギーが流れる＝導体内部の発熱へ供給される）
-
-### (2) 直方体（$x=\pm d,\ y=\pm d,\ z=\pm h$）へ単位時間に流れ込むエネルギー総和
-
-$\mathbf{S}$ は $z$ 成分のみで
-\[
-S_z(z)=-\rho i_c^2 z
-\]
-
-外向き法線 $\mathbf{n}$ に対する外向きフラックス：
-- 上面 $z=+h$：$\mathbf{n}=+\mathbf{k}$  
-  \[
-  \int S\cdot n\,dA=S_z(h)\cdot(4d^2)=(-\rho i_c^2 h)(4d^2)
-  \]
-- 下面 $z=-h$：$\mathbf{n}=-\mathbf{k}$  
-  \[
-  S\cdot n=S_z(-h)(-1)=\big(+\rho i_c^2 h\big)(-1)=-\rho i_c^2 h
-  \Rightarrow (-\rho i_c^2 h)(4d^2)
-  \]
-側面（$x=\pm d,y=\pm d$）は $S\cdot n=0$。
-
-よって外向き総フラックスは
-\[
-\oint \mathbf{S}\cdot \mathbf{n}\,dA
-=2\cdot(-\rho i_c^2 h)(4d^2)=-8\rho i_c^2 h d^2
-\]
-
-「流れ込む（内向き）」エネルギーは外向きの符号反転：
-\[
-\boxed{P_{\text{in}}=-\oint \mathbf{S}\cdot \mathbf{n}\,dA
-=8\rho i_c^2 h d^2}
-\]
-
-（確認）体積 $V=(2d)(2d)(2h)=8d^2h$、ジュール発熱密度 $J\cdot E=\rho i_c^2$ なので
-\[
-\int_V \rho i_c^2\,dV=\rho i_c^2(8d^2h)=8\rho i_c^2 h d^2
-\]
-で一致。
-
----
-
-## 問5（レールガン：運動方程式＋回路方程式）
-
-**問題の型**  
-「動く導体棒」＋「一様磁場」＝**運動起電力** $\mathcal{E}_{ind}=Bav$。  
-回路は KVL（オームの法則）で $I$ を $v$ に結びつける。  
-力は $\mathbf{F}=I\mathbf{l}\times\mathbf{B}$ で、最終的に **一次遅れ** $dv/dt + \gamma v = \text{const}$ になる。
-
-**設定**  
-間隔 $a$ の平行レールに電圧 $V$ の電池。上向き一様磁場 $B$。  
-質量 $M$、抵抗 $R$ の導体棒が滑る。摩擦なし。レール抵抗・自己インダクタンス無視。初速 $v_0=0$。  
-棒の速度を $v$、電流を $I$ とする。
-
-### (1) 磁場から受ける力を考えて運動方程式
-
-棒（長さ $a$）に流れる電流 $I$ と磁場 $B$ により
-\[
-|\mathbf{F}| = I a B
-\]
-（向きはレンツの法則で決まるが、ここでは「正方向の運動方程式」に $I$ の符号を含める流儀で進める）
-
-\[
-\boxed{M\frac{dv}{dt}=I a B}
-\]
-
-### (2) 誘導起電力を考え、$I$ のオームの法則
-
-棒が速度 $v$ で動くと、面積変化により運動起電力の大きさ
-\[
-\mathcal{E}_{ind}=Bav
-\]
-が生じ、電池起電力 $V$ と反対向きに働く（速度が増えるほど電流が減る向き）。
-
-よって KVL：
-\[
-V-\mathcal{E}_{ind}-IR=0
-\Rightarrow
-\boxed{IR=V-Bav}
-\]
-\[
-\boxed{I=\frac{V-Bav}{R}}
-\]
-
-### (3) 時刻 $t$ における $I(t)$ と $v(t)$
-
-(1)(2) を連立：
-\[
-M\frac{dv}{dt}=aB\frac{V-Bav}{R}
-\Rightarrow
-\frac{dv}{dt}+\frac{B^2a^2}{MR}v=\frac{aBV}{MR}
-\]
-
-時定数
-\[
-\tau=\frac{MR}{B^2a^2},\qquad
-v_\infty=\frac{V}{Ba}
-\]
-とおくと
-\[
-v(t)=v_\infty\left(1-e^{-t/\tau}\right)
-\]
-初期条件 $v(0)=0$ を満たす。
-
-したがって
-\[
-\boxed{v(t)=\frac{V}{Ba}\left(1-e^{-t/\tau}\right),\quad \tau=\frac{MR}{B^2a^2}}
-\]
-
-電流は
-\[
-I(t)=\frac{V-Bav(t)}{R}
-=\frac{V}{R}e^{-t/\tau}
-\]
-\[
-\boxed{I(t)=\frac{V}{R}e^{-t/\tau}}
-\]
-
-### (4) $t\to\infty$ までの全ジュール熱 $E_J$
-
-\[
-E_J=\int_0^\infty I(t)^2R\,dt
-=\int_0^\infty \left(\frac{V}{R}\right)^2 e^{-2t/\tau}R\,dt
-=\frac{V^2}{R}\cdot\frac{\tau}{2}
-\]
-\[
-\boxed{E_J=\frac{V^2\tau}{2R}=\frac{MV^2}{2B^2a^2}}
-\]
-
-（チェック）最終速度 $v_\infty=V/(Ba)$ なので
-\[
-\frac12 Mv_\infty^2=\frac{MV^2}{2B^2a^2}
-\]
-となり、ここではジュール熱がちょうどこの値になっている（電池の供給エネルギーはその2倍で、残り半分が運動エネルギー）。
-
----
-
-## 問6（変位電流と磁場）
-
-**問題の型**  
-(1) は $I=dQ/dt$ の積分。  
-(2) は平行板近似で $E=Q/(\varepsilon_0A)$、変位電流密度 $J_d=\varepsilon_0\partial E/\partial t$。  
-(3) はアンペール・マクスウェル：
-\[
-\oint \mathbf{B}\cdot d\mathbf{l}=\mu_0\left(I_{\text{cond}}+\varepsilon_0\frac{d\Phi_E}{dt}\right)
-\]
-で円対称により $B(2\pi r)=\mu_0 I_{\text{enc}}$。
-
-**設定**  
-半径 $R$ の円形導体板を間隔 $d$ で向かい合わせたコンデンサー。  
-電流 $I(t)=I_0 e^{-\alpha t}$（$I_0,\alpha&gt;0$）。端効果無視。
-
-### (1) 電荷 $Q(t)$（$Q(0)=0$）
-
-\[
-I(t)=\frac{dQ}{dt}=I_0e^{-\alpha t}
-\Rightarrow
-Q(t)=\int_0^t I_0e^{-\alpha t'}dt'
-=\frac{I_0}{\alpha}\left(1-e^{-\alpha t}\right)
-\]
-\[
-\boxed{Q(t)=\frac{I_0}{\alpha}\left(1-e^{-\alpha t}\right)}
-\]
-
-### (2) 極板間の電場 $E$ と変位電流密度
-
-面積 $A=\pi R^2$、平行板近似で
-\[
-E(t)=\frac{Q(t)}{\varepsilon_0 A}
-=\frac{Q(t)}{\varepsilon_0\pi R^2}
-\]
-\[
-\boxed{E(t)=\frac{1}{\varepsilon_0\pi R^2}\,Q(t)}
-\]
-
-変位電流密度
-\[
-J_d=\varepsilon_0\frac{\partial E}{\partial t}
-=\varepsilon_0\cdot\frac{1}{\varepsilon_0\pi R^2}\frac{dQ}{dt}
-=\frac{I(t)}{\pi R^2}
-\]
-\[
-\boxed{J_d(t)=\frac{I(t)}{\pi R^2}}
-\]
-
-### (3) 中心軸から距離 $r$ の磁場（$r&lt;R$ と $r&gt;R$）
-
-円周半径 $r$ のアンペール経路で、$\mathbf{B}$ は方位方向（$\mathbf{e}_\phi$）で一定。
-
-- **$r&lt;R$**：包む変位電流は面積比で
-  \[
-  I_{\text{enc}}=J_d\cdot\pi r^2 = I(t)\frac{r^2}{R^2}
-  \]
-  よって
-  \[
-  B(2\pi r)=\mu_0 I(t)\frac{r^2}{R^2}
-  \Rightarrow
-  \boxed{B(r,t)=\frac{\mu_0 I(t)}{2\pi}\frac{r}{R^2}\quad (r&lt;R)}
-  \]
-
-- **$r&gt;R$**：全電流を包むので $I_{\text{enc}}=I(t)$
-  \[
-  B(2\pi r)=\mu_0 I(t)
-  \Rightarrow
-  \boxed{B(r,t)=\frac{\mu_0 I(t)}{2\pi r}\quad (r&gt;R)}
-  \]
-
----
-
-## 問7（平面電磁波の基本：エネルギー保存）
-
-**問題の型**  
-「$E$ が $x$ 成分のみ」「$B$ が $y$ 成分のみ」「両方とも $z,t$ のみ依存」なら、マクスウェル方程式は偏微分2本に落ちる。  
-(2) はポインティングの定理 $\partial_t u + \nabla\cdot S=0$ を直接計算で示す。
-
-**設定**  
-真空中、電荷も電流もない。  
-\[
-\mathbf{E}(r,t)=E_x(z,t)\mathbf{i},\qquad
-\mathbf{B}(r,t)=B_y(z,t)\mathbf{j}
-\]
-
-### (1) ファラデー則の $y$ 成分と、アンペール・マクスウェルの $x$ 成分を書け
-
-**ファラデー則**
-\[
-\nabla\times\mathbf{E}=-\frac{\partial\mathbf{B}}{\partial t}
-\]
-$\mathbf{E}=(E_x(z,t),0,0)$ なので
-\[
-\nabla\times\mathbf{E}=(0,\ \frac{\partial E_x}{\partial z},\ 0)
-\]
-右辺は $-(0,\frac{\partial B_y}{\partial t},0)$。よって $y$ 成分：
-\[
-\boxed{\frac{\partial E_x}{\partial z}=-\frac{\partial B_y}{\partial t}}
-\]
-
-**アンペール・マクスウェル**
-\[
-\nabla\times\mathbf{B}=\mu_0\varepsilon_0\frac{\partial\mathbf{E}}{\partial t}
-\]
-$\mathbf{B}=(0,B_y(z,t),0)$ なので
-\[
-\nabla\times\mathbf{B}=(-\frac{\partial B_y}{\partial z},0,0)
-\]
-右辺は $(\mu_0\varepsilon_0\frac{\partial E_x}{\partial t},0,0)$。よって $x$ 成分：
-\[
-\boxed{-\frac{\partial B_y}{\partial z}=\mu_0\varepsilon_0\frac{\partial E_x}{\partial t}}
-\]
-
-### (2) $u_{em}$ と $\mathbf{S}$ に対し $\partial_t u_{em}+\nabla\cdot\mathbf{S}=0$ を示せ
-
-与えられた
-\[
-u_{em}=\frac12\varepsilon_0E^2+\frac{1}{2\mu_0}B^2
-=\frac12\varepsilon_0E_x^2+\frac{1}{2\mu_0}B_y^2
-\]
-\[
-\mathbf{S}=\frac{1}{\mu_0}\mathbf{E}\times\mathbf{B}
-=\frac{1}{\mu_0}(E_x\mathbf{i})\times(B_y\mathbf{j})
-=\frac{E_xB_y}{\mu_0}\mathbf{k}
-\]
-
-まず時間微分：
-\[
-\frac{\partial u_{em}}{\partial t}
-=\varepsilon_0E_x\frac{\partial E_x}{\partial t}
-+\frac{1}{\mu_0}B_y\frac{\partial B_y}{\partial t}
-\]
-
-次に発散（$\mathbf{S}$ は $z$ 成分のみ）：
-\[
-\nabla\cdot\mathbf{S}=\frac{\partial S_z}{\partial z}
-=\frac{\partial}{\partial z}\left(\frac{E_xB_y}{\mu_0}\right)
-=\frac{1}{\mu_0}\left(
-B_y\frac{\partial E_x}{\partial z}
-+E_x\frac{\partial B_y}{\partial z}
-\right)
-\]
-
-(1) の関係を代入：
-\[
-\frac{\partial E_x}{\partial z}=-\frac{\partial B_y}{\partial t},\qquad
-\frac{\partial B_y}{\partial z}=-\mu_0\varepsilon_0\frac{\partial E_x}{\partial t}
-\]
-すると
-\[
-\nabla\cdot\mathbf{S}
-=\frac{1}{\mu_0}\left(
-B_y\left(-\frac{\partial B_y}{\partial t}\right)
-+E_x\left(-\mu_0\varepsilon_0\frac{\partial E_x}{\partial t}\right)
-\right)
-=-\frac{1}{\mu_0}B_y\frac{\partial B_y}{\partial t}
--\varepsilon_0E_x\frac{\partial E_x}{\partial t}
-\]
-
-よって
-\[
-\frac{\partial u_{em}}{\partial t}+\nabla\cdot\mathbf{S}
-=\left(\varepsilon_0E_x\frac{\partial E_x}{\partial t}
-+\frac{1}{\mu_0}B_y\frac{\partial B_y}{\partial t}\right)
-+\left(-\varepsilon_0E_x\frac{\partial E_x}{\partial t}
--\frac{1}{\mu_0}B_y\frac{\partial B_y}{\partial t}\right)=0
-\]
-
-\[
-\boxed{\frac{\partial u_{em}}{\partial t}+\nabla\cdot\mathbf{S}=0}
-\]
-
----
-
-## 問8（ビオ・サバールと直線電流の磁場）
-
-**問題の型**  
-(1) はビオ・サバールの微小寄与の向き（外積）と距離。  
-(2) は既知の積分で $B=\mu_0I/(2\pi a)$ を再現。  
-(3) は2本の直線電流の重ね合わせ。対称性で成分が消える。
-
-**与式（ビオ・サバール）**
-\[
-d\mathbf{B}(r)=\frac{\mu_0 I}{4\pi}\frac{d\mathbf{r}'\times(\mathbf{r}-\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|^3}
-\]
-
-### (1) $z$ 軸に沿う無限直線電流 $I$。$r'=(0,0,z')$ の電流素片 $Id\mathbf{r}'=(0,0,Idz')$ が $r=(a,0,0)$ に作る $d\mathbf{B}$
-
-\[
-d\mathbf{r}'=\mathbf{k}\,dz',\quad
-\mathbf{r}-\mathbf{r}'=(a,0,-z')
-\]
-外積：
-\[
-d\mathbf{r}'\times(\mathbf{r}-\mathbf{r}')
-=\mathbf{k}dz'\times(a\mathbf{i}-z'\mathbf{k})
-=a(\mathbf{k}\times\mathbf{i})dz'
-=a\mathbf{j}\,dz'
-\]
-距離：
-\[
-|\mathbf{r}-\mathbf{r}'|=\sqrt{a^2+z'^2}
-\Rightarrow |\mathbf{r}-\mathbf{r}'|^3=(a^2+z'^2)^{3/2}
-\]
-
-したがって
-\[
-\boxed{
-d\mathbf{B}
-=\frac{\mu_0 I}{4\pi}\frac{a\,dz'}{(a^2+z'^2)^{3/2}}\,\mathbf{j}
-}
-\]
-
-### (2) (1) を積分して直線電流全体が $r=(a,0,0)$ に作る磁場
-
-\[
-\mathbf{B}=\int_{-\infty}^{\infty} d\mathbf{B}
-=\frac{\mu_0 I a}{4\pi}\mathbf{j}\int_{-\infty}^{\infty}\frac{dz'}{(a^2+z'^2)^{3/2}}
-\]
-既知積分：
-\[
-\int_{-\infty}^{\infty}\frac{dz'}{(a^2+z'^2)^{3/2}}=\frac{2}{a^2}
-\]
-よって
-\[
-\boxed{
-\mathbf{B}=\frac{\mu_0 I}{2\pi a}\,\mathbf{j}
-}
-\]
-
-### (3) 2本の無限直線電流：1本は $(a,0,0)$ を通り $+z$ 向きに $I$、もう1本は $(-a,0,0)$ を通り $+z$ 向きに $I$。点 $P(0,y,z)$ の磁場
-
-無限直線電流（$+z$ 方向）の磁場は、線からの横ベクトル $\boldsymbol{\rho}$ に対し
-\[
-\mathbf{B}=\frac{\mu_0 I}{2\pi \rho^2}\,(\mathbf{k}\times\boldsymbol{\rho})
-\quad(\rho=|\boldsymbol{\rho}|)
-\]
-ここでは $P$ の $x=0$ なので $z$ に依存しない（距離は $xy$ 平面で決まる）。
-
-- 線1（$x=a$）から：$\boldsymbol{\rho}_1=(-a)\mathbf{i}+y\mathbf{j}$、$\rho_1^2=a^2+y^2$
-  \[
-  \mathbf{k}\times\boldsymbol{\rho}_1=\mathbf{k}\times(-a\mathbf{i}+y\mathbf{j})
-  =-a\mathbf{j}-y\mathbf{i}
-  \]
-  \[
-  \mathbf{B}_1=\frac{\mu_0 I}{2\pi(a^2+y^2)}(-y\mathbf{i}-a\mathbf{j})
-  \]
-
-- 線2（$x=-a$）から：$\boldsymbol{\rho}_2=a\mathbf{i}+y\mathbf{j}$、$\rho_2^2=a^2+y^2$
-  \[
-  \mathbf{k}\times\boldsymbol{\rho}_2=a\mathbf{j}-y\mathbf{i}
-  \]
-  \[
-  \mathbf{B}_2=\frac{\mu_0 I}{2\pi(a^2+y^2)}(-y\mathbf{i}+a\mathbf{j})
-  \]
-
-加えると $\mathbf{j}$ 成分が打ち消し：
-\[
-\mathbf{B}=\mathbf{B}_1+\mathbf{B}_2
-=\frac{\mu_0 I}{2\pi(a^2+y^2)}\left(-2y\mathbf{i}\right)
-\]
-
-\[
-\boxed{
-\mathbf{B}(0,y,z)= -\frac{\mu_0 I\,y}{\pi(a^2+y^2)}\,\mathbf{i}
-}
-\]
-
----
-
-## まとめ（この試験の典型パターン）
-
-- **運動（問1,5）**：力（ローレンツ/電流×磁場）→ 運動方程式。回路が絡むなら KVL で $I$ を消去して一次微分方程式へ。
-- **場の計算（問2,6,8）**：  
-  - ベクトル解析（div/curl）  
-  - アンペール（+マクスウェル補正）  
-  - ビオ・サバール（外積の向きが最重要）
-- **エネルギー（問4,7）**：  
-  - $u=\frac12\varepsilon_0E^2+\frac1{2\mu_0}B^2$  
-  - $\mathbf{S}=\frac1{\mu_0}\mathbf{E}\times\mathbf{B}$  
-  - $\partial_t u+\nabla\cdot\mathbf{S}=0$（ポインティングの定理）</code></pre>
-
-
+\end{pmatrix}\]</span>
+<p>]</p>
+<p><strong>発散</strong> [ =++ ] ここで <span class="math inline">\(A_x\)</span> は <span class="math inline">\(x\)</span> を含まず、<span class="math inline">\(A_y\)</span> は <span class="math inline">\(y\)</span> を含まず、<span class="math inline">\(A_z\)</span> は <span class="math inline">\(z\)</span> を含まないので、全部 0。 [ ]</p>
+<p><strong>回転（カール）</strong><br>
+成分計算すると（定数 <span class="math inline">\(B_x,B_y,B_z\)</span> を用いる） [ ()_x=- =(B_x)-(-B_x)=B_x ] 同様に [ ()_y=B_y,()_z=B_z ] よって [ ]</p>
+</section>
+<section id="mathbfbrleft-kx2y2y-kx2y2x-0right-に対し電流密度-mathbfir-を求めよ" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="mathbfbrleft-kx2y2y-kx2y2x-0right-に対し電流密度-mathbfir-を求めよ"><span class="header-section-number">3.3</span> (3) <span class="math inline">\(\mathbf{B}(r)=\left(-k(x^2+y^2)y,\ k(x^2+y^2)x,\ 0\right)\)</span> に対し電流密度 <span class="math inline">\(\mathbf{i}(r)\)</span> を求めよ</h3>
+<p>静磁場なので [ =_0 = ]</p>
+<p>ここで <span class="math inline">\(B_z=0\)</span> かつ <span class="math inline">\(z\)</span> 依存がないので [ ()_x=()_y=0 ] [ ()_z=- ]</p>
+<p>[ B_y=kx(x<sup>2+y</sup>2) =k((x<sup>2+y</sup>2)+2x<sup>2)=k(3x</sup>2+y^2) ] [ B_x=-ky(x<sup>2+y</sup>2) =-k((x<sup>2+y</sup>2)+2y<sup>2)=-k(x</sup>2+3y^2) ] よって [ ()_z=k(3x<sup>2+y</sup>2)-(-k(x<sup>2+3y</sup>2))=4k(x<sup>2+y</sup>2) ]</p>
+<p>[ ]</p>
+<hr>
+</section>
+</section>
+<section id="問3トロイダルコイル" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="問3トロイダルコイル"><span class="header-section-number">4</span> 問3（トロイダル・コイル）</h2>
+<p><strong>問題の型</strong><br>
+トロイドは「アンペールの法則」で <span class="math inline">\(B\)</span> が一撃で出る。<br>
+次に <span class="math inline">\(\Phi=BA\)</span> で磁束、<span class="math inline">\(L=N\Phi/I\)</span>。<br>
+誘導起電力は <span class="math inline">\(\mathcal{E}=-L\,dI/dt\)</span>。<br>
+エネルギー密度は <span class="math inline">\(u_m=B^2/(2\mu_0)\)</span>、総エネルギーは <span class="math inline">\(U_m=\frac12 LI^2\)</span>（整合確認にも使える）。</p>
+<p><strong>設定</strong><br>
+半径 <span class="math inline">\(a\)</span> の小円（断面）をもつトロイド。中心線の半径を <span class="math inline">\(r\)</span>（<span class="math inline">\(a\ll r\)</span>）。巻数 <span class="math inline">\(N\)</span>、電流 <span class="math inline">\(I\)</span>。</p>
+<section id="円周-c半径-r上での磁場-b" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="円周-c半径-r上での磁場-b"><span class="header-section-number">4.1</span> (1) 円周 <span class="math inline">\(C\)</span>（半径 <span class="math inline">\(r\)</span>）上での磁場 <span class="math inline">\(B\)</span></h3>
+<p>アンペールの法則： [ _C d=_0 NI ] 対称性より <span class="math inline">\(C\)</span> 上で <span class="math inline">\(B\)</span> 一定、接線方向： [ B(2r)=_0 NI ]</p>
+</section>
+<section id="コイルの自己インダクタンス-l" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="コイルの自己インダクタンス-l"><span class="header-section-number">4.2</span> (2) コイルの自己インダクタンス <span class="math inline">\(L\)</span></h3>
+<p>1巻を貫く磁束（断面積 <span class="math inline">\(A=\pi a^2\)</span>、一様近似）： [ = BA = a^2 = ] 自己インダクタンス定義： [ L= ]</p>
+</section>
+<section id="iti_0cosomega-t-のとき誘導起電力-mathcale_em" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="iti_0cosomega-t-のとき誘導起電力-mathcale_em"><span class="header-section-number">4.3</span> (3) <span class="math inline">\(I(t)=I_0\cos(\omega t)\)</span> のとき誘導起電力 <span class="math inline">\(\mathcal{E}_{em}\)</span></h3>
+<p>[ _{em}=-L ] [ =-I_0(t) ]</p>
+</section>
+<section id="磁場エネルギー密度-u_m-と総エネルギー-u_m" class="level3" data-number="4.4">
+<h3 data-number="4.4" class="anchored" data-anchor-id="磁場エネルギー密度-u_m-と総エネルギー-u_m"><span class="header-section-number">4.4</span> (4) 磁場エネルギー密度 <span class="math inline">\(u_m\)</span> と総エネルギー <span class="math inline">\(U_m\)</span></h3>
+<p>磁場： [ B(t)= ] よって [ u_m(t)= =()^2 = ]</p>
+<p>総エネルギーは [ U_m= L I(t)^2 =,I(t)^2 = ]</p>
+<hr>
+</section>
+</section>
+<section id="問4導体中のエネルギー流ポインティング" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="問4導体中のエネルギー流ポインティング"><span class="header-section-number">5</span> 問4（導体中のエネルギー流：ポインティング）</h2>
+<p><strong>問題の型</strong><br>
+導体内部でも電磁エネルギーは <span class="math inline">\(\mathbf{S}=\frac1{\mu_0}\mathbf{E}\times\mathbf{B}\)</span> で流れ、体積内のジュール熱 <span class="math inline">\(J\cdot E\)</span> と釣り合う。<br>
+(1) はオームの法則とアンペール則で <span class="math inline">\(\mathbf{E},\mathbf{B}\)</span> を出して <span class="math inline">\(\mathbf{S}\)</span>。<br>
+(2) は「表面から入るエネルギー流量＝体積でのジュール発熱」を示す問題。</p>
+<p><strong>設定</strong><br>
+厚さ <span class="math inline">\(2d\)</span> の無限平板導体。面は <span class="math inline">\(z=\pm d\)</span>。抵抗率 <span class="math inline">\(\rho\)</span>。<br>
+電流密度が <span class="math inline">\(x\)</span> 方向に一様：<span class="math inline">\(\mathbf{J}=i_c\,\mathbf{i}\)</span>。</p>
+<section id="点-p0hh0hdでの-mathbfemathbfbmathbfs" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="点-p0hh0hdでの-mathbfemathbfbmathbfs"><span class="header-section-number">5.1</span> (1) 点 <span class="math inline">\(P(0,h,h)\)</span>（<span class="math inline">\(0&lt;h&lt;d\)</span>）での <span class="math inline">\(\mathbf{E},\mathbf{B},\mathbf{S}\)</span></h3>
+<p><strong>電場</strong>（オームの法則 <span class="math inline">\(\mathbf{E}=\rho\mathbf{J}\)</span>）： [ ]</p>
+<p><strong>磁場</strong><br>
+対称性より <span class="math inline">\(\mathbf{B}=B_y(z)\mathbf{j}\)</span> とおける。静磁場で [ =_0 ] <span class="math inline">\(\mathbf{B}=B_y(z)\mathbf{j}\)</span> のとき [ ()_x=-=_0 J_x=_0 i_c =-_0 i_c ] 中心 <span class="math inline">\(z=0\)</span> で対称性から <span class="math inline">\(B_y(0)=0\)</span>（奇関数）なので [ B_y(z)=-_0 i_c z ] 点 <span class="math inline">\(P\)</span> は <span class="math inline">\(z=h\)</span> なので [ ]</p>
+<p><strong>ポインティングベクトル</strong> [ = =(i_c)(-_0 i_c h) ] [ ] （<span class="math inline">\(z&gt;0\)</span> 側では <span class="math inline">\(-z\)</span> 方向にエネルギーが流れる＝導体内部の発熱へ供給される）</p>
+</section>
+<section id="直方体xpm-d-ypm-d-zpm-hへ単位時間に流れ込むエネルギー総和" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="直方体xpm-d-ypm-d-zpm-hへ単位時間に流れ込むエネルギー総和"><span class="header-section-number">5.2</span> (2) 直方体（<span class="math inline">\(x=\pm d,\ y=\pm d,\ z=\pm h\)</span>）へ単位時間に流れ込むエネルギー総和</h3>
+<p><span class="math inline">\(\mathbf{S}\)</span> は <span class="math inline">\(z\)</span> 成分のみで [ S_z(z)=-i_c^2 z ]</p>
+<p>外向き法線 <span class="math inline">\(\mathbf{n}\)</span> に対する外向きフラックス： - 上面 <span class="math inline">\(z=+h\)</span>：<span class="math inline">\(\mathbf{n}=+\mathbf{k}\)</span><br>
+[ Sn,dA=S_z(h)(4d<sup>2)=(-i_c</sup>2 h)(4d^2) ] - 下面 <span class="math inline">\(z=-h\)</span>：<span class="math inline">\(\mathbf{n}=-\mathbf{k}\)</span><br>
+[ Sn=S_z(-h)(-1)=(+i_c^2 h)(-1)=-i_c^2 h (-i_c^2 h)(4d^2) ] 側面（<span class="math inline">\(x=\pm d,y=\pm d\)</span>）は <span class="math inline">\(S\cdot n=0\)</span>。</p>
+<p>よって外向き総フラックスは [ ,dA =2(-i_c^2 h)(4d<sup>2)=-8i_c</sup>2 h d^2 ]</p>
+<p>「流れ込む（内向き）」エネルギーは外向きの符号反転： [ ]</p>
+<p>（確認）体積 <span class="math inline">\(V=(2d)(2d)(2h)=8d^2h\)</span>、ジュール発熱密度 <span class="math inline">\(J\cdot E=\rho i_c^2\)</span> なので [ _V i_c<sup>2,dV=i_c</sup>2(8d<sup>2h)=8i_c</sup>2 h d^2 ] で一致。</p>
+<hr>
+</section>
+</section>
+<section id="問5レールガン運動方程式回路方程式" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="問5レールガン運動方程式回路方程式"><span class="header-section-number">6</span> 問5（レールガン：運動方程式＋回路方程式）</h2>
+<p><strong>問題の型</strong><br>
+「動く導体棒」＋「一様磁場」＝<strong>運動起電力</strong> <span class="math inline">\(\mathcal{E}_{ind}=Bav\)</span>。<br>
+回路は KVL（オームの法則）で <span class="math inline">\(I\)</span> を <span class="math inline">\(v\)</span> に結びつける。<br>
+力は <span class="math inline">\(\mathbf{F}=I\mathbf{l}\times\mathbf{B}\)</span> で、最終的に <strong>一次遅れ</strong> <span class="math inline">\(dv/dt + \gamma v = \text{const}\)</span> になる。</p>
+<p><strong>設定</strong><br>
+間隔 <span class="math inline">\(a\)</span> の平行レールに電圧 <span class="math inline">\(V\)</span> の電池。上向き一様磁場 <span class="math inline">\(B\)</span>。<br>
+質量 <span class="math inline">\(M\)</span>、抵抗 <span class="math inline">\(R\)</span> の導体棒が滑る。摩擦なし。レール抵抗・自己インダクタンス無視。初速 <span class="math inline">\(v_0=0\)</span>。<br>
+棒の速度を <span class="math inline">\(v\)</span>、電流を <span class="math inline">\(I\)</span> とする。</p>
+<section id="磁場から受ける力を考えて運動方程式" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="磁場から受ける力を考えて運動方程式"><span class="header-section-number">6.1</span> (1) 磁場から受ける力を考えて運動方程式</h3>
+<p>棒（長さ <span class="math inline">\(a\)</span>）に流れる電流 <span class="math inline">\(I\)</span> と磁場 <span class="math inline">\(B\)</span> により [ || = I a B ] （向きはレンツの法則で決まるが、ここでは「正方向の運動方程式」に <span class="math inline">\(I\)</span> の符号を含める流儀で進める）</p>
+<p>[ ]</p>
+</section>
+<section id="誘導起電力を考えi-のオームの法則" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="誘導起電力を考えi-のオームの法則"><span class="header-section-number">6.2</span> (2) 誘導起電力を考え、<span class="math inline">\(I\)</span> のオームの法則</h3>
+<p>棒が速度 <span class="math inline">\(v\)</span> で動くと、面積変化により運動起電力の大きさ [ _{ind}=Bav ] が生じ、電池起電力 <span class="math inline">\(V\)</span> と反対向きに働く（速度が増えるほど電流が減る向き）。</p>
+<p>よって KVL： [ V-_{ind}-IR=0 ] [ ]</p>
+</section>
+<section id="時刻-t-における-it-と-vt" class="level3" data-number="6.3">
+<h3 data-number="6.3" class="anchored" data-anchor-id="時刻-t-における-it-と-vt"><span class="header-section-number">6.3</span> (3) 時刻 <span class="math inline">\(t\)</span> における <span class="math inline">\(I(t)\)</span> と <span class="math inline">\(v(t)\)</span></h3>
+<p>(1)(2) を連立： [ M=aB +v= ]</p>
+<p>時定数 [ =, v_= ] とおくと [ v(t)=v_(1-e^{-t/}) ] 初期条件 <span class="math inline">\(v(0)=0\)</span> を満たす。</p>
+<p>したがって [ ]</p>
+<p>電流は [ I(t)= =e^{-t/} ] [ ]</p>
+</section>
+<section id="ttoinfty-までの全ジュール熱-e_j" class="level3" data-number="6.4">
+<h3 data-number="6.4" class="anchored" data-anchor-id="ttoinfty-までの全ジュール熱-e_j"><span class="header-section-number">6.4</span> (4) <span class="math inline">\(t\to\infty\)</span> までの全ジュール熱 <span class="math inline">\(E_J\)</span></h3>
+<p>[ E_J=_0<sup>I(t)</sup>2R,dt =_0<sup>()</sup>2 e^{-2t/}R,dt = ] [ ]</p>
+<p>（チェック）最終速度 <span class="math inline">\(v_\infty=V/(Ba)\)</span> なので [ Mv_^2= ] となり、ここではジュール熱がちょうどこの値になっている（電池の供給エネルギーはその2倍で、残り半分が運動エネルギー）。</p>
+<hr>
+</section>
+</section>
+<section id="問6変位電流と磁場" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="問6変位電流と磁場"><span class="header-section-number">7</span> 問6（変位電流と磁場）</h2>
+<p><strong>問題の型</strong><br>
+(1) は <span class="math inline">\(I=dQ/dt\)</span> の積分。<br>
+(2) は平行板近似で <span class="math inline">\(E=Q/(\varepsilon_0A)\)</span>、変位電流密度 <span class="math inline">\(J_d=\varepsilon_0\partial E/\partial t\)</span>。<br>
+(3) はアンペール・マクスウェル： [ d=<em>0(I</em>{}+_0) ] で円対称により <span class="math inline">\(B(2\pi r)=\mu_0 I_{\text{enc}}\)</span>。</p>
+<p><strong>設定</strong><br>
+半径 <span class="math inline">\(R\)</span> の円形導体板を間隔 <span class="math inline">\(d\)</span> で向かい合わせたコンデンサー。<br>
+電流 <span class="math inline">\(I(t)=I_0 e^{-\alpha t}\)</span>（<span class="math inline">\(I_0,\alpha&gt;0\)</span>）。端効果無視。</p>
+<section id="電荷-qtq00" class="level3" data-number="7.1">
+<h3 data-number="7.1" class="anchored" data-anchor-id="電荷-qtq00"><span class="header-section-number">7.1</span> (1) 電荷 <span class="math inline">\(Q(t)\)</span>（<span class="math inline">\(Q(0)=0\)</span>）</h3>
+<p>[ I(t)==I_0e^{-t} Q(t)=_0^t I_0e^{-t’}dt’ =(1-e^{-t}) ] [ ]</p>
+</section>
+<section id="極板間の電場-e-と変位電流密度" class="level3" data-number="7.2">
+<h3 data-number="7.2" class="anchored" data-anchor-id="極板間の電場-e-と変位電流密度"><span class="header-section-number">7.2</span> (2) 極板間の電場 <span class="math inline">\(E\)</span> と変位電流密度</h3>
+<p>面積 <span class="math inline">\(A=\pi R^2\)</span>、平行板近似で [ E(t)= = ] [ ]</p>
+<p>変位電流密度 [ J_d=_0 =_0 = ] [ ]</p>
+</section>
+<section id="中心軸から距離-r-の磁場rr-と-rr" class="level3" data-number="7.3">
+<h3 data-number="7.3" class="anchored" data-anchor-id="中心軸から距離-r-の磁場rr-と-rr"><span class="header-section-number">7.3</span> (3) 中心軸から距離 <span class="math inline">\(r\)</span> の磁場（<span class="math inline">\(r&lt;R\)</span> と <span class="math inline">\(r&gt;R\)</span>）</h3>
+<p>円周半径 <span class="math inline">\(r\)</span> のアンペール経路で、<span class="math inline">\(\mathbf{B}\)</span> は方位方向（<span class="math inline">\(\mathbf{e}_\phi\)</span>）で一定。</p>
+<ul>
+<li><p><strong><span class="math inline">\(r&lt;R\)</span></strong>：包む変位電流は面積比で [ I_{}=J_dr^2 = I(t) ] よって [ B(2r)=_0 I(t) ]</p></li>
+<li><p><strong><span class="math inline">\(r&gt;R\)</span></strong>：全電流を包むので <span class="math inline">\(I_{\text{enc}}=I(t)\)</span> [ B(2r)=_0 I(t) ]</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="問7平面電磁波の基本エネルギー保存" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="問7平面電磁波の基本エネルギー保存"><span class="header-section-number">8</span> 問7（平面電磁波の基本：エネルギー保存）</h2>
+<p><strong>問題の型</strong><br>
+「<span class="math inline">\(E\)</span> が <span class="math inline">\(x\)</span> 成分のみ」「<span class="math inline">\(B\)</span> が <span class="math inline">\(y\)</span> 成分のみ」「両方とも <span class="math inline">\(z,t\)</span> のみ依存」なら、マクスウェル方程式は偏微分2本に落ちる。<br>
+(2) はポインティングの定理 <span class="math inline">\(\partial_t u + \nabla\cdot S=0\)</span> を直接計算で示す。</p>
+<p><strong>設定</strong><br>
+真空中、電荷も電流もない。<br>
+[ (r,t)=E_x(z,t), (r,t)=B_y(z,t) ]</p>
+<section id="ファラデー則の-y-成分とアンペールマクスウェルの-x-成分を書け" class="level3" data-number="8.1">
+<h3 data-number="8.1" class="anchored" data-anchor-id="ファラデー則の-y-成分とアンペールマクスウェルの-x-成分を書け"><span class="header-section-number">8.1</span> (1) ファラデー則の <span class="math inline">\(y\)</span> 成分と、アンペール・マクスウェルの <span class="math inline">\(x\)</span> 成分を書け</h3>
+<p><strong>ファラデー則</strong> [ =- ] <span class="math inline">\(\mathbf{E}=(E_x(z,t),0,0)\)</span> なので [ =(0,&nbsp;,&nbsp;0) ] 右辺は <span class="math inline">\(-(0,\frac{\partial B_y}{\partial t},0)\)</span>。よって <span class="math inline">\(y\)</span> 成分： [ ]</p>
+<p><strong>アンペール・マクスウェル</strong> [ =_0_0 ] <span class="math inline">\(\mathbf{B}=(0,B_y(z,t),0)\)</span> なので [ =(-,0,0) ] 右辺は <span class="math inline">\((\mu_0\varepsilon_0\frac{\partial E_x}{\partial t},0,0)\)</span>。よって <span class="math inline">\(x\)</span> 成分： [ ]</p>
+</section>
+<section id="u_em-と-mathbfs-に対し-partial_t-u_emnablacdotmathbfs0-を示せ" class="level3" data-number="8.2">
+<h3 data-number="8.2" class="anchored" data-anchor-id="u_em-と-mathbfs-に対し-partial_t-u_emnablacdotmathbfs0-を示せ"><span class="header-section-number">8.2</span> (2) <span class="math inline">\(u_{em}\)</span> と <span class="math inline">\(\mathbf{S}\)</span> に対し <span class="math inline">\(\partial_t u_{em}+\nabla\cdot\mathbf{S}=0\)</span> を示せ</h3>
+<p>与えられた [ u_{em}=_0E<sup>2+B</sup>2 =_0E_x<sup>2+B_y</sup>2 ] [ = =(E_x)(B_y) = ]</p>
+<p>まず時間微分： [ =_0E_x +B_y ]</p>
+<p>次に発散（<span class="math inline">\(\mathbf{S}\)</span> は <span class="math inline">\(z\)</span> 成分のみ）： [ = =() =( B_y +E_x ) ]</p>
+<ol type="1">
+<li>の関係を代入： [ =-, =-_0_0 ] すると [ =( B_y(-) +E_x(-_0_0) ) =-B_y -_0E_x ]</li>
+</ol>
+<p>よって [ + =(_0E_x +B_y) +(-_0E_x -B_y)=0 ]</p>
+<p>[ ]</p>
+<hr>
+</section>
+</section>
+<section id="問8ビオサバールと直線電流の磁場" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="問8ビオサバールと直線電流の磁場"><span class="header-section-number">9</span> 問8（ビオ・サバールと直線電流の磁場）</h2>
+<p><strong>問題の型</strong><br>
+(1) はビオ・サバールの微小寄与の向き（外積）と距離。<br>
+(2) は既知の積分で <span class="math inline">\(B=\mu_0I/(2\pi a)\)</span> を再現。<br>
+(3) は2本の直線電流の重ね合わせ。対称性で成分が消える。</p>
+<p><strong>与式（ビオ・サバール）</strong> [ d(r)= ]</p>
+<section id="z-軸に沿う無限直線電流-ir00z-の電流素片-idmathbfr00idz-が-ra00-に作る-dmathbfb" class="level3" data-number="9.1">
+<h3 data-number="9.1" class="anchored" data-anchor-id="z-軸に沿う無限直線電流-ir00z-の電流素片-idmathbfr00idz-が-ra00-に作る-dmathbfb"><span class="header-section-number">9.1</span> (1) <span class="math inline">\(z\)</span> 軸に沿う無限直線電流 <span class="math inline">\(I\)</span>。<span class="math inline">\(r'=(0,0,z')\)</span> の電流素片 <span class="math inline">\(Id\mathbf{r}'=(0,0,Idz')\)</span> が <span class="math inline">\(r=(a,0,0)\)</span> に作る <span class="math inline">\(d\mathbf{B}\)</span></h3>
+<p>[ d‘=,dz’, -‘=(a,0,-z’) ] 外積： [ d‘(-’) =dz’(a-z’) =a()dz’ =a,dz’ ] 距離： [ |-‘|= |-’|<sup>3=(a</sup>2+z’<sup>2)</sup>{3/2} ]</p>
+<p>したがって [ ]</p>
+</section>
+<section id="を積分して直線電流全体が-ra00-に作る磁場" class="level3" data-number="9.2">
+<h3 data-number="9.2" class="anchored" data-anchor-id="を積分して直線電流全体が-ra00-に作る磁場"><span class="header-section-number">9.2</span> (2) (1) を積分して直線電流全体が <span class="math inline">\(r=(a,0,0)\)</span> に作る磁場</h3>
+<p>[ =<em>{-}^{} d =</em>{-}^{} ] 既知積分： [ _{-}^{}= ] よって [ ]</p>
+</section>
+<section id="本の無限直線電流1本は-a00-を通り-z-向きに-iもう1本は--a00-を通り-z-向きに-i点-p0yz-の磁場" class="level3" data-number="9.3">
+<h3 data-number="9.3" class="anchored" data-anchor-id="本の無限直線電流1本は-a00-を通り-z-向きに-iもう1本は--a00-を通り-z-向きに-i点-p0yz-の磁場"><span class="header-section-number">9.3</span> (3) 2本の無限直線電流：1本は <span class="math inline">\((a,0,0)\)</span> を通り <span class="math inline">\(+z\)</span> 向きに <span class="math inline">\(I\)</span>、もう1本は <span class="math inline">\((-a,0,0)\)</span> を通り <span class="math inline">\(+z\)</span> 向きに <span class="math inline">\(I\)</span>。点 <span class="math inline">\(P(0,y,z)\)</span> の磁場</h3>
+<p>無限直線電流（<span class="math inline">\(+z\)</span> 方向）の磁場は、線からの横ベクトル <span class="math inline">\(\boldsymbol{\rho}\)</span> に対し [ =,() (=||) ] ここでは <span class="math inline">\(P\)</span> の <span class="math inline">\(x=0\)</span> なので <span class="math inline">\(z\)</span> に依存しない（距離は <span class="math inline">\(xy\)</span> 平面で決まる）。</p>
+<ul>
+<li><p>線1（<span class="math inline">\(x=a\)</span>）から：<span class="math inline">\(\boldsymbol{\rho}_1=(-a)\mathbf{i}+y\mathbf{j}\)</span>、<span class="math inline">\(\rho_1^2=a^2+y^2\)</span> [ _1=(-a+y) =-a-y ] [ _1=(-y-a) ]</p></li>
+<li><p>線2（<span class="math inline">\(x=-a\)</span>）から：<span class="math inline">\(\boldsymbol{\rho}_2=a\mathbf{i}+y\mathbf{j}\)</span>、<span class="math inline">\(\rho_2^2=a^2+y^2\)</span> [ _2=a-y ] [ _2=(-y+a) ]</p></li>
+</ul>
+<p>加えると <span class="math inline">\(\mathbf{j}\)</span> 成分が打ち消し： [ =_1+_2 =(-2y) ]</p>
+<p>[ ]</p>
+<hr>
+</section>
+</section>
+<section id="まとめこの試験の典型パターン" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="まとめこの試験の典型パターン"><span class="header-section-number">10</span> まとめ（この試験の典型パターン）</h2>
+<ul>
+<li><strong>運動（問1,5）</strong>：力（ローレンツ/電流×磁場）→ 運動方程式。回路が絡むなら KVL で <span class="math inline">\(I\)</span> を消去して一次微分方程式へ。</li>
+<li><strong>場の計算（問2,6,8）</strong>：
+<ul>
+<li>ベクトル解析（div/curl）<br>
+</li>
+<li>アンペール（+マクスウェル補正）<br>
+</li>
+<li>ビオ・サバール（外積の向きが最重要）</li>
+</ul></li>
+<li><strong>エネルギー（問4,7）</strong>：
+<ul>
+<li><span class="math inline">\(u=\frac12\varepsilon_0E^2+\frac1{2\mu_0}B^2\)</span><br>
+</li>
+<li><span class="math inline">\(\mathbf{S}=\frac1{\mu_0}\mathbf{E}\times\mathbf{B}\)</span><br>
+</li>
+<li><span class="math inline">\(\partial_t u+\nabla\cdot\mathbf{S}=0\)</span>（ポインティングの定理）</li>
+</ul></li>
+</ul>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

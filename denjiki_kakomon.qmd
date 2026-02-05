@@ -1,4 +1,3 @@
-```qmd
 ---
 title: "電磁気学 期末試験（2022-02-07） 解答・解説"
 format:
@@ -754,4 +753,3 @@ d\mathbf{B}
   - $u=\frac12\varepsilon_0E^2+\frac1{2\mu_0}B^2$  
   - $\mathbf{S}=\frac1{\mu_0}\mathbf{E}\times\mathbf{B}$  
   - $\partial_t u+\nabla\cdot\mathbf{S}=0$（ポインティングの定理）
-```
